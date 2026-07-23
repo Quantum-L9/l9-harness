@@ -1,0 +1,66 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/single-ingress-contract.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "single-ingress-contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schemaVersion",
+    "request_id",
+    "objective",
+    "mode",
+    "inputs",
+    "constraints",
+    "context_refs",
+    "authority_rules",
+    "trace_id",
+    "validation_profile",
+    "output_contract",
+    "route"
+  ],
+  "properties": {
+    "schema": {"const": "l9.harness-single-ingress"},
+    "schemaVersion": {"const": "1.0.0"},
+    "request_id": {"pattern": "^l9\\.harness-request:sha256:[0-9a-f]{64}$", "type": "string"},
+    "objective": {"minLength": 1, "type": "string"},
+    "mode": {"const": "cli"},
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["argument_names", "arguments_digest"],
+      "properties": {
+        "argument_names": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "arguments_digest": {"$ref": "common.schema.json#/$defs/digest"}
+      }
+    },
+    "constraints": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "context_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "authority_rules": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "trace_id": {"pattern": "^l9\\.harness-trace:sha256:[0-9a-f]{64}$", "type": "string"},
+    "validation_profile": {"const": "l9.harness.cli-ingress@1.0.0"},
+    "output_contract": {"const": "l9.harness-command-result@1.0.0"},
+    "route": {
+      "enum": [
+        "assurance",
+        "bundle",
+        "clean",
+        "collect",
+        "conformance",
+        "corpus",
+        "doctor",
+        "guidance",
+        "init",
+        "package",
+        "plan",
+        "replay",
+        "run",
+        "verify"
+      ]
+    }
+  }
+}

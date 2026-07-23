@@ -1,0 +1,11 @@
+{
+  "expectedCanonicalJson": "{\"a\":\"\u00e9\",\"nested\":{\"a\":1,\"b\":2},\"z\":1}",
+  "input": {
+    "a": "\u00e9",
+    "nested": {
+      "a": 1,
+      "b": 2
+    },
+    "z": 1
+  }
+}

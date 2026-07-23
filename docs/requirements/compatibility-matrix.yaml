@@ -1,0 +1,17 @@
+schema: l9.harness-compatibility-matrix/v1
+harness: 2.0.1
+assurance:
+  required_release: 2.0.0
+  immutable_identity: BLOCKED
+  plan_schema: BLOCKED
+sdk:
+  producer: l9-ci-sdk
+  trusted_version: UNKNOWN
+  trusted_build_digests: []
+release_zero_checks:
+  - l9.repository-metadata
+  - l9.transport-packet
+  - l9.sdk-validation
+  - l9.lint
+  - l9.tests
+  - l9.mandatory-findings

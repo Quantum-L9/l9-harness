@@ -1,0 +1,27 @@
+schema: l9.single-ingress-contract/v1
+owner: l9-harness
+scope: cli
+request_fields:
+  - request_id
+  - objective
+  - mode
+  - inputs
+  - constraints
+  - context_refs
+  - authority_rules
+  - trace_id
+  - validation_profile
+  - output_contract
+rules:
+  - normalize_input_once
+  - validate_input_once
+  - assign_trace_id_once
+  - route_only_after_validation
+  - reject_unsupported_routes_fail_closed
+  - prevent_direct_cli_module_bypass
+privacy:
+  emitted_inputs: argument_names_and_digest_only
+  raw_argument_values: never_emitted_by_ingress
+programmatic_api:
+  status: explicitly_outside_cli_ingress
+  reason: typed_internal_modules_remain_composable_for_tests_and_embedding

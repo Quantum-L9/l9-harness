@@ -1,0 +1,120 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-run-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assuranceInputManifestRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "assuranceInvocationRefs": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/relativePath"
+      },
+      "type": "array"
+    },
+    "attempt": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "completedAt": {
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "conformanceReportRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "executionId": {
+      "type": "string"
+    },
+    "executionRecords": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/relativePath"
+      },
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "observationIndexRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "planRef": {
+      "$ref": "common.schema.json#/$defs/relativePath"
+    },
+    "reasonCodes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "replayRecordRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runBundleManifestRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runKey": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "l9.harness-run-manifest"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "startedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "state": {
+      "type": "string"
+    },
+    "subjectLockRef": {
+      "$ref": "common.schema.json#/$defs/relativePath"
+    },
+    "toolchainLockRef": {
+      "$ref": "common.schema.json#/$defs/relativePath"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "runKey",
+    "executionId",
+    "attempt",
+    "state",
+    "subjectLockRef",
+    "toolchainLockRef",
+    "planRef",
+    "startedAt",
+    "executionRecords",
+    "assuranceInvocationRefs",
+    "reasonCodes",
+    "limitations"
+  ],
+  "title": "harness-run-manifest",
+  "type": "object"
+}

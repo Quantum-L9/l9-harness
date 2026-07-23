@@ -1,0 +1,48 @@
+schema: l9.convergence-report/v1
+artifact: l9-harness-v2-recursive-improvement-converged
+version: 2.0.4
+convergence_status: fixed_point
+recursive_passes_run: 10
+align_improve_cycles_run: 3
+same_output_after_final_pass: true
+material_improvement_remaining: false
+files_or_sections_improved:
+  - canonical_filetree_ownership
+  - source_identity_and_tracked_file_convergence
+  - wheel_metadata_contract
+  - sdist_membership_contract
+  - cli_version_contract
+  - validation_and_release_evidence
+source_intent_preserved: true
+scope_drift_detected: false
+pack_coherence_improved: true
+enforceability_improved: true
+reuse_value_improved: true
+execution_readiness: pass_for_harness_owned_runtime_and_distribution
+single_ingress_evaluated: true
+unknowns_remaining:
+  - live_harness_baseline
+  - repository_license_and_distribution_authorization
+  - immutable_assurance_release
+  - trusted_sdk_release
+  - authority_canonicalization_vectors
+  - ci_core_shadow_evidence
+  - local_ruff_result
+  - local_mypy_result
+validation_gates_passed:
+  - artifact_group_type_identified
+  - file_or_pack_structure_intentionally_corrected
+  - source_intent_preserved
+  - no_unsupported_scope_added
+  - no_behavior_regression
+  - constraints_strengthened_not_weakened
+  - output_contracts_complete
+  - validation_gates_complete
+  - failure_modes_explicit
+  - cross_file_references_valid
+  - L9_boundaries_preserved_when_applicable
+  - duplicate_or_weak_sections_removed
+  - improved_artifact_group_executable_without_reinterpretation
+  - convergence_reached
+validation_gates_failed: []
+minimum_safe_next_action: reconcile_against_accessible_immutable_live_baseline

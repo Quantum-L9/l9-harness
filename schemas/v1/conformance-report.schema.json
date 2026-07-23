@@ -1,0 +1,47 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/conformance-report.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "enum": [
+        "producer",
+        "consumer",
+        "canonicalization",
+        "cross-language",
+        "architecture"
+      ]
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "pass": {
+      "type": "boolean"
+    },
+    "results": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 100000,
+      "type": "array"
+    },
+    "schema": {
+      "const": "l9.conformance-report"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "kind",
+    "results",
+    "pass"
+  ],
+  "title": "conformance-report",
+  "type": "object"
+}

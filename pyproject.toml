@@ -1,0 +1,38 @@
+[build-system]
+requires = []
+build-backend = "build_backend"
+backend-path = ["."]
+
+[project]
+name = "l9-harness"
+version = "2.0.4"
+description = "Deterministic local execution, conformance, replay, and shadow tooling for the Quantum-L9 CI constellation."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { text = "License status UNKNOWN; no distribution rights granted by this generated pack." }
+authors = [{ name = "Quantum-L9" }]
+dependencies = []
+
+[project.scripts]
+l9-harness = "l9_harness.cli.app:main"
+
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["l9_harness"]
+warn_unused_configs = true
+exclude = ["tests"]

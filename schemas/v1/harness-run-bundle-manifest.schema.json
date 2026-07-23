@@ -1,0 +1,59 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-run-bundle-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "archiveDigest": {
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/digest"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "assuranceInputDigest": {
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/digest"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "bundleId": {
+      "$ref": "common.schema.json#/$defs/contentId"
+    },
+    "files": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/artifact"
+      },
+      "maxItems": 100000,
+      "type": "array"
+    },
+    "runBundleContentDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "runKey": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "l9.harness-run-bundle-manifest"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "bundleId",
+    "runKey",
+    "files",
+    "runBundleContentDigest"
+  ],
+  "title": "harness-run-bundle-manifest",
+  "type": "object"
+}

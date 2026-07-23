@@ -1,0 +1,167 @@
+{
+  "checks": [
+    {
+      "check_id": "V-STRUCT-001",
+      "detail": "required root files missing: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-STRUCT-002",
+      "detail": "duplicate file-tree artifacts: []",
+      "evidence": "canonical=FILETREE.md",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-STATIC-001",
+      "detail": "syntax errors: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-STATIC-002",
+      "detail": "public annotation gaps: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-STATIC-003",
+      "detail": "import errors: []",
+      "evidence": "modules=139",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-ARCH-001",
+      "detail": "prohibited runtime symbols: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-ARCH-002",
+      "detail": "boundary regressions: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-QUALITY-001",
+      "detail": "unfinished markers: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-QUALITY-002",
+      "detail": "cache residue: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-RELEASE-001",
+      "detail": "embedded local paths: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-RELEASE-002",
+      "detail": "version identities: {'pyproject': '2.0.4', 'uv.lock': '2.0.4', 'runtime': '2.0.4'}",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-CI-001",
+      "detail": "missing exact CI tool pins: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-SCHEMA-001",
+      "detail": "schema validation: all schemas valid",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-SCHEMA-002",
+      "detail": "schema registry digest mismatches: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-SCHEMA-003",
+      "detail": "profile instance errors: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-FIXTURE-001",
+      "detail": "contract fixture errors: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-FIXTURE-002",
+      "detail": "fixture manifest mismatches: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-SEC-001",
+      "detail": "secret marker hits: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-CLI-001",
+      "detail": "CLI help rendered",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-PACKAGE-001",
+      "detail": "editable backend: real source-linked wheel",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-SEC-002",
+      "detail": "runtime subprocess boundary violations: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-META-001",
+      "detail": "L9 metadata coverage: files=305, meta_refs=305",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-META-002",
+      "detail": "tracked-file integrity: exact",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-RELEASE-003",
+      "detail": "source identity errors: []",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-ASSURANCE-001",
+      "detail": "Assurance boundary alignment: locked",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-INGRESS-001",
+      "detail": "single-ingress enforcement: locked",
+      "evidence": "",
+      "status": "PASS"
+    },
+    {
+      "check_id": "V-RELEASE-004",
+      "detail": "source/evidence identity separation: explicit",
+      "evidence": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "l9.repository-validation/v1"
+}

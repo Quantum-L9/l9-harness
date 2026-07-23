@@ -1,0 +1,52 @@
+schema: l9.validation-report/v1
+artifact: l9-harness
+version: 2.0.4
+status: APPROVED_WITH_EXTERNAL_BLOCKERS
+baseline:
+  version: 2.0.3
+  tests:
+    passed: 75
+    failed: 4
+  root_cause: stale_duplicate_filetree_artifacts
+checks:
+  python_compilation: PASS
+  tests:
+    status: PASS
+    passed: 82
+    failed: 0
+  repository_gates:
+    status: PASS
+    passed: 27
+    failed: 0
+  generated_artifacts:
+    status: PASS
+    stable: 8
+  schemas:
+    status: PASS
+    count: 21
+  canonical_filetree: PASS
+  wheel_metadata_parity: PASS
+  sdist_filetree_membership: PASS
+  cli_version_contract: PASS
+  source_identity: PASS
+  single_ingress: PASS
+  tracked_file_integrity: PASS
+  validation_evidence_binding: PASS
+  wheel_source_parity: PASS
+  sdist_source_parity: PASS
+  reproducible_distribution: PASS
+  isolated_install: PASS
+  installed_modules:
+    status: PASS
+    imported: 139
+    total: 139
+  delivery_zip: PASS
+blocked:
+  - ruff_0_12_12_not_available_offline
+  - mypy_1_17_1_not_available_offline
+  - live_harness_baseline_unavailable
+  - repository_distribution_authorization_unknown
+  - assurance_production_authority_unavailable
+  - sdk_production_trust_unavailable
+  - authority_canonicalization_vectors_unavailable
+  - ci_core_shadow_evidence_unavailable

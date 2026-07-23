@@ -1,0 +1,53 @@
+{
+  "artifacts": [],
+  "check": {
+    "configurationDigest": {
+      "algorithm": "sha256",
+      "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    "id": "l9.repository-metadata",
+    "version": "1.0.0"
+  },
+  "execution": {
+    "attempt": 1,
+    "completedAt": "2026-07-22T00:00:01Z",
+    "runId": "fixture-run",
+    "startedAt": "2026-07-22T00:00:00Z",
+    "status": "passed"
+  },
+  "extensions": {
+    "quantum-l9.fixture": {
+      "source": "harness-build"
+    }
+  },
+  "findings": [],
+  "observationId": "fixture:l9.repository-metadata",
+  "producer": {
+    "buildDigest": {
+      "algorithm": "sha256",
+      "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "id": "l9-ci-sdk",
+    "version": "2.0.0"
+  },
+  "schema": "l9.observation",
+  "schemaVersion": "1.0.0",
+  "subject": {
+    "kind": "git-revision",
+    "repository": {
+      "host": "github.com",
+      "name": "fixture-repo",
+      "owner": "Quantum-L9"
+    },
+    "revision": {
+      "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "treeDigest": null
+    }
+  },
+  "summary": {
+    "errorCount": 0,
+    "findingCount": 0,
+    "informationalCount": 0,
+    "warningCount": 0
+  }
+}

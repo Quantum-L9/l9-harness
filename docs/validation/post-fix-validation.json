@@ -1,0 +1,71 @@
+{
+  "artifact": "l9-harness",
+  "checks": {
+    "archive_content_scan": {
+      "status": "PASS"
+    },
+    "compileall": {
+      "status": "PASS"
+    },
+    "editable_wheel": {
+      "mode": "source-pth",
+      "status": "PASS"
+    },
+    "generated_artifacts": {
+      "status": "PASS",
+      "targets": 5
+    },
+    "installed_module_imports": {
+      "modules": 138,
+      "status": "PASS"
+    },
+    "isolated_wheel_install": {
+      "status": "PASS"
+    },
+    "mypy": {
+      "reason": "tool unavailable locally; exact 1.17.1 pinned in hosted CI",
+      "status": "BLOCKED"
+    },
+    "packaged_resources": {
+      "profile": true,
+      "schema": true,
+      "status": "PASS"
+    },
+    "pytest": {
+      "failed": 0,
+      "passed": 64,
+      "status": "PASS"
+    },
+    "repository_audit": {
+      "passed": 19,
+      "status": "PASS",
+      "total": 19
+    },
+    "reproducible_sdist": {
+      "comparison": "two independent builds byte-identical",
+      "status": "PASS"
+    },
+    "reproducible_wheel": {
+      "comparison": "two independent builds byte-identical",
+      "status": "PASS"
+    },
+    "ruff": {
+      "reason": "tool unavailable locally; exact 0.12.12 pinned in hosted CI",
+      "status": "BLOCKED"
+    },
+    "sdist_build": {
+      "status": "PASS"
+    },
+    "uv_sync_locked_offline": {
+      "status": "PASS"
+    },
+    "wheel_build": {
+      "status": "PASS"
+    },
+    "wheel_integrity": {
+      "status": "PASS"
+    }
+  },
+  "schema": "l9.post-fix-validation/v1",
+  "version": "2.0.1"
+}

@@ -1,0 +1,118 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/execution-record.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "adapter": {
+      "enum": [
+        "process",
+        "container",
+        "fallback"
+      ]
+    },
+    "check": {
+      "type": "object"
+    },
+    "commandDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "completedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "configurationDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "environmentDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "executionRecordId": {
+      "type": "string"
+    },
+    "exitCode": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "observationRefs": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 1000,
+      "type": "array"
+    },
+    "resourceUsage": {
+      "type": "object"
+    },
+    "runKey": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "l9.execution-record"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "startedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "stderrRef": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "stdoutRef": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "subjectDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "supportingArtifactRefs": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 10000,
+      "type": "array"
+    },
+    "termination": {
+      "enum": [
+        "completed",
+        "timeout",
+        "cancelled",
+        "signal",
+        "infrastructure_error"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "executionRecordId",
+    "runKey",
+    "subjectDigest",
+    "check",
+    "adapter",
+    "commandDigest",
+    "configurationDigest",
+    "environmentDigest",
+    "startedAt",
+    "completedAt",
+    "termination",
+    "observationRefs",
+    "supportingArtifactRefs",
+    "resourceUsage",
+    "limitations"
+  ],
+  "title": "execution-record",
+  "type": "object"
+}

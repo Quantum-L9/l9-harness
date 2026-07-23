@@ -1,0 +1,52 @@
+{
+  "artifact": "L9_HARNESS_V2_FULL_BUILD_2.0.0.zip",
+  "checks": [
+    {
+      "command": "/opt/pyvenv/bin/python -m compileall -q src tests scripts build_backend.py",
+      "id": "baseline_compile",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python -m pytest -q",
+      "id": "baseline_pytest",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "..................................................                       [100%]\n50 passed in 2.51s\n"
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/verify_generated.py",
+      "id": "baseline_generated",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "/tmp/l9-harness-baseline/l9-harness/src/l9_harness/contracts/generated/schema_inventory.py\n/tmp/l9-harness-baseline/l9-harness/src/l9_harness/contracts/generated/models.py\ngenerated bindings verified: 2 files\n"
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_repository.py",
+      "id": "baseline_repository_audit",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"checks\": 12,\n  \"passed\": 12,\n  \"failed\": 0,\n  \"report\": \"/tmp/l9-harness-baseline/l9-harness/docs/validation/repository-validation.json\"\n}\n"
+    },
+    {
+      "command": "uv sync --offline --reinstall",
+      "id": "baseline_uv_sync",
+      "returncode": 0,
+      "stderr": "Using CPython 3.13.5 interpreter at: /usr/bin/python3.13\nCreating virtual environment at: .venv\nResolved 1 package in 7ms\n   Building l9-harness @ file:///tmp/l9-harness-baseline/l9-harness\n      Built l9-harness @ file:///tmp/l9-harness-baseline/l9-harness\nPrepared 1 package in 416ms\nInstalled 1 package in 12ms\n + l9-harness==2.0.0 (from file:///tmp/l9-harness-baseline/l9-harness)\n",
+      "stdout": ""
+    },
+    {
+      "command": "ruff",
+      "id": "baseline_ruff",
+      "returncode": null,
+      "status": "BLOCKED_TOOL_UNAVAILABLE"
+    },
+    {
+      "command": "mypy",
+      "id": "baseline_mypy",
+      "returncode": null,
+      "status": "BLOCKED_TOOL_UNAVAILABLE"
+    }
+  ]
+}

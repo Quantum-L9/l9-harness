@@ -1,0 +1,48 @@
+schema: l9.release-readiness/v1
+artifact: l9-harness
+version: 2.0.4
+decision: GO_RECURSIVE_IMPROVEMENT_CONVERGED_DISTRIBUTION_WITH_EXTERNAL_PRODUCTION_BLOCKERS
+approved:
+  - harness_owned_runtime
+  - local_execution_coordination
+  - deterministic_single_cli_ingress
+  - source_worktree_isolation
+  - observation_raw_byte_preservation
+  - deterministic_bundle_and_replay
+  - conformance_surfaces
+  - corpus_candidate_operations
+  - guidance_generation
+  - l9_metadata_coverage
+  - canonical_filetree_ownership
+  - exact_tracked_file_integrity
+  - assurance_boundary_alignment
+  - deterministic_source_identity
+  - source_identity_validation_evidence_separation
+  - repository_validation_distribution_binding
+  - wheel_metadata_parity
+  - cli_version_contract
+  - wheel_source_byte_parity
+  - sdist_source_byte_parity
+  - deterministic_distribution_manifest
+  - isolated_wheel_installation
+blocked:
+  - live_repository_baseline_reconciliation
+  - repository_license_and_distribution_authorization
+  - local_ruff_execution
+  - local_mypy_execution
+  - assurance_production_authority
+  - sdk_production_trust
+  - canonicalization_fixture_authority
+  - ci_core_shadow_parity
+prohibited:
+  - harness_as_authoritative_ci_hop
+  - harness_verdict_issuance
+  - diagnostic_fallback_as_release_zero_evidence
+  - proprietary_assurance_envelope
+  - packet_envelope
+  - automatic_corpus_promotion
+  - remote_mutation_without_explicit_authorization
+minimum_safe_next_action: >-
+  Reconcile this improved source graph against an accessible immutable live Harness
+  commit, confirm distribution authorization, then supply immutable Assurance and SDK
+  authority records before enabling production adapters.

@@ -1,0 +1,45 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/corpus-candidate.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "candidateId": {
+      "$ref": "common.schema.json#/$defs/contentId"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "payloadDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "promotion": {
+      "const": "external_only"
+    },
+    "schema": {
+      "const": "l9.corpus-candidate"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sourceRefs": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/artifact"
+      },
+      "type": "array"
+    },
+    "status": {
+      "const": "candidate"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "candidateId",
+    "kind",
+    "sourceRefs",
+    "payloadDigest",
+    "status"
+  ],
+  "title": "corpus-candidate",
+  "type": "object"
+}

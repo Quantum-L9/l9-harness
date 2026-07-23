@@ -1,0 +1,58 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/toolchain-lock.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assuranceCli": {
+      "type": "object"
+    },
+    "assuranceContracts": {
+      "type": "object"
+    },
+    "capabilityManifestDigest": {
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/digest"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "container": {
+      "type": "object"
+    },
+    "harness": {
+      "type": "object"
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "l9.toolchain-lock"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sdk": {
+      "type": "object"
+    },
+    "sdkPublicContractDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "harness",
+    "sdk",
+    "assuranceContracts",
+    "assuranceCli",
+    "runtime",
+    "container",
+    "sdkPublicContractDigest",
+    "capabilityManifestDigest"
+  ],
+  "title": "toolchain-lock",
+  "type": "object"
+}

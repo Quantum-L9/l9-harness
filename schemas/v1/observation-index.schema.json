@@ -1,0 +1,54 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/observation-index.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "counts": {
+      "properties": {
+        "invalid": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "structurallyValid": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "structurallyValid",
+        "invalid"
+      ],
+      "type": "object"
+    },
+    "entries": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 1000,
+      "type": "array"
+    },
+    "schema": {
+      "const": "l9.observation-index"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "subjectDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "subjectDigest",
+    "entries",
+    "counts"
+  ],
+  "title": "observation-index",
+  "type": "object"
+}

@@ -1,0 +1,6 @@
+from __future__ import annotations
+import json
+from typing import Any
+
+def render_json(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + '\n'

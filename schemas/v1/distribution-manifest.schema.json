@@ -1,0 +1,98 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/distribution-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "distribution-manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schemaVersion",
+    "package",
+    "version",
+    "sourceIdentityDigest",
+    "sourceTreeDigest",
+    "repositoryValidationDigest",
+    "wheel",
+    "sdist",
+    "artifacts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "l9.harness-distribution-manifest"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "package": {
+      "const": "l9-harness"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sourceIdentityDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "sourceTreeDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "wheel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fileCount",
+        "rawDigest"
+      ],
+      "properties": {
+        "fileCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "rawDigest": {
+          "$ref": "common.schema.json#/$defs/digest"
+        }
+      }
+    },
+    "sdist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rawDigest"
+      ],
+      "properties": {
+        "rawDigest": {
+          "$ref": "common.schema.json#/$defs/digest"
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "byteLength",
+          "rawDigest"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "byteLength": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rawDigest": {
+            "$ref": "common.schema.json#/$defs/digest"
+          }
+        }
+      }
+    },
+    "repositoryValidationDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    }
+  }
+}

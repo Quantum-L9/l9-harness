@@ -1,0 +1,105 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/subject-lock.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "resolution": {
+      "properties": {
+        "resolvedAt": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "resolvedFrom": {
+          "type": "object"
+        },
+        "resolver": {
+          "type": "object"
+        },
+        "worktree": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "resolvedFrom",
+        "worktree",
+        "resolvedAt",
+        "resolver"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "l9.subject-lock"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "git-revision"
+        },
+        "repository": {
+          "additionalProperties": false,
+          "properties": {
+            "host": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "host",
+            "owner",
+            "name"
+          ],
+          "type": "object"
+        },
+        "revision": {
+          "additionalProperties": false,
+          "properties": {
+            "commit": {
+              "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$",
+              "type": "string"
+            },
+            "treeDigest": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/digest"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "commit"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "kind",
+        "repository",
+        "revision"
+      ],
+      "type": "object"
+    },
+    "subjectIdentityDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "subject",
+    "subjectIdentityDigest",
+    "resolution"
+  ],
+  "title": "subject-lock",
+  "type": "object"
+}

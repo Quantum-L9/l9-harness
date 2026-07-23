@@ -1,0 +1,57 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/assurance-invocation-record.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "argvDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "authoritative": {
+      "const": false
+    },
+    "authorityRef": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "completedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "exitCode": {
+      "type": "integer"
+    },
+    "invocationId": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "l9.assurance-invocation-record"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "startedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "stderrDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "stdoutDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "invocationId",
+    "argvDigest",
+    "startedAt",
+    "completedAt",
+    "exitCode",
+    "stdoutDigest",
+    "stderrDigest",
+    "authoritative"
+  ],
+  "title": "assurance-invocation-record",
+  "type": "object"
+}

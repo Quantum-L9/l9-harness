@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "includeSupporting": true,
+    "maxTotalBytes": 1073741824,
+    "outputDirectory": "artifacts"
+  },
+  "assuranceProfileRef": {
+    "id": "l9.pull-request",
+    "version": "1.0.0"
+  },
+  "corpus": {
+    "mode": "offline",
+    "snapshotRef": null
+  },
+  "execution": {
+    "adapter": "process",
+    "concurrency": 1,
+    "environmentAllowlist": [],
+    "isolation": "workspace",
+    "network": "denied",
+    "timeoutSeconds": 900
+  },
+  "fallback": {
+    "enabled": false,
+    "explicitOptInRequired": true
+  },
+  "id": "l9.harness.release-zero-local",
+  "replay": {
+    "record": true,
+    "strict": true
+  },
+  "schema": "l9.harness-run-profile",
+  "schemaVersion": "1.0.0",
+  "sdk": {
+    "digest": "UNKNOWN",
+    "version": "UNKNOWN"
+  },
+  "subjectKinds": [
+    "git-revision"
+  ],
+  "version": "1.0.0"
+}

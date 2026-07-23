@@ -1,0 +1,35 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-config.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "extensions": {
+      "$ref": "common.schema.json#/$defs/extensions"
+    },
+    "mode": {
+      "enum": [
+        "local",
+        "conformance",
+        "replay",
+        "shadow"
+      ]
+    },
+    "paths": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "l9.harness-config"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "mode",
+    "paths"
+  ],
+  "title": "harness-config",
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+schema: l9.repository-meta/v1
+repository: Quantum-L9/l9-harness
+artifact_role: local_execution_conformance_replay_shadow_tool
+authoritative_ci_path_member: false
+tracked_file_index: docs/requirements/tracked-files.yaml
+assurance_alignment_record: docs/requirements/assurance-v2-alignment.yaml
+distribution_identity: distribution/source-identity.json
+single_ingress_contract: docs/requirements/SINGLE_INGRESS_CONTRACT.yaml
+provenance_map: PROVENANCE_MAP.yaml
+decision_log: DECISION_LOG.md
+metadata_policy:
+  strict_schema_files: indexed_not_mutated
+  generated_files: indexed_with_provenance
+  source_files: indexed_by_digest
+  every_tracked_file_inherits_repository_meta: true
+unknowns:
+  - verified_repository_baseline_commit
+  - verified_repository_license
+  - immutable_assurance_release_tuple
+  - trusted_sdk_release_tuple
+  - authority_canonicalization_fixture_set
+  - ci_core_shadow_parity_evidence

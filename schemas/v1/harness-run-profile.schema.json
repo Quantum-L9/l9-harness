@@ -1,0 +1,198 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-run-profile.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "properties": {
+        "includeSupporting": {
+          "type": "boolean"
+        },
+        "maxTotalBytes": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "outputDirectory": {
+          "$ref": "common.schema.json#/$defs/relativePath"
+        }
+      },
+      "required": [
+        "outputDirectory",
+        "includeSupporting",
+        "maxTotalBytes"
+      ],
+      "type": "object"
+    },
+    "assuranceProfileRef": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semver"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "type": "object"
+    },
+    "corpus": {
+      "properties": {
+        "mode": {
+          "enum": [
+            "offline",
+            "pull_if_missing",
+            "synchronized"
+          ]
+        },
+        "snapshotRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "snapshotRef",
+        "mode"
+      ],
+      "type": "object"
+    },
+    "execution": {
+      "properties": {
+        "adapter": {
+          "enum": [
+            "process",
+            "container"
+          ]
+        },
+        "concurrency": {
+          "maximum": 64,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "environmentAllowlist": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 128,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "isolation": {
+          "enum": [
+            "none",
+            "workspace",
+            "container"
+          ]
+        },
+        "network": {
+          "enum": [
+            "denied",
+            "restricted",
+            "allowed"
+          ]
+        },
+        "timeoutSeconds": {
+          "maximum": 86400,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "adapter",
+        "isolation",
+        "concurrency",
+        "timeoutSeconds",
+        "environmentAllowlist",
+        "network"
+      ],
+      "type": "object"
+    },
+    "fallback": {
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "explicitOptInRequired": {
+          "const": true
+        }
+      },
+      "required": [
+        "enabled",
+        "explicitOptInRequired"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "type": "string"
+    },
+    "replay": {
+      "properties": {
+        "record": {
+          "type": "boolean"
+        },
+        "strict": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "record",
+        "strict"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "l9.harness-run-profile"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sdk": {
+      "properties": {
+        "digest": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "digest"
+      ],
+      "type": "object"
+    },
+    "subjectKinds": {
+      "items": {
+        "enum": [
+          "git-revision"
+        ]
+      },
+      "maxItems": 8,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semver"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "id",
+    "version",
+    "subjectKinds",
+    "assuranceProfileRef",
+    "sdk",
+    "execution",
+    "artifacts",
+    "fallback",
+    "corpus",
+    "replay"
+  ],
+  "title": "harness-run-profile",
+  "type": "object"
+}

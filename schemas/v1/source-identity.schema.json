@@ -1,0 +1,107 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/source-identity.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "source-identity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schemaVersion",
+    "package",
+    "version",
+    "sourceRepository",
+    "sourceCommit",
+    "identityScope",
+    "mutableEvidenceExclusions",
+    "sourceTreeDigest",
+    "sourceFileCount",
+    "schemaRegistryDigest",
+    "fixtureManifestDigest",
+    "specificationDigest",
+    "buildBackendDigest",
+    "exclusions",
+    "files"
+  ],
+  "properties": {
+    "schema": {
+      "const": "l9.harness-source-identity"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "package": {
+      "const": "l9-harness"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sourceRepository": {
+      "const": "Quantum-L9/l9-harness"
+    },
+    "sourceCommit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceTreeDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "sourceFileCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "schemaRegistryDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "fixtureManifestDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "specificationDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "buildBackendDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/relativePath"
+      },
+      "uniqueItems": true
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "byteLength",
+          "rawDigest"
+        ],
+        "properties": {
+          "path": {
+            "$ref": "common.schema.json#/$defs/relativePath"
+          },
+          "byteLength": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rawDigest": {
+            "$ref": "common.schema.json#/$defs/digest"
+          }
+        }
+      }
+    },
+    "identityScope": {
+      "const": "approved-source-graph"
+    },
+    "mutableEvidenceExclusions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/relativePath"
+      },
+      "uniqueItems": true
+    }
+  }
+}

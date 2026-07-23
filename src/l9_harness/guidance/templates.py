@@ -1,0 +1,2 @@
+CLAUDE_TEMPLATE = '# L9 Harness Guidance\n\nGenerated from profile `{{ profile.id }}@{{ profile.version }}`.\n\n- Harness is non-authoritative.\n- SDK emits observations.\n- Assurance admits and decides.\n- CI Core publishes.\n'
+CURSOR_TEMPLATE = '---\ndescription: L9 Harness non-authoritative local guidance\nalwaysApply: true\n---\nHarness exercises public contracts only. Do not implement verdict logic or mutate SDK observations.\n'

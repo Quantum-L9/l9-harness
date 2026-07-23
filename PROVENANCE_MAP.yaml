@@ -1,0 +1,33 @@
+schema: l9.provenance-map/v1
+artifact: l9-harness
+source_authority:
+  repository: Quantum-L9/l9-harness
+  commit: UNKNOWN_REPOSITORY_UNAVAILABLE
+  local_baseline: L9_HARNESS_V2_RECURSIVE_LEVERAGE_ALIGNED_2.0.3.zip
+contract_authority:
+  - Recursive Improvement (L9)(4).md
+  - SPECIFICATION.md
+  - ARCHITECTURE.md
+  - AGENTS.md
+source_to_output:
+  approved_source_graph:
+    identity: distribution/source-identity.json
+    wheel: dist/l9_harness-2.0.4-py3-none-any.whl
+    sdist: dist/l9_harness-2.0.4.tar.gz
+  mutable_validation_evidence:
+    source: docs/validation/repository-validation.json
+    release_copy: dist/repository-validation.json
+    binding: dist/distribution-manifest.json
+  schemas:
+    source: schemas/v1
+    bundle: dist/l9-harness-2.0.4-schema-bundle.zip
+  conformance_fixtures:
+    source: fixtures
+    bundle: dist/l9-harness-2.0.4-conformance-fixtures.zip
+validation_evidence:
+  - VALIDATION.md
+  - validation_report.yaml
+  - docs/validation/repository-validation.json
+  - dist/distribution-alignment.json
+unknowns:
+  - UNKNOWN_REGISTER.md

@@ -1,0 +1,161 @@
+{
+  "acceptedBuildDigests": [
+    {
+      "algorithm": "sha256",
+      "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "authorizedChecks": [
+    "l9.repository-metadata",
+    "l9.transport-packet",
+    "l9.sdk-validation",
+    "l9.lint",
+    "l9.tests",
+    "l9.mandatory-findings"
+  ],
+  "buildDigest": {
+    "algorithm": "sha256",
+    "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "capabilities": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "print('fixture execution')"
+      ],
+      "capabilityId": "fixture:l9.repository-metadata",
+      "checkId": "l9.repository-metadata",
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "configurationDigest": {
+        "algorithm": "sha256",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "network": "denied",
+      "observationGlobs": [],
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "subjectKinds": [
+        "git-revision"
+      ],
+      "timeoutSeconds": 30,
+      "version": "1.0.0"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "print('fixture execution')"
+      ],
+      "capabilityId": "fixture:l9.transport-packet",
+      "checkId": "l9.transport-packet",
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "configurationDigest": {
+        "algorithm": "sha256",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "network": "denied",
+      "observationGlobs": [],
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "subjectKinds": [
+        "git-revision"
+      ],
+      "timeoutSeconds": 30,
+      "version": "1.0.0"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "print('fixture execution')"
+      ],
+      "capabilityId": "fixture:l9.sdk-validation",
+      "checkId": "l9.sdk-validation",
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "configurationDigest": {
+        "algorithm": "sha256",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "network": "denied",
+      "observationGlobs": [],
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "subjectKinds": [
+        "git-revision"
+      ],
+      "timeoutSeconds": 30,
+      "version": "1.0.0"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "print('fixture execution')"
+      ],
+      "capabilityId": "fixture:l9.lint",
+      "checkId": "l9.lint",
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "configurationDigest": {
+        "algorithm": "sha256",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "network": "denied",
+      "observationGlobs": [],
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "subjectKinds": [
+        "git-revision"
+      ],
+      "timeoutSeconds": 30,
+      "version": "1.0.0"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "print('fixture execution')"
+      ],
+      "capabilityId": "fixture:l9.tests",
+      "checkId": "l9.tests",
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "configurationDigest": {
+        "algorithm": "sha256",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "network": "denied",
+      "observationGlobs": [],
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "subjectKinds": [
+        "git-revision"
+      ],
+      "timeoutSeconds": 30,
+      "version": "1.0.0"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "print('fixture execution')"
+      ],
+      "capabilityId": "fixture:l9.mandatory-findings",
+      "checkId": "l9.mandatory-findings",
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "configurationDigest": {
+        "algorithm": "sha256",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "network": "denied",
+      "observationGlobs": [],
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "subjectKinds": [
+        "git-revision"
+      ],
+      "timeoutSeconds": 30,
+      "version": "1.0.0"
+    }
+  ],
+  "id": "l9-ci-sdk",
+  "producerAuthorization": "pending",
+  "publicContractDigest": {
+    "algorithm": "sha256",
+    "value": "3333333333333333333333333333333333333333333333333333333333333333"
+  },
+  "version": "2.0.0"
+}

@@ -1,0 +1,63 @@
+schema: l9.assurance-alignment/v1
+artifact: l9-harness
+artifact_version: 2.0.4
+source_authorities:
+  assurance_execution_spec:
+    title: L9 Assurance v2 Clean Rewrite Execution Specification
+    version: 2.0.0
+    status: locked
+    sha256: c55176775b06a556c54970c4c24dd524cce02269c9d5c98982ac7f6dbe26fab4
+    source_availability: supplied_build_input
+    copied_into_runtime: false
+  harness_alignment_spec:
+    title: L9 Harness v2 Locked Assurance Alignment Build Specification
+    version: 1.2.1
+    sha256: ef35fc2a0d08c7dc30bee79fc59b968927c2b61a664cd763df9c3b6bab52af48
+    source_availability: supplied_build_input
+    copied_into_runtime: false
+responsibility_boundary:
+  ci_core: hosted_orchestration_and_decision_publication
+  ci_sdk: check_execution_and_canonical_observation_emission
+  harness: local_coordination_conformance_replay_shadow_and_byte_preservation
+  assurance: evidence_admission_control_evaluation_and_decision_issuance
+  harness_in_authoritative_path: false
+release_zero:
+  subject_kind: git-revision
+  producer: l9-ci-sdk
+  profile: l9.pull-request@1.0.0
+  consumer: l9-ci-core
+  checks:
+    - l9.repository-metadata
+    - l9.transport-packet
+    - l9.sdk-validation
+    - l9.lint
+    - l9.tests
+    - l9.mandatory-findings
+required_invariants:
+  - no_assurance_private_imports
+  - no_sdk_private_imports
+  - no_harness_verdict_issuance
+  - no_proprietary_assurance_envelope
+  - no_packet_envelope
+  - exact_git_revision_subject
+  - raw_observation_byte_preservation
+  - admitted_evidence_directory_passed_to_evaluate
+  - assurance_decision_outputs_copied_without_reserialization
+  - simulation_always_non_authoritative
+  - production_authority_requires_immutable_release_tuple
+  - production_sdk_requires_approved_authority_tuple
+  - missing_or_invalid_mandatory_evidence_never_reclassified_by_harness
+l9_applicability:
+  artifact_class: ci_tooling_repository_not_runtime_node
+  transport_packet_inter_node_wire_rule: not_applicable_to_filesystem_assurance_exchange
+  gate_only_node_egress: not_applicable
+  derive_or_with_hop: not_applicable
+  packet_envelope: prohibited
+  transport_packet_repository_check: preserved_as_sdk_observation
+  metadata_coverage: repository_meta_plus_per_file_index
+external_blockers:
+  - immutable_assurance_release_tuple
+  - published_assurance_plan_schema_and_vectors
+  - trusted_sdk_release_tuple
+  - authority_canonicalization_fixture_set
+  - ci_core_shadow_parity_evidence

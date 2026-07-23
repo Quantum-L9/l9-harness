@@ -1,0 +1,12 @@
+schema: l9.harness-traceability/v1
+requirements:
+  HAR-INV-001: {requirement: Harness outside authoritative CI, evidence: tests/architecture/test_boundaries.py}
+  HAR-INV-002: {requirement: No verdict logic, evidence: tests/architecture/test_prohibited_symbols.py}
+  HAR-INV-003: {requirement: Exact observation bytes, evidence: tests/unit/test_preserve.py}
+  HAR-INV-004: {requirement: Subject locked to commit, evidence: tests/integration/test_subject_lock.py}
+  HAR-INV-005: {requirement: Fallback diagnostic only, evidence: tests/architecture/test_fallback.py}
+  HAR-INV-006: {requirement: Safe paths and archives, evidence: tests/adversarial/test_security.py}
+  HAR-INV-007: {requirement: Deterministic archive, evidence: tests/replay/test_bundle_replay.py}
+  HAR-INV-008: {requirement: Raw-byte consumer conformance, evidence: tests/conformance/test_consumer.py}
+  HAR-INV-009: {requirement: Corpus cache/outbox separation, evidence: tests/unit/test_corpus.py}
+  HAR-INV-010: {requirement: Guidance non-authoritative, evidence: tests/unit/test_guidance.py}

@@ -1,0 +1,37 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/guidance-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authoritative": {
+      "const": false
+    },
+    "outputs": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/artifact"
+      },
+      "type": "array"
+    },
+    "schema": {
+      "const": "l9.guidance-manifest"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sources": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "authoritative",
+    "outputs",
+    "sources"
+  ],
+  "title": "guidance-manifest",
+  "type": "object"
+}

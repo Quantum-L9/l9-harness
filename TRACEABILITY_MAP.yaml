@@ -1,0 +1,163 @@
+schema: l9.harness-repair-traceability/v1
+artifact: l9-harness
+baseline_version: 2.0.0
+revised_version: 2.0.4
+entries:
+  - id: GAP-001
+    severity: high
+    defect: CI referenced undeclared ambient Ruff, mypy, pytest, and jsonschema tools.
+    sources: [.github/workflows/ci.yml, .github/workflows/conformance.yml, .github/workflows/release.yml, .pre-commit-config.yaml]
+    fix: Pin exact hosted tool versions and use uv sync --locked.
+    validation: [V-CI-001, validation_report.yaml]
+  - id: GAP-002
+    severity: high
+    defect: build_editable returned a normal copied wheel instead of an editable installation.
+    sources: [build_backend.py]
+    fix: Emit a deterministic PEP 660 wheel containing a source .pth and metadata only.
+    validation: [tests/contract/test_editable_backend.py, V-PACKAGE-001]
+  - id: GAP-003
+    severity: critical
+    defect: External Assurance and SDK documents were mutated with Harness-private fields.
+    sources: [src/l9_harness/planning/assurance_plan.py, src/l9_harness/sdk/capability_manifest.py]
+    fix: Keep loaded documents byte-model equivalent and expose separate inspection functions.
+    validation: [tests/contract/test_external_contract_immutability.py, tests/contract/test_production_gates.py]
+  - id: GAP-004
+    severity: critical
+    defect: Missing Assurance requirements were guessed from a hardcoded check list and capability matching was incomplete.
+    sources: [src/l9_harness/contracts/assurance.py, src/l9_harness/planning/capability_resolution.py]
+    fix: Fail incomplete plans closed and resolve every requirement against explicit producer, build, check, schema, configuration, subject, cardinality, alternative, and artifact constraints.
+    validation: [tests/unit/test_plan.py, V-ARCH-002, V-FIXTURE-001]
+  - id: GAP-005
+    severity: critical
+    defect: Dirty subjects could be locked and SDK commands ran in the source worktree.
+    sources: [src/l9_harness/subject/lock.py, src/l9_harness/execution/workspace.py, src/l9_harness/application/execute_run.py, src/l9_harness/execution/engine.py]
+    fix: Require a clean subject, clone and detach the exact commit per step, copy outputs before teardown, and revalidate the source before and after execution.
+    validation: [tests/integration/test_subject_lock.py, tests/integration/test_execution_isolation.py]
+  - id: GAP-006
+    severity: high
+    defect: Harness labeled locally canonicalized external JSON as authority-canonical.
+    sources: [src/l9_harness/observations/preserve.py, src/l9_harness/observations/index.py]
+    fix: Preserve raw digests and set canonicalPayloadDigest to null until authority vectors verify it.
+    validation: [tests/unit/test_preserve.py, tests/unit/test_observation_validation.py, V-ARCH-002]
+  - id: GAP-007
+    severity: high
+    defect: Observation preflight omitted producer, check, execution, summary, string, extension, and count constraints and dropped invalid JSON from the index.
+    sources: [src/l9_harness/observations/validate.py, src/l9_harness/observations/index.py]
+    fix: Add bounded validation and retain invalid artifact evidence with reasons.
+    validation: [tests/unit/test_observation_validation.py, tests/conformance/test_producer.py]
+  - id: GAP-008
+    severity: high
+    defect: ZIP creation followed symlinks and extraction lacked duplicate, encryption, ratio, and streaming protections.
+    sources: [src/l9_harness/bundle/archive.py, src/l9_harness/security/archives.py]
+    fix: Reject unsafe entries and enforce bounded streaming extraction.
+    validation: [tests/adversarial/test_archive_hardening.py, tests/adversarial/test_security.py]
+  - id: GAP-009
+    severity: medium
+    defect: Bundle verification ignored extra files.
+    sources: [src/l9_harness/bundle/verify.py]
+    fix: Require exact manifest membership and reject symlinks.
+    validation: [tests/unit/test_bundle_verify.py]
+  - id: GAP-010
+    severity: high
+    defect: Corpus pull retained stale files, push could erase remote content, and sync could overwrite divergent paths.
+    sources: [src/l9_harness/corpus/adapters/filesystem.py, src/l9_harness/corpus/sync.py]
+    fix: Use exact staged pull, non-destructive candidate submission, overlap rejection, and three-state conflict detection.
+    validation: [tests/unit/test_corpus_sync.py, tests/adversarial/test_corpus_symlink.py]
+  - id: GAP-011
+    severity: high
+    defect: Production Assurance authority completeness did not verify the invoked executable bytes.
+    sources: [src/l9_harness/assurance/versioning.py, src/l9_harness/cli/commands/assurance.py]
+    fix: Require the complete immutable authority tuple and compare executable SHA-256 before invocation.
+    validation: [tests/contract/test_assurance_authority.py]
+  - id: GAP-012
+    severity: medium
+    defect: Schema registry, fixture manifest, and tracked-file index were not all covered by generated drift checks.
+    sources: [scripts/update_schema_registry.py, scripts/update_fixtures.py, scripts/update_tracked_files.py, scripts/verify_generated.py]
+    fix: Generate and verify all deterministic metadata artifacts.
+    validation: [V-SCHEMA-002, V-FIXTURE-002, scripts/verify_generated.py]
+  - id: GAP-013
+    severity: high
+    defect: Release construction hardcoded version 2.0.0 and did not run repository validation.
+    sources: [build_backend.py, scripts/build_release.py, pyproject.toml, uv.lock]
+    fix: Derive version from pyproject, validate before packaging, and produce truthful provenance.
+    validation: [V-RELEASE-002, reproducible build evidence, isolated wheel installation]
+  - id: GAP-014
+    severity: medium
+    defect: The run command wrote the same execution-record file twice.
+    sources: [src/l9_harness/cli/commands/run.py]
+    fix: Write the deterministic execution record exactly once.
+    validation: [tests/integration, V-STATIC-001]
+  - id: GAP-015
+    severity: high
+    defect: Doctor diagnostics bypassed the sanitized subprocess boundary.
+    sources: [src/l9_harness/cli/commands/doctor.py, src/l9_harness/security/subprocesses.py]
+    fix: Route the Git repository probe through run_argv and enforce import confinement.
+    validation: [tests/architecture/test_subprocess_boundary.py, tests/contract/test_doctor.py, V-SEC-002]
+  - id: GAP-016
+    severity: high
+    defect: Object-store corpus access allowed unbounded HTTP(S), redirects, URL credentials, and unrestricted hosts.
+    sources: [src/l9_harness/corpus/adapters/object_store.py]
+    fix: Require HTTPS by default, reject credentials and redirects, support host allowlists, and bound transfer bytes.
+    validation: [tests/adversarial/test_object_store_security.py]
+  - id: GAP-017
+    severity: high
+    defect: Source, wheel, and sdist were reproducible independently but lacked one shared immutable source identity.
+    sources: [build_backend.py, scripts/build_release.py, scripts/release_identity.py, scripts/verify_distribution.py]
+    fix: Generate one source identity, embed it in wheel and sdist, and bind all release artifacts through a distribution manifest.
+    validation: [tests/contract/test_source_identity.py, tests/contract/test_wheel_source_alignment.py, dist/distribution-alignment.json]
+  - id: GAP-018
+    severity: medium
+    defect: Repository metadata coverage was asserted globally but not explicitly inherited by every tracked-file record.
+    sources: [L9_META.yaml, scripts/update_tracked_files.py, docs/requirements/tracked-files.yaml]
+    fix: Add deterministic per-entry meta_ref and role fields with repository-level inheritance.
+    validation: [V-META-001]
+  - id: GAP-019
+    severity: medium
+    defect: Release construction bundled validation, build, and distribution proof into one long diagnostic stage.
+    sources: [scripts/build_release.py]
+    fix: Split source validation, artifact build, and distribution finalization into independently rerunnable stages.
+    validation: [scripts/finalize_distribution.py, RUNBOOK.md]
+
+  - id: GAP-020
+    severity: critical
+    defect: Repository validation rewrote a report included in the immutable source graph, invalidating source identity after a normal validation run.
+    sources: [scripts/validate_repository.py, scripts/release_identity.py, distribution/source-identity.json]
+    fix: Exclude mutable validation evidence from source identity and bind an exact release copy through the distribution manifest.
+    validation: [tests/contract/test_validation_identity_cycle.py, V-RELEASE-003, V-RELEASE-004]
+  - id: GAP-021
+    severity: high
+    defect: CLI commands shared one executable but lacked one explicit normalized validation and trace boundary.
+    sources: [src/l9_harness/cli/app.py]
+    fix: Add deterministic single-ingress normalization, validation, routing, request identity, trace identity, and privacy-preserving public records.
+    validation: [tests/contract/test_single_ingress.py, V-INGRESS-001]
+  - id: GAP-022
+    severity: medium
+    defect: FINAL_TREE.md and FINAL_REPO_TREE.md duplicated source inventory responsibility.
+    sources: [FINAL_TREE.md, FINAL_REPO_TREE.md]
+    fix: Replace both with one deterministic FILETREE.md generator and prohibit their return.
+    validation: [tests/contract/test_pack_contract_artifacts.py, scripts/update_filetree.py]
+  - id: GAP-023
+    severity: high
+    defect: L9 metadata validation checked record counts but not exact tracked-file contents.
+    sources: [scripts/update_tracked_files.py, scripts/validate_repository.py]
+    fix: Generate typed record dictionaries and compare the complete tracked index path-by-path and digest-by-digest.
+    validation: [V-META-001, V-META-002]
+  - id: GAP-024
+    severity: high
+    defect: Distribution lineage did not explicitly bind repository-validation evidence.
+    sources: [scripts/finalize_distribution.py, scripts/verify_distribution.py, schemas/v1/distribution-manifest.schema.json]
+    fix: Copy validation evidence into dist and require its SHA-256 digest in the distribution manifest.
+    validation: [tests/contract/test_distribution_validation_evidence.py, dist/distribution-alignment.json]
+  - id: GAP-025
+    severity: high
+    defect: Delivered source pack retained two prohibited duplicate file-tree artifacts, invalidating tests and source identity.
+    sources: [FINAL_TREE.md, FINAL_REPO_TREE.md, FILETREE.md, tests/contract/test_pack_contract_artifacts.py]
+    fix: Remove stale artifacts, preserve FILETREE.md as canonical, and add repository gate V-STRUCT-002.
+    validation: [V-STRUCT-002, tests/contract/test_pack_contract_artifacts.py, tests/contract/test_distribution_metadata.py]
+  - id: GAP-026
+    severity: medium
+    defect: Wheel metadata, sdist canonical-tree ownership, and CLI version behavior lacked independent package-contract tests.
+    sources: [build_backend.py, pyproject.toml, src/l9_harness/cli/app.py]
+    fix: Add deterministic metadata, sdist membership, and version behavior tests.
+    validation: [tests/contract/test_distribution_metadata.py, tests/contract/test_cli_version.py]
+

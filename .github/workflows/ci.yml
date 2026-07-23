@@ -1,0 +1,17 @@
+name: ci
+on: [push, pull_request]
+permissions: {contents: read}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: {enable-cache: true}
+      - run: uv sync --locked
+      - run: uvx ruff==0.12.12 format --check .
+      - run: uvx ruff==0.12.12 check .
+      - run: uvx --from mypy==1.17.1 mypy src/l9_harness
+      - run: uv run --with pytest==9.0.2 --with jsonschema==4.26.0 pytest
+      - run: uv run python scripts/verify_generated.py
+      - run: uv run --with jsonschema==4.26.0 python scripts/validate_repository.py

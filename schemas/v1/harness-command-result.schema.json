@@ -1,0 +1,64 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-command-result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 10000,
+      "type": "array"
+    },
+    "authoritative": {
+      "const": false
+    },
+    "command": {
+      "type": "string"
+    },
+    "details": {
+      "type": "object"
+    },
+    "exit_code": {
+      "type": "integer"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 128,
+      "type": "array"
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 128,
+      "type": "array"
+    },
+    "schema": {
+      "const": "l9.harness-command-result"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "status": {
+      "enum": [
+        "pass",
+        "partial",
+        "fail",
+        "blocked"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "command",
+    "status",
+    "exit_code",
+    "authoritative"
+  ],
+  "title": "harness-command-result",
+  "type": "object"
+}

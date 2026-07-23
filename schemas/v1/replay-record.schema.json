@@ -1,0 +1,43 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/replay-record.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actual": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "baseline": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "comparison": {
+      "type": "object"
+    },
+    "recordedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "replayId": {
+      "$ref": "common.schema.json#/$defs/contentId"
+    },
+    "runKey": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "l9.replay-record"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "replayId",
+    "runKey",
+    "baseline",
+    "actual",
+    "comparison",
+    "recordedAt"
+  ],
+  "title": "replay-record",
+  "type": "object"
+}

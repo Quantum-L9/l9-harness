@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "bytes": 180,
+      "path": "adversarial/README.md",
+      "sha256": "1a65df3e8220ca3e983011e2a33e5c9e62989b6c37cad708ece53d7d36a1ca74"
+    },
+    {
+      "bytes": 187,
+      "path": "assurance/canonicalization/development-basic.json",
+      "sha256": "7ca34abdcd5804093d8a6a921a5441d20dd0190793bc78cb593a2077d5483c51"
+    },
+    {
+      "bytes": 6341,
+      "path": "assurance/development/assurance-plan.json",
+      "sha256": "0b0ab4573738b01ab3c9653f2e160ee48706197d92b39ef33ec0001b50ccd419"
+    },
+    {
+      "bytes": 4493,
+      "path": "sdk/development/capability-manifest.json",
+      "sha256": "ceb97c1b7c96dc9b5faf29b9568fd42ea938700c9e0221cd7b29ebe73557cf2f"
+    },
+    {
+      "bytes": 61,
+      "path": "sdk/invalid/missing-fields.json",
+      "sha256": "847cb869c13ad79e9b4a81f9d06d9f5cbf0d34729d64285ee15d709d26273948"
+    },
+    {
+      "bytes": 1200,
+      "path": "sdk/valid/lint.json",
+      "sha256": "291a39dcba5c11a9427f6ba92410d6c23fb3a8e446734aa11f8b9f72f047fe91"
+    },
+    {
+      "bytes": 1228,
+      "path": "sdk/valid/mandatory-findings.json",
+      "sha256": "c89e060bfd5ba76a2784db35de057cc0fd4ed7384b3b5f140f7583ce817644a2"
+    },
+    {
+      "bytes": 1230,
+      "path": "sdk/valid/repository-metadata.json",
+      "sha256": "81da4e496fadec3c9a88cd80a5e86ac0491e4eecb17cc9fbb690aef4daae9246"
+    },
+    {
+      "bytes": 1220,
+      "path": "sdk/valid/sdk-validation.json",
+      "sha256": "e38f481cc1aa4457dc930c90175d7c35b5bb3e1a144f63569559ce27f30e04af"
+    },
+    {
+      "bytes": 1202,
+      "path": "sdk/valid/tests.json",
+      "sha256": "036d230228028b9f3050ef68c1adc3a0ebb5d3d940e5e15c82a9797ab7cc5e07"
+    },
+    {
+      "bytes": 1224,
+      "path": "sdk/valid/transport-packet.json",
+      "sha256": "3709e969121b97bb72de2381ed7fc47913872c948c95c663e8b7818c06262bd9"
+    }
+  ],
+  "fixtureSetDigest": "7336d2c19fd5331ad4ddbdd8527da47312f7b4ef0bbe275698abab6822691bf8",
+  "schema": "l9.harness-fixture-manifest/v1"
+}

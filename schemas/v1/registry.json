@@ -1,0 +1,195 @@
+{
+  "schema": "l9.harness-schema-registry",
+  "schemaVersion": "1.0.0",
+  "schemas": [
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "dd9228c34d4fffda1c800edaa5757987d0a48dd881ca5625443070e5e49f6eb8"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/assurance-input-manifest.schema.json",
+      "name": "assurance-input-manifest",
+      "path": "schemas/v1/assurance-input-manifest.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "65df2307e84b3835737cb7023ae601c69572a4b62f293cea4819b2ed1b5cafe9"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/assurance-invocation-record.schema.json",
+      "name": "assurance-invocation-record",
+      "path": "schemas/v1/assurance-invocation-record.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "524e7298a984e2a22cbb1a3503e4077c4b652bedea99dcf149907e0320b1508e"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/common.schema.json",
+      "name": "common",
+      "path": "schemas/v1/common.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "ca3c60a2a9174e21dfbd355c0cbc83da0f339e41a8eb44c9e5666a77b61aa6a6"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/conformance-report.schema.json",
+      "name": "conformance-report",
+      "path": "schemas/v1/conformance-report.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c105e7d82c02f4721c1df3c6ef5576156b95c6ebbae32d8c3d57ca89b150a59b"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/corpus-candidate.schema.json",
+      "name": "corpus-candidate",
+      "path": "schemas/v1/corpus-candidate.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "07a41398a2a2488edff5fe59d7e709ffda46a287556ed05d82da9e1742251fa0"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/corpus-snapshot.schema.json",
+      "name": "corpus-snapshot",
+      "path": "schemas/v1/corpus-snapshot.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "18c96f9f780da446a7ca071bc331cac55e8a1750a89c2aa6a16234fc4af89d09"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/distribution-manifest.schema.json",
+      "name": "distribution-manifest",
+      "path": "schemas/v1/distribution-manifest.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "ef12bfa94ef4aa9a59e68a37f5fd534a52d75f3fd9c22d2f9184b1a32d3d36a3"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/execution-record.schema.json",
+      "name": "execution-record",
+      "path": "schemas/v1/execution-record.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "dcc3a2be2e8f4037787e86b8f3a4fea7cc5f3512137bfc4d1f5c7519b0d96c96"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/guidance-manifest.schema.json",
+      "name": "guidance-manifest",
+      "path": "schemas/v1/guidance-manifest.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "91e6b4dbd5862ca8a47a14a42176151efdb2c9e6cd9213392f0e88dedcc01d6b"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-command-result.schema.json",
+      "name": "harness-command-result",
+      "path": "schemas/v1/harness-command-result.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f1b59766e6961c617c0ca72ec9934e46c4a8919a197a262d6fcd28ac43f85bcd"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-config.schema.json",
+      "name": "harness-config",
+      "path": "schemas/v1/harness-config.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "45d24f81ea093383a2e4d97b59d50cb2a8ba9a1897d354ef7c09aed2879db198"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-plan.schema.json",
+      "name": "harness-plan",
+      "path": "schemas/v1/harness-plan.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "05f5c851746205c7631bbcc10f4ba22e7fa29549c3edfdc3df87c0bf761345bb"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-run-bundle-manifest.schema.json",
+      "name": "harness-run-bundle-manifest",
+      "path": "schemas/v1/harness-run-bundle-manifest.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "49ef2267456b7cc0504b3a9e97af92828d038891ac6444a420a65cf677bb0a02"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-run-manifest.schema.json",
+      "name": "harness-run-manifest",
+      "path": "schemas/v1/harness-run-manifest.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "0a0b71b45757759f54750531230d7a23606f8c1088b3325aaf7f3c0e9f2eba01"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-run-profile.schema.json",
+      "name": "harness-run-profile",
+      "path": "schemas/v1/harness-run-profile.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b0163fea3aa1369f4820f28a1e20dadafe7489a0eca403c81b7c87ab703bf29d"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/observation-index.schema.json",
+      "name": "observation-index",
+      "path": "schemas/v1/observation-index.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "18def02bd47e3ef644bfdd84ce7d6816c4142b5c9ce8728bbc2b7bdf2f525691"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/replay-record.schema.json",
+      "name": "replay-record",
+      "path": "schemas/v1/replay-record.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4db4fe10638ffadff1111d3fdd5f8fe1bb8075eba127765d91e421a35581de13"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/single-ingress-contract.schema.json",
+      "name": "single-ingress-contract",
+      "path": "schemas/v1/single-ingress-contract.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "00c43425247bb0efc5f9b9d03c95acc79ef699ea00af4706cf460d07768c61c5"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/source-identity.schema.json",
+      "name": "source-identity",
+      "path": "schemas/v1/source-identity.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "9a22d2228377392491e10ebe26f8cd9fdbfd3d3a76c560a6d20620a02fcb319b"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/subject-lock.schema.json",
+      "name": "subject-lock",
+      "path": "schemas/v1/subject-lock.schema.json"
+    },
+    {
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f3f567f8a9924e087e5a0c87ef9e7c4965c9bfa9fbd1ccd34568786acdde060a"
+      },
+      "id": "https://quantum-l9.dev/l9-harness/schemas/v1/toolchain-lock.schema.json",
+      "name": "toolchain-lock",
+      "path": "schemas/v1/toolchain-lock.schema.json"
+    }
+  ]
+}

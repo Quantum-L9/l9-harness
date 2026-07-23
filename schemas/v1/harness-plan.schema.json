@@ -1,0 +1,125 @@
+{
+  "$id": "https://quantum-l9.dev/l9-harness/schemas/v1/harness-plan.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assurancePlanRef": {
+      "type": "object"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "execution": {
+      "type": "object"
+    },
+    "planId": {
+      "$ref": "common.schema.json#/$defs/contentId"
+    },
+    "resolvedChecks": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 1000,
+      "type": "array"
+    },
+    "runProfileRef": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "l9.harness-plan"
+    },
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "sdkAuthorityRef": {
+      "type": "object"
+    },
+    "steps": {
+      "items": {
+        "properties": {
+          "capabilityRef": {
+            "type": "string"
+          },
+          "checkRef": {
+            "type": "string"
+          },
+          "dependsOn": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "kind": {
+            "enum": [
+              "sdk_check",
+              "fallback_check"
+            ]
+          },
+          "network": {
+            "enum": [
+              "denied",
+              "restricted",
+              "allowed"
+            ]
+          },
+          "outputContractRef": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "stepId": {
+            "$ref": "common.schema.json#/$defs/contentId"
+          },
+          "timeoutSeconds": {
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "stepId",
+          "kind",
+          "checkRef",
+          "capabilityRef",
+          "dependsOn",
+          "required",
+          "timeoutSeconds",
+          "outputContractRef",
+          "network"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1000,
+      "type": "array"
+    },
+    "subject": {
+      "type": "object"
+    },
+    "subjectLockDigest": {
+      "$ref": "common.schema.json#/$defs/digest"
+    },
+    "unresolvedRequirements": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 1000,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema",
+    "schemaVersion",
+    "planId",
+    "subjectLockDigest",
+    "assurancePlanRef",
+    "runProfileRef",
+    "resolvedChecks",
+    "unresolvedRequirements",
+    "steps",
+    "complete"
+  ],
+  "title": "harness-plan",
+  "type": "object"
+}

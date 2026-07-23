@@ -1,0 +1,242 @@
+{
+  "planId": "l9.assurance-plan:sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "policy": {
+    "digest": {
+      "algorithm": "sha256",
+      "value": "4444444444444444444444444444444444444444444444444444444444444444"
+    },
+    "id": "l9.organization-default",
+    "version": "1.0.0"
+  },
+  "profile": {
+    "digest": {
+      "algorithm": "sha256",
+      "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "id": "l9.pull-request",
+    "version": "1.0.0"
+  },
+  "registryDigests": {
+    "checks": {
+      "algorithm": "sha256",
+      "value": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "controls": {
+      "algorithm": "sha256",
+      "value": "2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    "producers": {
+      "algorithm": "sha256",
+      "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    }
+  },
+  "requirements": [
+    {
+      "alternatives": [],
+      "cardinality": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "check": {
+        "acceptedVersions": [
+          "1.0.0"
+        ],
+        "id": "l9.repository-metadata"
+      },
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "controlRef": "L9.CI.REPOSITORY_METADATA",
+      "mandatory": true,
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "producer": {
+        "acceptedBuildDigests": [
+          {
+            "algorithm": "sha256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "acceptedVersions": [
+          "2.0.0"
+        ],
+        "id": "l9-ci-sdk"
+      },
+      "requirementId": "l9.repository-metadata",
+      "subjectKind": "git-revision",
+      "supportingArtifacts": []
+    },
+    {
+      "alternatives": [],
+      "cardinality": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "check": {
+        "acceptedVersions": [
+          "1.0.0"
+        ],
+        "id": "l9.transport-packet"
+      },
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "controlRef": "L9.CI.TRANSPORT_PACKET",
+      "mandatory": true,
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "producer": {
+        "acceptedBuildDigests": [
+          {
+            "algorithm": "sha256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "acceptedVersions": [
+          "2.0.0"
+        ],
+        "id": "l9-ci-sdk"
+      },
+      "requirementId": "l9.transport-packet",
+      "subjectKind": "git-revision",
+      "supportingArtifacts": []
+    },
+    {
+      "alternatives": [],
+      "cardinality": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "check": {
+        "acceptedVersions": [
+          "1.0.0"
+        ],
+        "id": "l9.sdk-validation"
+      },
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "controlRef": "L9.CI.SDK_VALIDATION",
+      "mandatory": true,
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "producer": {
+        "acceptedBuildDigests": [
+          {
+            "algorithm": "sha256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "acceptedVersions": [
+          "2.0.0"
+        ],
+        "id": "l9-ci-sdk"
+      },
+      "requirementId": "l9.sdk-validation",
+      "subjectKind": "git-revision",
+      "supportingArtifacts": []
+    },
+    {
+      "alternatives": [],
+      "cardinality": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "check": {
+        "acceptedVersions": [
+          "1.0.0"
+        ],
+        "id": "l9.lint"
+      },
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "controlRef": "L9.CI.LINT",
+      "mandatory": true,
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "producer": {
+        "acceptedBuildDigests": [
+          {
+            "algorithm": "sha256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "acceptedVersions": [
+          "2.0.0"
+        ],
+        "id": "l9-ci-sdk"
+      },
+      "requirementId": "l9.lint",
+      "subjectKind": "git-revision",
+      "supportingArtifacts": []
+    },
+    {
+      "alternatives": [],
+      "cardinality": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "check": {
+        "acceptedVersions": [
+          "1.0.0"
+        ],
+        "id": "l9.tests"
+      },
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "controlRef": "L9.CI.TESTS",
+      "mandatory": true,
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "producer": {
+        "acceptedBuildDigests": [
+          {
+            "algorithm": "sha256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "acceptedVersions": [
+          "2.0.0"
+        ],
+        "id": "l9-ci-sdk"
+      },
+      "requirementId": "l9.tests",
+      "subjectKind": "git-revision",
+      "supportingArtifacts": []
+    },
+    {
+      "alternatives": [],
+      "cardinality": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "check": {
+        "acceptedVersions": [
+          "1.0.0"
+        ],
+        "id": "l9.mandatory-findings"
+      },
+      "configurationContractRef": "l9.sdk-check-config@1.0.0",
+      "controlRef": "L9.CI.MANDATORY_FINDINGS",
+      "mandatory": true,
+      "observationSchemaRef": "l9.observation@1.0.0",
+      "producer": {
+        "acceptedBuildDigests": [
+          {
+            "algorithm": "sha256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "acceptedVersions": [
+          "2.0.0"
+        ],
+        "id": "l9-ci-sdk"
+      },
+      "requirementId": "l9.mandatory-findings",
+      "subjectKind": "git-revision",
+      "supportingArtifacts": []
+    }
+  ],
+  "schema": "l9.assurance-plan",
+  "schemaVersion": "1.0.0",
+  "subject": {
+    "kind": "git-revision",
+    "repository": {
+      "host": "github.com",
+      "name": "fixture-repo",
+      "owner": "Quantum-L9"
+    },
+    "revision": {
+      "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "treeDigest": null
+    }
+  },
+  "waiverRules": []
+}

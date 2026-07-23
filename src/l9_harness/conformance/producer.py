@@ -1,0 +1,18 @@
+from __future__ import annotations
+import json
+from pathlib import Path
+from ..observations.validate import validate_observation
+
+def run_producer_fixtures(root: Path, subject: dict | None=None) -> dict:
+    results = []
+    for p in sorted(root.rglob('*.json')):
+        try:
+            raw = json.loads(p.read_text())
+        except Exception:
+            raw = {}
+        if raw.get('schema') != 'l9.observation':
+            continue
+        ok, reasons, _ = validate_observation(p, subject)
+        expected = 'invalid' not in p.parts
+        results.append({'path': p.as_posix(), 'expectedValid': expected, 'actualValid': ok, 'reasons': reasons, 'pass': ok == expected})
+    return {'schema': 'l9.conformance-report', 'schemaVersion': '1.0.0', 'kind': 'producer', 'results': results, 'pass': bool(results) and all((x['pass'] for x in results))}

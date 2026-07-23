@@ -9,7 +9,7 @@ version = "2.0.4"
 description = "Deterministic local execution, conformance, replay, and shadow tooling for the Quantum-L9 CI constellation."
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
-license = { text = "License status UNKNOWN; no distribution rights granted by this generated pack." }
+license = { text = "Proprietary" }
 authors = [{ name = "Quantum-L9" }]
 dependencies = []
 

@@ -16,6 +16,17 @@ dependencies = []
 [project.scripts]
 l9-harness = "l9_harness.cli.app:main"
 
+# Exact-pinned (not ranged) to match this repo's CI philosophy: ci.yml previously
+# pinned these same versions inline via `uvx ruff==X` / `uv run --with X==Y`, which
+# Dependabot's `uv` ecosystem cannot see or bump. Declaring them here puts them in
+# uv.lock so Dependabot tracks and bumps them like any other dependency.
+[dependency-groups]
+dev = [
+  "ruff==0.12.12",
+  "mypy==1.17.1",
+  "pytest==9.0.2",
+  "jsonschema==4.26.0",
+]
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-config --strict-markers"

@@ -890,11 +890,11 @@
       }
     },
     {
-      "byteLength": 21878,
+      "byteLength": 21920,
       "path": "scripts/validate_repository.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "6d3ae9618c83fa0bb450ce5e78e91fad471dca860c43944b78dd814bdc1a3998"
+        "value": "6a1c4d048b7127dfcaf4e80ff7904df72e233c3a1a92637d8bde919d95e6ea6c"
       }
     },
     {
@@ -1234,11 +1234,11 @@
       }
     },
     {
-      "byteLength": 1358,
+      "byteLength": 1324,
       "path": "src/l9_harness/cli/commands/init.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "361811a5c467331262e70b6d7658cbd737e92a7096e00d09db10334f70490c8b"
+        "value": "b839c3dd4e90c2a085b6fec39a45d0387c85247f0794565236575f39c08ca8e8"
       }
     },
     {
@@ -1962,11 +1962,11 @@
       }
     },
     {
-      "byteLength": 299,
+      "byteLength": 290,
       "path": "src/l9_harness/security/redaction.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "9e4304cc0314e15e252e487776abbf6abd9e3859d365f0a5a7d978924308f7ae"
+        "value": "33a5f4b1b7c60bca9e021bad42bc84216be1a13d638a81c223b105a6cf60c904"
       }
     },
     {
@@ -2378,11 +2378,11 @@
       }
     },
     {
-      "byteLength": 506,
+      "byteLength": 544,
       "path": "tests/unit/test_digests.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "210efd835c4df568966919c205c5001eea9385a5ab32c6669e359e5a1382db77"
+        "value": "a67b64520bd98afe36fbd2a24da189e1532741325f36b3978081b37123c75a20"
       }
     },
     {
@@ -2470,7 +2470,7 @@
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "fa25c8db490ae3bb6741ae750f25b673e531756e741d464d46d57e42198d69bc"
+    "value": "a9b2952838d526c4db99ad95eab360ee6744a039cdd0f04b2b0ee8f19cf49548"
   },
   "specificationDigest": {
     "algorithm": "sha256",

@@ -4,7 +4,7 @@ import re
 
 PATTERNS = [
     re.compile("(?i)(token|password|secret|api[_-]?key)\\s*[=:]\\s*[^\\s]+"),
-    re.compile("gh[pousr]_[A-Za-z0-9_]{20,}"),
+    re.compile("gh[pousr]_\\w{20,}"),
 ]
 
 

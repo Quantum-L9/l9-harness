@@ -17,6 +17,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src" / "l9_harness"
 SCRIPTS = ROOT / "scripts"
+PYPROJECT_TOML = "pyproject.toml"
+UV_LOCK = "uv.lock"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 sys.dont_write_bytecode = True
@@ -92,8 +94,8 @@ def main() -> int:
         "CHANGELOG.md",
         "L9_META.yaml",
         "LICENSE",
-        "pyproject.toml",
-        "uv.lock",
+        PYPROJECT_TOML,
+        UV_LOCK,
         ".python-version",
         "MANIFEST.md",
         "FILETREE.md",
@@ -226,17 +228,17 @@ def main() -> int:
         f"embedded local paths: {local_path_hits}",
     )
 
-    project = tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))["project"]
+    project = tomllib.loads((ROOT / PYPROJECT_TOML).read_text("utf-8"))["project"]
     version = project["version"]
     lock_match = re.search(
         r'\[\[package\]\]\s+name = "l9-harness"\s+version = "([^"]+)"',
-        (ROOT / "uv.lock").read_text("utf-8"),
+        (ROOT / UV_LOCK).read_text("utf-8"),
     )
     from l9_harness.domain.models import VERSION
 
     version_values = {
         "pyproject": version,
-        "uv.lock": lock_match.group(1) if lock_match else "MISSING",
+        UV_LOCK: lock_match.group(1) if lock_match else "MISSING",
         "runtime": VERSION,
     }
     check(
@@ -255,7 +257,7 @@ def main() -> int:
         path.read_text("utf-8") for path in sorted((ROOT / ".github" / "workflows").glob("*.yml"))
     )
     dev_group = (
-        tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))
+        tomllib.loads((ROOT / PYPROJECT_TOML).read_text("utf-8"))
         .get("dependency-groups", {})
         .get("dev", [])
     )

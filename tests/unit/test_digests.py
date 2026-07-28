@@ -6,7 +6,9 @@ def test_canonical_order():
 
 
 def test_digest_deterministic():
-    assert digest_canonical({"x": 1}, "x") == digest_canonical({"x": 1}, "x")
+    first = digest_canonical({"x": 1}, "x")
+    second = digest_canonical({"x": 1}, "x")
+    assert first == second
 
 
 def test_domain_separation():

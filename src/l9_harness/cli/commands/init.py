@@ -31,7 +31,7 @@ DEFAULT_PROFILE = {
 }
 
 
-def command(repo: Path, package_root: Path | None = None) -> dict[str, Any]:
+def command(repo: Path) -> dict[str, Any]:
     target = repo / ".l9/harness"
     target.mkdir(parents=True, exist_ok=True)
     cfg = target / "config.yaml"

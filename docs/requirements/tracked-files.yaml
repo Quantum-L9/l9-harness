@@ -184,7 +184,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 7396782c8e0b0dd68ee8e35a017535285ebc9576148c56b919ee291fc59919ea
+    sha256: 13c48115dcfd48dec9b8b7c49a862b506f7e28df5a9a0f85d37b35a461151564
     bytes: 72749
     role: distribution_identity
     meta_ref: L9_META.yaml
@@ -564,8 +564,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/validate_repository.py"
-    sha256: 6d3ae9618c83fa0bb450ce5e78e91fad471dca860c43944b78dd814bdc1a3998
-    bytes: 21878
+    sha256: 6a1c4d048b7127dfcaf4e80ff7904df72e233c3a1a92637d8bde919d95e6ea6c
+    bytes: 21920
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/verify_distribution.py"
@@ -779,8 +779,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/init.py"
-    sha256: 361811a5c467331262e70b6d7658cbd737e92a7096e00d09db10334f70490c8b
-    bytes: 1358
+    sha256: b839c3dd4e90c2a085b6fec39a45d0387c85247f0794565236575f39c08ca8e8
+    bytes: 1324
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/package.py"
@@ -1234,8 +1234,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/redaction.py"
-    sha256: 9e4304cc0314e15e252e487776abbf6abd9e3859d365f0a5a7d978924308f7ae
-    bytes: 299
+    sha256: 33a5f4b1b7c60bca9e021bad42bc84216be1a13d638a81c223b105a6cf60c904
+    bytes: 290
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/secrets.py"
@@ -1494,8 +1494,8 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_digests.py"
-    sha256: 210efd835c4df568966919c205c5001eea9385a5ab32c6669e359e5a1382db77
-    bytes: 506
+    sha256: a67b64520bd98afe36fbd2a24da189e1532741325f36b3978081b37123c75a20
+    bytes: 544
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_guidance.py"

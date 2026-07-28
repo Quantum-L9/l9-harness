@@ -23,7 +23,7 @@ l9-harness = "l9_harness.cli.app:main"
 [dependency-groups]
 dev = [
   "ruff==0.12.12",
-  "mypy==1.17.1",
+  "mypy==2.3.0",
   "pytest==9.0.2",
   "jsonschema==4.26.0",
 ]

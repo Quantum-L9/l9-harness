@@ -14,7 +14,7 @@ class Response:
         self.headers = {} if declared is None else {"Content-Length": declared}
         self.status = status
 
-    def __enter__(self) -> "Response":
+    def __enter__(self) -> Response:
         return self
 
     def __exit__(self, *_: object) -> None:

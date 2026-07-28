@@ -31,11 +31,11 @@ def _metadata() -> bytes:
 
 def _wheel_metadata() -> bytes:
     return (
-        "Wheel-Version: 1.0\n"
-        "Generator: l9-harness-build-backend\n"
-        "Root-Is-Purelib: true\n"
-        "Tag: py3-none-any\n"
-    ).encode()
+        b"Wheel-Version: 1.0\n"
+        b"Generator: l9-harness-build-backend\n"
+        b"Root-Is-Purelib: true\n"
+        b"Tag: py3-none-any\n"
+    )
 
 
 def _wheel_files():
@@ -135,11 +135,11 @@ def build_sdist(sdist_directory, config_settings=None):
             info.gname = ""
             with path.open("rb") as handle:
                 archive.addfile(info, handle)
-    with output.open("wb") as raw:
-        with gzip.GzipFile(
-            filename="", mode="wb", fileobj=raw, mtime=0, compresslevel=9
-        ) as compressed:
-            compressed.write(tar_buffer.getvalue())
+    with (
+        output.open("wb") as raw,
+        gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0, compresslevel=9) as compressed,
+    ):
+        compressed.write(tar_buffer.getvalue())
     return output.name
 
 

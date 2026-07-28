@@ -70,7 +70,10 @@ def validate_instance(instance: Any, schema_path: Path) -> list[str]:
         )
         schema = load_json(schema_path)
         validator = Draft202012Validator(schema, registry=registry)
-        return [error.message for error in sorted(validator.iter_errors(instance), key=lambda error: list(error.path))]
+        return [
+            error.message
+            for error in sorted(validator.iter_errors(instance), key=lambda error: list(error.path))
+        ]
     except Exception as error:
         return [f"{type(error).__name__}: {error}"]
 
@@ -78,16 +81,35 @@ def validate_instance(instance: Any, schema_path: Path) -> list[str]:
 def main() -> int:
     RESULTS.clear()
     required = [
-        "README.md", "AGENTS.md", "RUNBOOK.md", "ARCHITECTURE.md", "SPECIFICATION.md",
-        "ROADMAP.md", "SECURITY.md", "CONTRIBUTING.md", "CHANGELOG.md", "L9_META.yaml",
-        "LICENSE", "pyproject.toml", "uv.lock", ".python-version",
-        "MANIFEST.md", "FILETREE.md", "CHANGE_SUMMARY.md", "VALIDATION.md",
-        "UNKNOWN_REGISTER.md", "REGRESSION_GUARD.md", "TRACEABILITY_MAP.yaml",
-        "PROVENANCE_MAP.yaml", "DECISION_LOG.md",
+        "README.md",
+        "AGENTS.md",
+        "RUNBOOK.md",
+        "ARCHITECTURE.md",
+        "SPECIFICATION.md",
+        "ROADMAP.md",
+        "SECURITY.md",
+        "CONTRIBUTING.md",
+        "CHANGELOG.md",
+        "L9_META.yaml",
+        "LICENSE",
+        "pyproject.toml",
+        "uv.lock",
+        ".python-version",
+        "MANIFEST.md",
+        "FILETREE.md",
+        "CHANGE_SUMMARY.md",
+        "VALIDATION.md",
+        "UNKNOWN_REGISTER.md",
+        "REGRESSION_GUARD.md",
+        "TRACEABILITY_MAP.yaml",
+        "PROVENANCE_MAP.yaml",
+        "DECISION_LOG.md",
         "docs/requirements/SINGLE_INGRESS_CONTRACT.yaml",
     ]
     missing = [path for path in required if not (ROOT / path).is_file()]
-    check("V-STRUCT-001", "PASS" if not missing else "FAIL", f"required root files missing: {missing}")
+    check(
+        "V-STRUCT-001", "PASS" if not missing else "FAIL", f"required root files missing: {missing}"
+    )
 
     duplicate_tree_files = [
         path for path in ("FINAL_TREE.md", "FINAL_REPO_TREE.md") if (ROOT / path).exists()
@@ -108,15 +130,29 @@ def main() -> int:
             syntax_errors.append(f"{path.relative_to(ROOT)}:{error.lineno}:{error.msg}")
             continue
         for node in ast.walk(tree):
-            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and not node.name.startswith("__"):
+            if isinstance(
+                node, ast.FunctionDef | ast.AsyncFunctionDef
+            ) and not node.name.startswith("__"):
                 args = [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs]
-                gaps = [arg.arg for arg in args if arg.arg not in {"self", "cls"} and arg.annotation is None]
+                gaps = [
+                    arg.arg
+                    for arg in args
+                    if arg.arg not in {"self", "cls"} and arg.annotation is None
+                ]
                 if node.returns is None:
                     gaps.append("return")
                 if gaps:
-                    annotation_errors.append(f"{path.relative_to(ROOT)}:{node.lineno}:{node.name}:{gaps}")
-    check("V-STATIC-001", "PASS" if not syntax_errors else "FAIL", f"syntax errors: {syntax_errors}")
-    check("V-STATIC-002", "PASS" if not annotation_errors else "FAIL", f"public annotation gaps: {annotation_errors[:20]}")
+                    annotation_errors.append(
+                        f"{path.relative_to(ROOT)}:{node.lineno}:{node.name}:{gaps}"
+                    )
+    check(
+        "V-STATIC-001", "PASS" if not syntax_errors else "FAIL", f"syntax errors: {syntax_errors}"
+    )
+    check(
+        "V-STATIC-002",
+        "PASS" if not annotation_errors else "FAIL",
+        f"public annotation gaps: {annotation_errors[:20]}",
+    )
 
     sys.path.insert(0, str(ROOT / "src"))
     import_errors: list[str] = []
@@ -127,23 +163,39 @@ def main() -> int:
             importlib.import_module(module.name)
         except Exception as error:
             import_errors.append(f"{module.name}: {type(error).__name__}: {error}")
-    check("V-STATIC-003", "PASS" if not import_errors else "FAIL", f"import errors: {import_errors}", f"modules={len(modules) + 1}")
+    check(
+        "V-STATIC-003",
+        "PASS" if not import_errors else "FAIL",
+        f"import errors: {import_errors}",
+        f"modules={len(modules) + 1}",
+    )
 
     source_text = "\n".join(path.read_text("utf-8") for path in SRC.rglob("*.py"))
     prohibited = [
-        "PacketEnvelope", "shell=True", "git apply", "apply_patch", "create_check_run",
-        "merge_pull_request", "l9_ci_sdk.", "assurance_evaluator", "NotImplementedError",
+        "PacketEnvelope",
+        "shell=True",
+        "git apply",
+        "apply_patch",
+        "create_check_run",
+        "merge_pull_request",
+        "l9_ci_sdk.",
+        "assurance_evaluator",
+        "NotImplementedError",
     ]
     hits = [token for token in prohibited if token in source_text]
     check("V-ARCH-001", "PASS" if not hits else "FAIL", f"prohibited runtime symbols: {hits}")
     architecture_failures = []
-    if "requirements = assurance_plan.get(\"requirements\") or" in source_text:
+    if 'requirements = assurance_plan.get("requirements") or' in source_text:
         architecture_failures.append("guessed-assurance-requirements")
     if "_harnessContractComplete" in source_text:
         architecture_failures.append("external-plan-mutation-marker")
     if "authority-canonical-json" in source_text or "assurance-observation" in source_text:
         architecture_failures.append("unverified-authority-canonical-digest")
-    check("V-ARCH-002", "PASS" if not architecture_failures else "FAIL", f"boundary regressions: {architecture_failures}")
+    check(
+        "V-ARCH-002",
+        "PASS" if not architecture_failures else "FAIL",
+        f"boundary regressions: {architecture_failures}",
+    )
 
     todo_hits: list[str] = []
     for path in SRC.rglob("*.py"):
@@ -155,7 +207,11 @@ def main() -> int:
     residue = [
         path.relative_to(ROOT).as_posix()
         for path in ROOT.rglob("*")
-        if any(part in {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"} for part in path.parts)
+        if ".venv" not in path.parts
+        and any(
+            part in {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
+            for part in path.parts
+        )
     ]
     check("V-QUALITY-002", "PASS" if not residue else "FAIL", f"cache residue: {residue[:20]}")
 
@@ -164,20 +220,59 @@ def main() -> int:
         text = path.read_text("utf-8", errors="ignore")
         if "/mnt/data" in text or "/home/oai" in text:
             local_path_hits.append(path.relative_to(ROOT).as_posix())
-    check("V-RELEASE-001", "PASS" if not local_path_hits else "FAIL", f"embedded local paths: {local_path_hits}")
+    check(
+        "V-RELEASE-001",
+        "PASS" if not local_path_hits else "FAIL",
+        f"embedded local paths: {local_path_hits}",
+    )
 
     project = tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))["project"]
     version = project["version"]
-    lock_match = re.search(r'\[\[package\]\]\s+name = "l9-harness"\s+version = "([^"]+)"', (ROOT / "uv.lock").read_text("utf-8"))
+    lock_match = re.search(
+        r'\[\[package\]\]\s+name = "l9-harness"\s+version = "([^"]+)"',
+        (ROOT / "uv.lock").read_text("utf-8"),
+    )
     from l9_harness.domain.models import VERSION
 
-    version_values = {"pyproject": version, "uv.lock": lock_match.group(1) if lock_match else "MISSING", "runtime": VERSION}
-    check("V-RELEASE-002", "PASS" if len(set(version_values.values())) == 1 else "FAIL", f"version identities: {version_values}")
+    version_values = {
+        "pyproject": version,
+        "uv.lock": lock_match.group(1) if lock_match else "MISSING",
+        "runtime": VERSION,
+    }
+    check(
+        "V-RELEASE-002",
+        "PASS" if len(set(version_values.values())) == 1 else "FAIL",
+        f"version identities: {version_values}",
+    )
 
-    workflow_text = "\n".join(path.read_text("utf-8") for path in sorted((ROOT / ".github" / "workflows").glob("*.yml")))
-    tool_pins = ["ruff==0.12.12", "mypy==1.17.1", "pytest==9.0.2", "jsonschema==4.26.0", "uv sync --locked"]
-    missing_pins = [pin for pin in tool_pins if pin not in workflow_text]
-    check("V-CI-001", "PASS" if not missing_pins else "FAIL", f"missing exact CI tool pins: {missing_pins}")
+    # Exact tool pins now live in pyproject.toml's [dependency-groups].dev (so
+    # Dependabot's uv ecosystem can see and bump them via uv.lock), not as
+    # literal strings in workflow YAML -- ci.yml just runs `uv sync --locked`
+    # against whatever pyproject.toml + uv.lock declare. This check verifies
+    # the pins are still exact (== , not a range) at their new source of
+    # truth, plus that CI actually installs from the lock deterministically.
+    workflow_text = "\n".join(
+        path.read_text("utf-8") for path in sorted((ROOT / ".github" / "workflows").glob("*.yml"))
+    )
+    dev_group = (
+        tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))
+        .get("dependency-groups", {})
+        .get("dev", [])
+    )
+    required_tools = {"ruff", "mypy", "pytest", "jsonschema"}
+    pinned_tools = {
+        re.match(r"([A-Za-z0-9_.-]+)==", dep).group(1)
+        for dep in dev_group
+        if re.match(r"([A-Za-z0-9_.-]+)==", dep)
+    }
+    missing_pins = sorted(required_tools - pinned_tools)
+    if "uv sync --locked" not in workflow_text:
+        missing_pins.append("uv sync --locked")
+    check(
+        "V-CI-001",
+        "PASS" if not missing_pins else "FAIL",
+        f"missing exact CI tool pins: {missing_pins}",
+    )
 
     schema_errors: list[str] = []
     try:
@@ -187,16 +282,37 @@ def main() -> int:
             Draft202012Validator.check_schema(load_json(path))
     except Exception as error:
         schema_errors.append(f"{type(error).__name__}: {error}")
-    check("V-SCHEMA-001", "PASS" if not schema_errors else "FAIL", f"schema validation: {schema_errors or 'all schemas valid'}")
+    check(
+        "V-SCHEMA-001",
+        "PASS" if not schema_errors else "FAIL",
+        f"schema validation: {schema_errors or 'all schemas valid'}",
+    )
 
     registry = load_json(ROOT / "schemas" / "v1" / "registry.json")
-    registry_errors = [entry["path"] for entry in registry["schemas"] if sha256(ROOT / entry["path"]) != entry["digest"]["value"]]
-    check("V-SCHEMA-002", "PASS" if not registry_errors else "FAIL", f"schema registry digest mismatches: {registry_errors}")
+    registry_errors = [
+        entry["path"]
+        for entry in registry["schemas"]
+        if sha256(ROOT / entry["path"]) != entry["digest"]["value"]
+    ]
+    check(
+        "V-SCHEMA-002",
+        "PASS" if not registry_errors else "FAIL",
+        f"schema registry digest mismatches: {registry_errors}",
+    )
 
     profile_errors: list[str] = []
     for path in sorted((ROOT / "profiles").glob("*.yaml")):
-        profile_errors.extend(f"{path.name}:{error}" for error in validate_instance(load_json(path), ROOT / "schemas/v1/harness-run-profile.schema.json"))
-    check("V-SCHEMA-003", "PASS" if not profile_errors else "FAIL", f"profile instance errors: {profile_errors}")
+        profile_errors.extend(
+            f"{path.name}:{error}"
+            for error in validate_instance(
+                load_json(path), ROOT / "schemas/v1/harness-run-profile.schema.json"
+            )
+        )
+    check(
+        "V-SCHEMA-003",
+        "PASS" if not profile_errors else "FAIL",
+        f"profile instance errors: {profile_errors}",
+    )
 
     from l9_harness.contracts.assurance import plan_contract_complete
     from l9_harness.observations.validate import validate_observation
@@ -210,7 +326,11 @@ def main() -> int:
             observation_errors.append(f"{path.name}:{reasons}")
     fixture_errors = [] if plan_complete else plan_missing
     fixture_errors.extend(observation_errors)
-    check("V-FIXTURE-001", "PASS" if not fixture_errors else "FAIL", f"contract fixture errors: {fixture_errors}")
+    check(
+        "V-FIXTURE-001",
+        "PASS" if not fixture_errors else "FAIL",
+        f"contract fixture errors: {fixture_errors}",
+    )
 
     manifest = load_json(ROOT / "fixtures" / "manifest.json")
     manifest_errors = []
@@ -218,7 +338,11 @@ def main() -> int:
         path = ROOT / "fixtures" / item["path"]
         if sha256(path) != item["sha256"] or path.stat().st_size != item["bytes"]:
             manifest_errors.append(item["path"])
-    check("V-FIXTURE-002", "PASS" if not manifest_errors else "FAIL", f"fixture manifest mismatches: {manifest_errors}")
+    check(
+        "V-FIXTURE-002",
+        "PASS" if not manifest_errors else "FAIL",
+        f"fixture manifest mismatches: {manifest_errors}",
+    )
 
     secret_patterns = (
         re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
@@ -240,11 +364,19 @@ def main() -> int:
     help_result = subprocess.run(
         [sys.executable, "-m", "l9_harness", "--help"],
         cwd=ROOT,
-        env={"PYTHONPATH": str(ROOT / "src"), "PATH": __import__("os").environ.get("PATH", ""), "PYTHONDONTWRITEBYTECODE": "1"},
+        env={
+            "PYTHONPATH": str(ROOT / "src"),
+            "PATH": __import__("os").environ.get("PATH", ""),
+            "PYTHONDONTWRITEBYTECODE": "1",
+        },
         capture_output=True,
         text=True,
     )
-    check("V-CLI-001", "PASS" if help_result.returncode == 0 else "FAIL", help_result.stderr or "CLI help rendered")
+    check(
+        "V-CLI-001",
+        "PASS" if help_result.returncode == 0 else "FAIL",
+        help_result.stderr or "CLI help rendered",
+    )
 
     editable_errors: list[str] = []
     try:
@@ -260,7 +392,11 @@ def main() -> int:
                     editable_errors.append("editable wheel does not use a source .pth")
     except Exception as error:
         editable_errors.append(f"{type(error).__name__}: {error}")
-    check("V-PACKAGE-001", "PASS" if not editable_errors else "FAIL", f"editable backend: {editable_errors or 'real source-linked wheel'}")
+    check(
+        "V-PACKAGE-001",
+        "PASS" if not editable_errors else "FAIL",
+        f"editable backend: {editable_errors or 'real source-linked wheel'}",
+    )
 
     subprocess_import_violations: list[str] = []
     subprocess_allowed = {
@@ -306,9 +442,7 @@ def main() -> int:
         from update_tracked_files import tracked_records
 
         expected_tracked = tracked_records(ROOT)
-        actual_tracked = load_tracked_index(
-            ROOT / "docs" / "requirements" / "tracked-files.yaml"
-        )
+        actual_tracked = load_tracked_index(ROOT / "docs" / "requirements" / "tracked-files.yaml")
         if actual_tracked != expected_tracked:
             tracked_index_errors.append(
                 f"tracked index mismatch: expected={len(expected_tracked)} actual={len(actual_tracked)}"
@@ -378,8 +512,19 @@ def main() -> int:
         from l9_harness.application.ingress import SUPPORTED_ROUTES
 
         expected_routes = {
-            "assurance", "bundle", "clean", "collect", "conformance", "corpus",
-            "doctor", "guidance", "init", "package", "plan", "replay", "run",
+            "assurance",
+            "bundle",
+            "clean",
+            "collect",
+            "conformance",
+            "corpus",
+            "doctor",
+            "guidance",
+            "init",
+            "package",
+            "plan",
+            "replay",
+            "run",
             "verify",
         }
         app_text = (SRC / "cli" / "app.py").read_text("utf-8")
@@ -416,9 +561,24 @@ def main() -> int:
 
     output = ROOT / "docs" / "validation" / "repository-validation.json"
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps({"schema": "l9.repository-validation/v1", "checks": RESULTS}, sort_keys=True, indent=2) + "\n")
+    output.write_text(
+        json.dumps(
+            {"schema": "l9.repository-validation/v1", "checks": RESULTS}, sort_keys=True, indent=2
+        )
+        + "\n"
+    )
     failed = [item for item in RESULTS if item["status"] == "FAIL"]
-    print(json.dumps({"checks": len(RESULTS), "passed": len(RESULTS) - len(failed), "failed": len(failed), "report": output.as_posix()}, indent=2))
+    print(
+        json.dumps(
+            {
+                "checks": len(RESULTS),
+                "passed": len(RESULTS) - len(failed),
+                "failed": len(failed),
+                "report": output.as_posix(),
+            },
+            indent=2,
+        )
+    )
     return 1 if failed else 0
 
 

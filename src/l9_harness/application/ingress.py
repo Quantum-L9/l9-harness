@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Mapping
 from dataclasses import dataclass
 from types import MappingProxyType
-from typing import Any, Mapping
+from typing import Any
 
 from ..domain.errors import ContractError
 
@@ -55,9 +56,9 @@ _PATH_KEYS = frozenset(
 
 
 def _json_value(value: Any) -> Any:
-    if value is None or isinstance(value, (str, int, float, bool)):
+    if value is None or isinstance(value, str | int | float | bool):
         return value
-    if isinstance(value, (list, tuple)):
+    if isinstance(value, list | tuple):
         return [_json_value(item) for item in value]
     if isinstance(value, Mapping):
         return {str(key): _json_value(item) for key, item in sorted(value.items())}

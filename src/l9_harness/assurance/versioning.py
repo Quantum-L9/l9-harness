@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import shutil
 from pathlib import Path
+from typing import Any
 
 from ..domain.digests import digest_file
 
@@ -20,7 +21,7 @@ REQUIRED_RELEASE_FIELDS = (
 )
 
 
-def authority_complete(authority: dict) -> tuple[bool, list[str]]:
+def authority_complete(authority: dict[str, Any]) -> tuple[bool, list[str]]:
     missing = [
         key
         for key in REQUIRED_RELEASE_FIELDS
@@ -29,7 +30,7 @@ def authority_complete(authority: dict) -> tuple[bool, list[str]]:
     return (not missing, missing)
 
 
-def verify_authority_executable(executable: str, authority: dict) -> tuple[bool, str]:
+def verify_authority_executable(executable: str, authority: dict[str, Any]) -> tuple[bool, str]:
     resolved = shutil.which(executable) or executable
     path = Path(resolved)
     if not path.is_file():

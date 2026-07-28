@@ -17,7 +17,15 @@ class IsolatedWorkspace:
         self.path = Path(tempfile.mkdtemp(prefix="l9-harness-"))
         workspace = self.path / "repo"
         clone = run_argv(
-            ["git", "clone", "--quiet", "--local", "--no-hardlinks", str(self.source), str(workspace)],
+            [
+                "git",
+                "clone",
+                "--quiet",
+                "--local",
+                "--no-hardlinks",
+                str(self.source),
+                str(workspace),
+            ],
             self.path,
             120,
         )

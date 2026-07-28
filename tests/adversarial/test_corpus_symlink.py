@@ -1,5 +1,7 @@
 import pytest
+
 from l9_harness.corpus.adapters.filesystem import FilesystemCorpus
+
 
 def test_corpus_rejects_symlink(tmp_path):
     source = tmp_path / "source"

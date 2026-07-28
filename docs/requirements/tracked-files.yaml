@@ -6,16 +6,21 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 305
+file_count: 306
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
     bytes: 213
     role: configuration
     meta_ref: L9_META.yaml
+  - path: ".github/dependabot.yml"
+    sha256: 5e948078ff276af7a4e07828d2727607a175a53b7dca09cc8c95fc4d4eae9aef
+    bytes: 899
+    role: ci
+    meta_ref: L9_META.yaml
   - path: ".github/workflows/ci.yml"
-    sha256: 336148b354f67a80a3ce79b84ee1e1e2a72f4c414a24caec25b81916e582bd8d
-    bytes: 612
+    sha256: 7d229ee591360976c3a8d44d5bbd6bc0f75b52ae1861cd46f72251880a63eebb
+    bytes: 1138
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/conformance.yml"
@@ -99,8 +104,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: 65fe26f2a537d2b44fc0d042bca79753cf0a9f58cc154044ee8c6be6754df834
-    bytes: 12280
+    sha256: 8d51ac39acfdf00d7f54a244b717da351a5aa1fcc0e94aa4ed6e8a2bfce0cbcb
+    bytes: 12307
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -109,13 +114,13 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "LICENSE"
-    sha256: f0c06418ad5ba5adec508e7615523813122fc49a296d93d9b90f325fccaef30f
-    bytes: 336
+    sha256: 40480115927c1985499925b32072e1bcb4f48e86432af9bffbf9d2a718e28a2d
+    bytes: 4658
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: d6f8f950af1bcc9c8877804f94d7b04368ebb07ddb15388be9140a946bf0d5cb
-    bytes: 17689
+    sha256: 490f80c16f67f5d5b736382e134078b9980cd3280e707cd9b4d9421457bb8ccb
+    bytes: 17725
     role: documentation
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
@@ -174,13 +179,13 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "build_backend.py"
-    sha256: dc433b74557447c8bf5e8bb23fe3e3e21aa7c943ccc933e8c554440684294827
-    bytes: 5900
+    sha256: 42238b4e6bfdf384a323c10023eaef3dba71dbd10d6e6cb709be213151b6b1b4
+    bytes: 5881
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: ff8163d5d2ebcb6c7c45674b0519e241bb08d3941ab5eed59ebc46aa2101f020
-    bytes: 72517
+    sha256: 7396782c8e0b0dd68ee8e35a017535285ebc9576148c56b919ee291fc59919ea
+    bytes: 72749
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
@@ -394,8 +399,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "pyproject.toml"
-    sha256: bedf9a43656d27c406d0f1eea91df6ba48a9975f4cb687c48f6bc8863394c686
-    bytes: 909
+    sha256: 96ead8df004ed227130280d22c81188f2b6bd3819b3cf3d8158f78dfdcc578a4
+    bytes: 1549
     role: configuration
     meta_ref: L9_META.yaml
   - path: "schemas/v1/assurance-input-manifest.schema.json"
@@ -514,13 +519,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/finalize_distribution.py"
-    sha256: 83a679e82aa8f4f8d6ae9b59d8954c5ce3124d51e479ea678c176183cf8f63c1
-    bytes: 4755
+    sha256: 2c5d539e08fb0d3a5c18a12ef2b3ab9ddb6dd82776e2ac5e7d82c2dc19eb5c60
+    bytes: 4739
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/generate_bindings.py"
-    sha256: 8010623991c1765030610c4b19a7723cb45a877022a946a428d480d50481ce0b
-    bytes: 3180
+    sha256: eea5c8d7a89aadad334f236db951c96c705336ea09633be5416e2c21ad5c5508
+    bytes: 3946
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/generate_source_identity.py"
@@ -529,8 +534,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/release_identity.py"
-    sha256: 70bc3f86c265c5215d40b614aa8a2c521685169098779134b71bdfbe3fceed63
-    bytes: 4911
+    sha256: 6758b6d677261459e257ab6bd6f996e21708e3ecb2f10189ac16f31a7043f2cf
+    bytes: 5425
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_filetree.py"
@@ -549,8 +554,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_schema_registry.py"
-    sha256: caaa0830584b43002a11f9004dfa47ba636028f98f365f1fec2ebfa96fe942a0
-    bytes: 1009
+    sha256: 6c71bfe151745754188850ab8c2b59523ec76b22bbba5b7356e70f97198e23f1
+    bytes: 1110
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_tracked_files.py"
@@ -559,28 +564,28 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/validate_repository.py"
-    sha256: c008787533fd028e36474ff6e1891b0f1d051531c3d68ceda19aa7d6bc645939
-    bytes: 19694
+    sha256: 6d3ae9618c83fa0bb450ce5e78e91fad471dca860c43944b78dd814bdc1a3998
+    bytes: 21878
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/verify_distribution.py"
-    sha256: 29402359f5aba7606d5f7ff0ba4cb88b8b0fdcc3b74e6568e5245be63a8b16e6
-    bytes: 6924
+    sha256: ddf4c9e6529716cb0874fd3e1b121dfde696ed500714fc1e3ab6381c003af1da
+    bytes: 7199
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/verify_generated.py"
-    sha256: 77d527be6ee9b49dd9aefda1e70453a41291e51a0edb8b7224cc355909012058
-    bytes: 1527
+    sha256: 975c81b8f84ed3f0536b23446cb77f1f7ff24e6942e65ac188405ceca1f9c164
+    bytes: 1511
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/__init__.py"
-    sha256: 0b4ae51cf56d3da70192d1a2be6264538c9010932ce8f71ad97d6d8d556149eb
-    bytes: 93
+    sha256: 0c751e3869f6cdb6be7da85b18695e05e47a63cbb03425ef4eb789169b0575e7
+    bytes: 95
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/__main__.py"
-    sha256: d8aed4b452d7fa7fd273fae073f3385e49bcd93626d08b64507151991795f867
-    bytes: 82
+    sha256: 88bf45afd20a2991cf567399acb39aba447d798c82fc367a6de8858e36916df7
+    bytes: 83
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/__init__.py"
@@ -589,48 +594,48 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/build_run_bundle.py"
-    sha256: 96c8a50728de7f63db94a4fce76481764d231afcab15f81dbc3d05ceef2315f8
-    bytes: 154
+    sha256: 6037f1d9fed8c087aadb1d32033b5e63daa23ff79c2f9e7e5d21a74e4c9ae1d6
+    bytes: 155
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/collect_observations.py"
-    sha256: 498d7948ca7982ee0ccb18c45b307c7a1cf4ff47d21fc189073e225a5e09631a
-    bytes: 71
+    sha256: 2e5bf85845a185aafec7c67fec30a2305e15e296801a1ea0f1ceb6ea71496a4d
+    bytes: 72
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/execute_run.py"
-    sha256: 09d499e0dcec081443e4ac689db6775428878bf6e509005bf9c6247f7330570b
-    bytes: 2075
+    sha256: 41441ed5fce571050a361e0c236dc2ed969b164139cff02eaf04a68400a0dcae
+    bytes: 2157
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/export_assurance_input.py"
-    sha256: 4577431e1629d70d835d3415ae3a1e74f0f1cf51127cd5527d9f1c6a96f3fc53
-    bytes: 77
+    sha256: b5d651ec5a6a5bf295e5cdb5ead7695cf231148a22075574a032232c82a45302
+    bytes: 78
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/ingress.py"
-    sha256: 838bd0b0327baed303db30ffedef3c178eab13f9ca260bc2992eadc93cc2a757
-    bytes: 5253
+    sha256: a583589107571e0fd3a0af4fc4d59b5ca424629c0af4143a19d5cd2e72d7d09b
+    bytes: 5280
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/plan_run.py"
-    sha256: 1533a6c7f35e3245b0fde904e37e13dde061c15893037abed1682c417f6482bf
-    bytes: 85
+    sha256: 6feb95837b1f53f691dadb8cece527214cce6175cdfe8df73632058bacb8139c
+    bytes: 86
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/replay_run.py"
-    sha256: b3ed024ac2b603958be1d7f41c498b7441992f31532652133b2a974852b7ff0d
-    bytes: 68
+    sha256: 0a960af877c8844ce3e4fc763099e1d0395d4455c207559d018da479f8605590
+    bytes: 69
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/run_conformance.py"
-    sha256: d0a2586ad5b79ce68c6337169c129b8358e75896517ffc8db0605fad4f03d364
-    bytes: 165
+    sha256: c0e61593674f0c364edf396ab0683979cc4da0b6f0a403feb952bc9b5ecf3116
+    bytes: 166
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/application/verify_artifacts.py"
-    sha256: 3e2b5805e2156fe3e5f5de676819dd002a343ef8c10465275ffd46a59a7f306e
-    bytes: 142
+    sha256: 02baf2f5b9c933e95d0b676f3c8ebf075c1964649205c891f008d13e6bf028c4
+    bytes: 143
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/__init__.py"
@@ -639,38 +644,38 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/admission.py"
-    sha256: eb5227c325b6052f48c69b187e03ea9ff27ec5de8f950edfccc3f58559e66a94
-    bytes: 440
+    sha256: 4658d9a72546124e6f5ffdf7eef6b9a472aca5546ff0d4a8e36765c4fe5ab06c
+    bytes: 595
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/cli_adapter.py"
-    sha256: 99179db250c37affce262fe1143b7f1dd31913205e244acd0ecfea3f4725c8d4
-    bytes: 1190
+    sha256: 6a778cadf1072372b9f4a0c0f630af4c8854ef4455d8ca78ab7d93cb6d994eaf
+    bytes: 1341
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/evaluation.py"
-    sha256: 229fb031a26f5ca07ca2c7dd27dc00c08c4debbf2833749801fd354849296cf3
-    bytes: 706
+    sha256: 2ea1f19e784ae2b11c37e95cf9841c3dedc8e2b69f4d121ec5066b4719beb08f
+    bytes: 954
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/plan.py"
-    sha256: f62109e3d27b5c42b2d40e1a0c2aadd4667d68a863ac7b367915a10320e96b40
-    bytes: 427
+    sha256: b70db092825c2871dc67223928f626e55d31b4d9131cc2870434e0e8644169c9
+    bytes: 475
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/result_capture.py"
-    sha256: e2b3de836188f5f42cba4158fda24bb20a3e4a4c419c4923548bfabe3a8b2b8d
-    bytes: 666
+    sha256: fb2a6e670f0d862e34c8be633c7e333b19ca8cee8ff86bd34385f3d09da40fc9
+    bytes: 712
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/simulation.py"
-    sha256: 09f04dae3a4afaa03db62f4206114ae47efe0c38ad92795852eccf4e8368f1dd
-    bytes: 443
+    sha256: 02eb3d528ca02bcb248600181bfdff69241fbab512a8fefb4bcb9415f6ddb6de
+    bytes: 491
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/versioning.py"
-    sha256: 35c34d1d748c29f6cb0cddfb89318da6fe3fffe8319a19a03e3ddfbb64a9f501
-    bytes: 1302
+    sha256: e439258b158f34e1aab3af7be6ae5e29d62f9330557777b8338d643e7b8132c8
+    bytes: 1345
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance_input/__init__.py"
@@ -679,23 +684,23 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance_input/export.py"
-    sha256: a713b65f577051bc3f45711e3bff1de3c69ba1f7ebc9042a8648f3018d3e70b9
-    bytes: 557
+    sha256: 9dccaabe3e97d318db6441fe3e01270dc6feea14fc11c5f29951a8acbcb5e086
+    bytes: 637
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance_input/layout.py"
-    sha256: 3eddfac55fd61230463201660224601cecfe5185cfbfc11ab24ff658fc65787b
-    bytes: 284
+    sha256: 1c297a2e6909cc56ea72adca772ebbc763cedee0e7960124a7255312d9a9bda2
+    bytes: 286
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance_input/manifest.py"
-    sha256: 93586e68177c0f4f57f3eff77fca4828b7d5ece349ea75848ce642eef7d5efb1
-    bytes: 1148
+    sha256: 0ae227ba61f9203f0f24b6d996220898e9e08f2799dc3ecfe059c5fa677747a8
+    bytes: 1437
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance_input/verify.py"
-    sha256: a83dc597d7b71a10b572f29822f408d6e2e6d6ee8de371a01ab74e00841c1690
-    bytes: 507
+    sha256: d53d4e46e508c52e5500a1683e609a47ecb5b222f4d572f024e48f54c5ba5bac
+    bytes: 543
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/bundle/__init__.py"
@@ -704,13 +709,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/bundle/archive.py"
-    sha256: b552ab5c2eb5617caee3534fd303e5ce92cb9f395be648b0b61bc14282031c03
-    bytes: 1155
+    sha256: 9752fbfa2f07b941878d57231dd5f67605c9b77bcf432bc2c251ec503593b186
+    bytes: 1186
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/bundle/manifest.py"
-    sha256: 44ec202ae02ea4d4017d5d2985564fb289231ad13bef6494096d01cf4c5b1b2b
-    bytes: 844
+    sha256: cff6de325a2993a604038dbce0969d1002a28171024e4b724e5a0ddc228f86a2
+    bytes: 1078
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/bundle/verify.py"
@@ -724,7 +729,7 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/app.py"
-    sha256: a2c22c2cf9f476bb1f193ef06694a0f9f7a83603440a668c7ca85828aa2337bb
+    sha256: d2a0426ca792cfd41db532224bbff9be7b2a1e31bffb60af2205e407a526a31c
     bytes: 9454
     role: implementation
     meta_ref: L9_META.yaml
@@ -739,28 +744,28 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/bundle.py"
-    sha256: 3aad4d4f4622080dc073c59029a295b3f76b5bd1f0c7a94c9c2d0a86455c2126
-    bytes: 355
+    sha256: 78bb8f85639500fdc0ed3daedb1ea4c7a73468d291a74b151ced6fab94981a9c
+    bytes: 391
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/clean.py"
-    sha256: 2e28cde71c89acbd5f1658d40394444dd8714b71249b25efb9e61b03d96fb1ca
-    bytes: 345
+    sha256: 55992e2ef80bbaaa987c2955a1a1d2e38820735497d56356f20c0962ceb35d8a
+    bytes: 380
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/collect.py"
-    sha256: 5f3b0d2d5ca777291db1a1895d74765cbfd2833ac4c0a2a3ac13de81fc772e00
-    bytes: 622
+    sha256: 15b2028fbd4023da9a8fcef5b9ba360ddb2211ff10751a6150d5f9f0cd128219
+    bytes: 689
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/conformance.py"
-    sha256: 83f60b54ad46edd0fa7cba5ac9aab001f3e4096bf3361b32326845b2b7341c7b
-    bytes: 490
+    sha256: 2e5bef2355bda0137fd7c076545eafc553626a7a4cfe9ee45dd76bc3c5214096
+    bytes: 537
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/corpus.py"
-    sha256: a4016ce97bf1903454b7cfea65f4b6a3b7914301687de529bf661761e25a0f47
-    bytes: 840
+    sha256: 3165c7ed4ebcf4341abb6bda60ab96b8c02ba69af7bc6ee28dc57dc5b1643daa
+    bytes: 1005
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/doctor.py"
@@ -769,48 +774,48 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/guidance.py"
-    sha256: c0bf42a93105b09de313f78f9bce29b59b68f3a8e34916a93a6490eb314d3c46
-    bytes: 317
+    sha256: ec498844075e1e9c26d4ce938dbf0b88c3afd0c7609005c85a6d29a7df665373
+    bytes: 353
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/init.py"
-    sha256: 54bc443423b131b60fe0303d7d500e40ebd0baac6443d1564f6ee247c889b5e7
-    bytes: 1161
+    sha256: 361811a5c467331262e70b6d7658cbd737e92a7096e00d09db10334f70490c8b
+    bytes: 1358
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/package.py"
-    sha256: 31767737569d4723a9cc5e66f28ba51542ca4e70564c1ef4fe089e10a9af11e6
-    bytes: 250
+    sha256: e2cfed62f15c7ef1e125e8893709d81fc5990e16a6bf790dd31f587ea653e9b0
+    bytes: 286
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/plan.py"
-    sha256: 30abfe5f96c2d632b67e158276029dd0ac031b6cf84927c5d7802138987e677b
-    bytes: 1066
+    sha256: 69280698e9839775fb4b692f065787cd3e91b8d148b12e77f802ff233fca0c6a
+    bytes: 1162
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/replay.py"
-    sha256: 508c09fc9a8dc2e918f8896a34a012bab1b9035dd1e6fc4e5018524b06454117
-    bytes: 262
+    sha256: 0a8a81409254c75a2c9e921dd7c8c208e30ed9ef597ac5455cd6bea3f43490d3
+    bytes: 298
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/run.py"
-    sha256: 469c39cbffa31641534d35483d2e577ab32dd5557c2709d66bec65467aeeba26
-    bytes: 1067
+    sha256: 165a3fa1ef5e8ddc703105cbb8551b4e1366de5829d97c28be235e8d6bfe6a2b
+    bytes: 1089
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/verify.py"
-    sha256: 6052fe113a35eec380b67930706f8c2618746ac59d56b3bb709a02a6c54ad7bc
-    bytes: 329
+    sha256: bd9984e4ab8d09b5ddc33033c2709bbfd71a3b2a51adf1d0fee8e6b68a52bfc6
+    bytes: 365
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/options.py"
-    sha256: 267875b70b3df209fb770cd2461ee7d8b625f60677d562b7f2d43f0729363bfe
+    sha256: c0866927361d2791676a4abf37aeab7205486665db750e158ab7354f8375f0c8
     bytes: 43
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/output.py"
-    sha256: 0a6a9b52c180bf350adc41f06b750de190a9abef09b0806e56585264d0229a61
-    bytes: 260
+    sha256: d3f4e1d54dabc4d5bf2087de7cad025a346f72537d968493e07017c8949e57be
+    bytes: 296
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/__init__.py"
@@ -819,28 +824,28 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/canonicalization.py"
-    sha256: 36caeb2e7690e5856fb47a405a05db44ce086813eeaaedbfe4a123d815b6eb4b
-    bytes: 616
+    sha256: 083322b4d34fa7c4c4004731f7f914458f650bec281d88b3f911e906ad6098f6
+    bytes: 681
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/consumer.py"
-    sha256: 92a4eff1649f37926295416507bc8866573ae08a193f65d404eb2243995b88c2
-    bytes: 633
+    sha256: 8bc677a3ab53df741698c78fb82eb8c468c3140e57b2287548b356ea0f8d0551
+    bytes: 722
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/cross_language.py"
-    sha256: 4cf4a278febf5cff6858afc39bb3b6b1868043460afe53798cd37771fa09a239
-    bytes: 391
+    sha256: 5a89f1af987840bfc0a0ef1f796f1f21248273db554262eff524cb890c426ac8
+    bytes: 426
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/fixtures.py"
-    sha256: 84aa1bc22dfd90469bfe0427a8b538bd3ca8c4a69bbec7eb53b7a6ccc39809d8
-    bytes: 134
+    sha256: d7956b764b27bd0eca0f9130ce761bce8dc0dd305bd18f58a8a15c955de380d1
+    bytes: 133
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/producer.py"
-    sha256: 6ff46e80fc8c158b17b5353ad016dfb5e428e2b1ef4d27023b11a3cba2cae613
-    bytes: 852
+    sha256: 725bc224333c1e81c9f576c483dc53784e8ae78eda9cf41967cd3f8efe1adec1
+    bytes: 1062
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/__init__.py"
@@ -849,12 +854,12 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/assurance.py"
-    sha256: 5d52df29f92622e17caea77eea0e9f2d8ad9726be5bcdb0d7c1ab33fc645d1d8
-    bytes: 1879
+    sha256: b410ab69ad9472297aee13de24453016596babb7635f67b1ab10cb945f21d401
+    bytes: 1939
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/corpus.py"
-    sha256: 13ebb892a24e4e5989385f8b13685afba7a64d777ee80904c7daa635c1761919
+    sha256: 2442ed86d8686c67384d2aafa0fd71904248d0311fc5fd6b2794ea0cd43c3a4f
     bytes: 85
     role: implementation
     meta_ref: L9_META.yaml
@@ -869,28 +874,28 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/generated/models.py"
-    sha256: 9e56f097e7e7550745f91cea5343e2f223a873a5bc4386c43bdb785d56f5eb26
-    bytes: 10154
+    sha256: fca3681ff3096a52022df2f1b79aaa72da1ac81bee5aeb334104163bf7bd838a
+    bytes: 9953
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/generated/schema_inventory.py"
-    sha256: 513d87a367ff1f41c07f6e31fc3e88ca03078ca3b393836855ff02655b8bf6e3
-    bytes: 2170
+    sha256: 5eb3ba88ade263e6a26245df76614b9ed7fea79ef77e5aba9d6db4690dd71e80
+    bytes: 2257
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/guidance.py"
-    sha256: 1e5853aabbb0bdb0dd3e3e796f251487ab633dbe8e5950043e76efdf6c3c3900
+    sha256: dc761c98caafa4fab315177cf3cd2a92deaf31c6b5a4b7fffc67561187c89dc1
     bytes: 98
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/observations.py"
-    sha256: decc3d5dae41a5182684aa05b3ddc6e6b87d98b142e9458ebec3c7779c34756a
-    bytes: 404
+    sha256: 8edb9743230f9e044a74d2215f8de882ce4f00a0c076698417c2a8bf9a9cde5b
+    bytes: 473
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/sdk.py"
-    sha256: 4d0fdf4265f92dd82ca4d481c75c6010f95da256866a0bd27c5dfaa30f0d502e
-    bytes: 541
+    sha256: 25d6a68bf5344e61c6e7c0867c8101df24f0684e7375d642b76cbe82555534b2
+    bytes: 575
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/__init__.py"
@@ -909,8 +914,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/adapters/git.py"
-    sha256: 03b497cda597a4360a2e833a1709ee7682a5a7bcdc8e7638717f4846ef981160
-    bytes: 1954
+    sha256: a0e44e1c26b652b5a4ecb7deb9d7b5759cf493f0ca492ea5ca2ffd775ab62dee
+    bytes: 1982
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/adapters/object_store.py"
@@ -919,28 +924,28 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/conflicts.py"
-    sha256: f9a9ef86f9a8066bceda0ca114425c162bae8485ec5184aac5c5aae8137511df
-    bytes: 259
+    sha256: 87d707310907ae9b3f48b019b9c079812e0e4470b37e33c03b501eb4ffc6db30
+    bytes: 302
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/layout.py"
-    sha256: b07143f11b7b32873ee1a931a8ff8e64dcb81a4bbe1d9630b36fc9be99bf705a
-    bytes: 281
+    sha256: 4907a8253a1f11d266239ad85c204d48c1ba33379bcb59412928cb663e61ad6d
+    bytes: 283
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/service.py"
-    sha256: 81cb30624170cdb38a81fcb3cc727dc9cfb3b539b6612e0d53533ae3d86f8556
-    bytes: 84
+    sha256: 13c62601412d739a21255d25dcb9e03b650687b86b1e05709e82ba8a7f6223a4
+    bytes: 85
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/snapshot.py"
-    sha256: 7a9de5565823d77be28aafb5046ecb965eb06530d16c4ade0cfcd17937e5587b
-    bytes: 490
+    sha256: 374c89bd92056d406605d37fba1ba010bd00a8adaaf50787e3e66930f50eaf9c
+    bytes: 603
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/corpus/sync.py"
-    sha256: 264cdfed62ee78e2120ab08a5067fb8b42cffeb1c537bf055bdb9a9877516fea
-    bytes: 1890
+    sha256: ce40a4efadae1b2279b9d819df47eeaca63f568af93d8397c95ec97fdae1754a
+    bytes: 1983
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/__init__.py"
@@ -949,48 +954,48 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/digests.py"
-    sha256: 7e0e9ae933572b078c6982264f0b3612cd5e23bc28feaf4f7d137aa72119363d
-    bytes: 996
+    sha256: 9f461f3c2eb2cb1979de12a36808d9f0ff6a12a36e45016c73c79493c891eb0f
+    bytes: 1038
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/errors.py"
-    sha256: 9b8fbab296a3660da8db2f17af290d54d312b03ba5f6a3cc25baba6070f7cb60
-    bytes: 510
+    sha256: 9e36a74124a1656726fb2fefcb9611d5aac267fdf92ee18b148d5107d2418f59
+    bytes: 516
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/identifiers.py"
-    sha256: b7b362e036340545c2b16f3251927e0399d1f4f912e754ae42c79c6e2c5ccf5d
-    bytes: 183
+    sha256: e1460be5a375b1b7ee3236829ba8308b4059d2193b6c9af8e7f34be765119fc7
+    bytes: 185
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/invariants.py"
-    sha256: b65298ce9e0d012373f34a0905745008358adfdbc0db458cf6152f0d3ffb15a6
-    bytes: 417
+    sha256: 35de7cf53d52f255bea376de59d991fdd0513a95520b88c2301607c2295af569
+    bytes: 451
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/models.py"
-    sha256: ce09c08253bb433241e5f027e7363e8cbfb4c8331ac46f56e42759dac8587024
-    bytes: 816
+    sha256: 2b2e789fd32457717dce4f091a1260a0c9c53e49a4545d74cf3073aca7383ca5
+    bytes: 817
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/ordering.py"
-    sha256: 8e2fd0cf8b7254fa5c0751020ccdd2b31ddb6ba61bfa96772a96eee7dcbe7471
+    sha256: 73d59a09cda8fbc95b428e109778b708af4989792abb4ec763573bcde82205ef
     bytes: 228
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/provenance.py"
-    sha256: a9fb622dcd0cbb685a7b954d07e63470c8cf9c3c352c6cd017f81518722bd286
-    bytes: 366
+    sha256: 32fad5ad78d0091b38872da8f9a5c77ac0533060217d93e7d17344da4a6f6636
+    bytes: 392
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/reason_codes.py"
-    sha256: 70d86dccd0f85a81b63ecdcda9f5e27285264cbaab1f7b478ee1f796749b4fa9
-    bytes: 1311
+    sha256: 5540c25d45db198980dc92266f2fa35fbf5ba871832bf3e2344dd8673d9b5d8a
+    bytes: 1312
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/domain/states.py"
-    sha256: 2e9029dd1995b40d7c6214b67059d0f592d8df565630d092b3fc7c5ebb1c694b
-    bytes: 461
+    sha256: bde949f87a96a591130018c07a3096875713ecdbed100b3b8f77581624b187c7
+    bytes: 464
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/__init__.py"
@@ -999,38 +1004,38 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/cache.py"
-    sha256: ccaebd73187cbce4d0cde754a75b0f5cd368886d950e897511b77d01e3e00450
-    bytes: 559
+    sha256: fcfe89f23eecd0e2ce3766adda0cb05d1d1bd5a837d5dec1139d65d670b78e66
+    bytes: 560
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/container_adapter.py"
-    sha256: 20921ac6d63dbf3ba9bead6d164d14d5767a57f8417928e03c0414f1f08b2fb1
-    bytes: 527
+    sha256: dfbc39f2e00cc192dec9e21fc3b784a44fddca5e30040e0688c3a914e48bb1fd
+    bytes: 711
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/engine.py"
-    sha256: fac7cc6412040e62bdc4b3b22f883d92be11eddc853902b6884d7897aafa0c0f
-    bytes: 4011
+    sha256: 1a68be2fe3dd79e6d66b8a1464048343e639763696aa73c6543731bdb809a046
+    bytes: 4131
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/environment.py"
-    sha256: 7722f3eb49507b97baa23e72e7a80e7e95479e51d435f4abef7fd75b726180d7
-    bytes: 86
+    sha256: 2b1e86e03bc414b1e6f891435677e53134e51a6f60e1177059896eb69c37fa47
+    bytes: 87
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/limits.py"
-    sha256: ab7db97ef9051d2fd65c8a88eeb89755cc321c7a5f83fdb1666e0d98a6f85fdf
-    bytes: 175
+    sha256: d6b1128691d46657badd7fcdbd1927ecf8c3d57dc0b93b5ec5d88fe55a44f749
+    bytes: 198
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/process_adapter.py"
-    sha256: 35d21ae433c7b2c3b1211aaa1065921e672a4eedabe7ad6ace288f990cff6015
-    bytes: 346
+    sha256: bddb3a7b2dcb1df02ad74c1b6e0bedfbd85dabaee48a9900cf5562c13d788d61
+    bytes: 357
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/execution/workspace.py"
-    sha256: 7f71cadd5b783af3f0a022e043d0e998207e57e173124a3f9e7d06a344857401
-    bytes: 1210
+    sha256: a54b5f51279e01304852a2bdf873b1eec49a5ebd921c2ec807f5833ff647b646
+    bytes: 1337
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/fallback/__init__.py"
@@ -1039,8 +1044,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/fallback/adapter.py"
-    sha256: 14a3d878a76d1e6be7abb99212daeefbcf5315454957aecbddcaad25b33b5370
-    bytes: 558
+    sha256: 58c3a563dbefd6ecc27cef0f53befeb84a262819da1e9794d6eadaa53127dc25
+    bytes: 675
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/fallback/producer_identity.py"
@@ -1049,13 +1054,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/fallback/regex_scanner.py"
-    sha256: 28638531be0cea468da201b3bfe340bb3bd75c915763605a77cc6e7b44ea5c23
-    bytes: 776
+    sha256: ddedb820fc095f574a5506ed37879070cf9daa8af386777645cf5c06c2e52c00
+    bytes: 1026
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/fallback/restrictions.py"
-    sha256: df265ff144d1478717f58307d3791bfff975a54e7fe386a0e8630642da316281
-    bytes: 264
+    sha256: 0d2516bf6817aaa3ccd578dc30c63856c6c1b93288e6d2aa12b03114afabe2dc
+    bytes: 265
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/guidance/__init__.py"
@@ -1064,22 +1069,22 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/guidance/drift.py"
-    sha256: 2145d608fee9337b600045525634822e1d312384b27219353c4c9662ff7d5411
-    bytes: 359
+    sha256: 1559a542e0d00286b594c63635a9de8ab00885c03f57117e740105c1c96596ba
+    bytes: 395
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/guidance/generate.py"
-    sha256: 8a3b4df225a6dc3808554bf400ebf39d7d4ec8f277b82c926bbeb60c44b40707
-    bytes: 871
+    sha256: f3ab89b954868ddb8705ff70422bccbc3000a14bb6fc7ed4d33db8d843b9f705
+    bytes: 1110
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/guidance/manifest.py"
-    sha256: f7efdc1cbaa4aa12e9bab6ffb453db70d4db99a19ecd02815668e0d67d2fee4d
-    bytes: 151
+    sha256: 060fbcec02cf4abb8e4cc245fd82a65d24bfc8a292e9f43db73d5b1f821ce441
+    bytes: 196
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/guidance/templates.py"
-    sha256: 61538aaffc29444c4a25d6e2da9358511b4cfa3afedca02f330fef0f6ca9bbc8
+    sha256: 8498ff0f116d1b307cd8bb6068aada0860c288ad91632745ff7bc61d5e04bb08
     bytes: 438
     role: implementation
     meta_ref: L9_META.yaml
@@ -1089,13 +1094,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/observations/index.py"
-    sha256: a2313efac34084de48095bedb07c189ff80efd4d9b4454e6ec1cdbaf24768f8e
-    bytes: 2007
+    sha256: e69d97cb8d1baf234978b401fdfe836b15ae7eb6144df38d8fb414385a928c32
+    bytes: 2065
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/observations/limits.py"
-    sha256: eb001ffec371b259d45dc0726db2ef93608aeaf899b3e9e55d8a260ff730b995
-    bytes: 136
+    sha256: 949eb79d6ad7fabd99c2ad9e0d6799ee648b9e30bfe4d384574f53aaf90763d4
+    bytes: 163
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/observations/preserve.py"
@@ -1114,18 +1119,18 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/planning/assurance_plan.py"
-    sha256: d24d001e7044d96978f9f4a93c1f27ec75646d1ab897f3afa7ae799066045aae
-    bytes: 850
+    sha256: c5e1e001fb1d763d25b9c3e1aa9bec527c8eedf4d3f9664e6b98c6b188f405c4
+    bytes: 866
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/planning/capability_resolution.py"
-    sha256: 0b1242d0b09b8517ee50435a4867c000bdcf6810d8b77ccd3585ea5dd5c49cbe
-    bytes: 7132
+    sha256: d72b582b81c080b1b18dfb824256c37a942ce89014553c0c20478c0cb7be20ba
+    bytes: 7338
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/planning/run_profile.py"
-    sha256: 13d87e48a82777af2b31a57d8554a347034f4599c9055fcd95905c1e46deb4a6
-    bytes: 313
+    sha256: 5582a2c1f317931e4cb22df453379b5b928f2252f4d38501991433fca471175d
+    bytes: 388
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/py.typed"
@@ -1139,23 +1144,23 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/replay/compare.py"
-    sha256: 07c259542f7a48cc0010b97c6a8337a096e31bb2bbe253ece3e5b4d79117d364
-    bytes: 702
+    sha256: 90bd1ba495690ddb67049d5ef40a583bfaeac372d3dbcdf9c844efa38617dcea
+    bytes: 916
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/replay/executor.py"
-    sha256: ec2a537ca0a8921b0f18ba7d44cb96320475c55dc64be047296d7a4aff8a79ed
-    bytes: 244
+    sha256: 2b5f7796429accfdf5b96eb63c189c6a876852794321b7d38fdf8ec28588bbd8
+    bytes: 280
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/replay/nondeterminism.py"
-    sha256: bacd8713524cb30965cfd4f8e75fef2900836ae7aece377185922c548fb0f3d0
-    bytes: 264
+    sha256: 8eacf99eac7524e4552994c346ef194316c7cfa44898d44976f04cf0c2690d5e
+    bytes: 326
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/replay/record.py"
-    sha256: 440d7da3cdb23faaef2309338c0284e16dba25f281277c6d9cb65aa414172c69
-    bytes: 481
+    sha256: 39e88cef31e66abf136b33b5586cf6b28b87ad58da0a0fb0f090b50bd759fd4b
+    bytes: 652
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/reporting/__init__.py"
@@ -1164,23 +1169,23 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/reporting/console.py"
-    sha256: 7bb77cbb7c69e28c52d0b225bcdf8a487426d4187d0a81fddbd7652d13e12bf4
-    bytes: 396
+    sha256: 08bd1a8a6571b4c847ba7626b1a8b36865e5b7286becb38d98ccbd4252689a31
+    bytes: 394
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/reporting/json_output.py"
-    sha256: 9094f706691d5c0bd8b4789d3aff41bd4e429a02fa69b4b97abaedb070dc6963
-    bytes: 189
+    sha256: 50485a1fc22f9b9e89491c53d81817b69385425a87891711561fc0274feb57c8
+    bytes: 191
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/reporting/markdown.py"
-    sha256: 79ea59b10ae710db197eba9db3a84185656690d09f2bb242c8ec32aedb90ffb5
-    bytes: 247
+    sha256: 426a0f5e8564233097eff2ac47bbf17653cef415aa5601cb54266667605ee89c
+    bytes: 249
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/reporting/sanitize.py"
-    sha256: 245f12879c93043718aa1d75f6dfa9a7ee8697b0f14e66881744f194bd979721
-    bytes: 174
+    sha256: 84cac8170216e316e9ddb58f7520496a5aa26faabd0c78f9ad21f3d94956973d
+    bytes: 177
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/resources.py"
@@ -1194,23 +1199,23 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/sdk/adapter.py"
-    sha256: 624ab89a3ca15b12e2989c89da8d50d0b9679e6c6b675d7028aa6350ef729256
-    bytes: 290
+    sha256: 34f1ffec135d277e1433cabf18f18822dd6241166987585466ef9c94124fcb5c
+    bytes: 383
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/sdk/capability_manifest.py"
-    sha256: 67923c989bf0e45d392fcea3fff9b0280b2ea1be9bdd75880d3a0a19bf3fa35e
-    bytes: 809
+    sha256: d133675baeb5443a8df8f7571043bbd96cdc01274360b7f6bfbaee2aa63cc929
+    bytes: 825
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/sdk/invocation.py"
-    sha256: 5e356f0a53f3ebd1e532bbe2a0e920661466006534bd803dc5a6f35f93072b16
-    bytes: 301
+    sha256: 46164289332056c1eb835bda8f6fab45eb7d06fb510bd73029c67d92ebb8f171
+    bytes: 386
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/sdk/versioning.py"
-    sha256: c0fd64f0759135729a8ae4d0aa58efc35e75b3fc59d343bfed935ddccde1daca
-    bytes: 203
+    sha256: 411a3c5eac4ed1ac4a4b5c48a80440eb35cebf9132f07dc1ad5f30bc13dc58a1
+    bytes: 206
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/__init__.py"
@@ -1219,28 +1224,28 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/archives.py"
-    sha256: 78a86497e26f2b085b14809649cd23e00b5f538ea7a75ce79b24277053cf2461
-    bytes: 2954
+    sha256: 714f0ef54a6efc12e6da6f15f07108002f78570350d05d7e7c121976b62e56de
+    bytes: 2925
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/paths.py"
-    sha256: bb174142083c60b487f049a51f585c34e9c429d9b3b3baadc20fac572dce51d6
-    bytes: 834
+    sha256: 3e6cf153f2464e2986dbbad241437315b0e10c85e99dbd313235cf41560011ed
+    bytes: 836
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/redaction.py"
-    sha256: f4b1e7a28b1c2c2dbf816164e055ef8cb2640a354c1a10378971b972befb8d1e
-    bytes: 285
+    sha256: 9e4304cc0314e15e252e487776abbf6abd9e3859d365f0a5a7d978924308f7ae
+    bytes: 299
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/secrets.py"
-    sha256: 7db2f7364dd1dacbcb929197278383eda42f010aaedccac193f3a1f7c015360c
-    bytes: 561
+    sha256: 8198fe42c2f35cb54d2de30650a545474b5e6212bfa5b445d808be6172009854
+    bytes: 562
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/security/subprocesses.py"
-    sha256: c24960ed6687ea6fc848b99c2d30829212ec22755cd94938abcd98a7cbe4e14f
-    bytes: 1189
+    sha256: 6fadecc56cd5a20c60ce0f606911783f652fbe6c780a6f80d447c391e630c120
+    bytes: 1382
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/subject/__init__.py"
@@ -1249,18 +1254,18 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/subject/git.py"
-    sha256: 152fe60eca153465948f061a9d1edcdb06db8adb34c1a9aaa88f44c4b2de9cb1
-    bytes: 837
+    sha256: 751dc87c13333311e44281d2c1c2089474e569a6311b07044b14ba0deb4fd7b0
+    bytes: 846
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/subject/lock.py"
-    sha256: c3667c812bc523372f38f377111e79bc5216012d89c149c66a927389bc6672d4
-    bytes: 3014
+    sha256: 7e541b224bfb411602b10bc359260eab3b7aad0aaf97cfdef2d04d7d5ccd4dcf
+    bytes: 3063
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/subject/repository_state.py"
-    sha256: b49311e5be7688407edba586f40f33af1fb3f0668cb8186c721febc9bf8a02fd
-    bytes: 345
+    sha256: 7749576cd6fa5d590db0faaf26f2fccd4b7bba1d97f6b9fa2b44099c3e30246a
+    bytes: 348
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/telemetry/__init__.py"
@@ -1269,13 +1274,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/telemetry/noop.py"
-    sha256: b77abc0c2dea2cdb163c6489f658e8f77b9bbe1eb2bfdb37e8639d6e6a34d434
-    bytes: 208
+    sha256: 07aa7baabf0c85a244415f949ddf809ab2799612974dd0067a1d5063ff6b68ad
+    bytes: 209
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/telemetry/ports.py"
-    sha256: a1ff215e5372a95d127e4e3fb99284a52a0d137adc2ad190a8d97381063ac821
-    bytes: 266
+    sha256: 087d89ad4e5b2b7fa52789956c456493184320dc2a234c0e5b91f4a12bb40e9a
+    bytes: 253
     role: implementation
     meta_ref: L9_META.yaml
   - path: "templates/CLAUDE.md.j2"
@@ -1289,43 +1294,43 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "tests/adversarial/test_archive_hardening.py"
-    sha256: 988dd8a13238faec884470591e996fee3200ab31624ec77905864df68f7cab2f
-    bytes: 1273
+    sha256: d6f6f633dc864bc58c610918a1be8852900d13a4576fdefd72522ca0d3f4a14c
+    bytes: 1332
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/adversarial/test_corpus_symlink.py"
-    sha256: 395370c1f4e53a47bb7c9a532dd9b63544fab4bfe745a27717928f003ad879d2
-    bytes: 363
+    sha256: f764653bbf622dd9973d15d79f1b724bc111e576035cfea5f7d676e875e6480e
+    bytes: 365
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/adversarial/test_object_store_security.py"
-    sha256: 72abd07080edb6f38f8f9d072af2c4c1914647438b7ca575558616933ebc9e44
-    bytes: 1864
+    sha256: 016284d9cc268b3686ec7ad2d56dc3dccfb4bfbf17f153d05ef7e8eacf594e9c
+    bytes: 1862
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/adversarial/test_security.py"
-    sha256: b7a6e2d8183edd6ec1755c9a865563698b1e860833c80d7127160a2fb01d1679
-    bytes: 539
+    sha256: 3adf39e8a60e0077e098cbd8822f6da6df4f1c8a4f9925a33c4b623e3215827a
+    bytes: 608
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/architecture/test_boundaries.py"
-    sha256: f827d315280a0741b74062c76fb5244dbf1db22272daf925253523b4be19486a
-    bytes: 497
+    sha256: a356fff8cceab81d22ac198a7157078955c22a178c674b49b452c985871a5da4
+    bytes: 500
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/architecture/test_fallback.py"
-    sha256: 62095a28cb4860682aaec8d70493b8ae5b74887e516e691d92ce7ba5af5f6bf8
-    bytes: 419
+    sha256: 89d90972c69484fd25e4b7ce0743266681580e956afdb6036758c7a009e1d8f5
+    bytes: 422
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/architecture/test_no_mutation.py"
-    sha256: 8bc925fe3bbdc2a79696ce0b337116975ce80db32f6b588523962a1d3cffe68d
-    bytes: 357
+    sha256: 93f4e2c071b8f0cd8d90ba9d85d9a62e28690a95048c2287313867add68f1d82
+    bytes: 359
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/architecture/test_prohibited_symbols.py"
-    sha256: 215e9f92fc472304f42046de7e3a3d0fd0fa549303adac221854af54f6708e89
-    bytes: 754
+    sha256: 14052e84785ff78ad19a698fb2b111b948f630fa11bba837490a248c30f60baf
+    bytes: 789
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/architecture/test_subprocess_boundary.py"
@@ -1334,33 +1339,33 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/conformance/test_canonicalization.py"
-    sha256: 6f95b886e63522f86414131bb9883a3bbf24dc33569eb0c2bc1dab333940ac1e
-    bytes: 229
+    sha256: 135542e865b122ea064e5c737ad9ddacbffeb37655e18c27f9ef19586d69459c
+    bytes: 245
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/conformance/test_consumer.py"
-    sha256: a2b115af523bf47138e8e1aecdbbeb3d126c98a0aac1866c9cbffc9ab59a90a8
-    bytes: 545
+    sha256: 9f2f3aebcb9a1e23d4f01d83addd98d2525d49e98fef15f104f9f2967c7ce2e2
+    bytes: 547
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/conformance/test_producer.py"
-    sha256: a985dbe82f778ad2234be33cc65ae16d37588cffd214a4c2df7a68ebaa4bbc76
-    bytes: 238
+    sha256: 8ec5349e7a355fc81d39bcfc5f304c92e0aea00b332416114bd91ee76c56a4f8
+    bytes: 240
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_assurance_authority.py"
-    sha256: 6c2e9e56cfd260a2d71e091204434d3c5c630e0a8c78608cbd7d5d40c8fbdb02
-    bytes: 1253
+    sha256: f2f76f782a70cd0490255e3e64cdb3c9a47317200da62f4ddb95e8acd8d8b6c2
+    bytes: 1227
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_cli_json.py"
-    sha256: 63e3fd3c1c7cd5837c5fb8d2a1d3b74584c4eec95c5485e68a1fdc4215c71692
-    bytes: 308
+    sha256: 2d3b8cb187a2f6eac4cafd29960227e3d49075811f35190358f0f01a6937ba32
+    bytes: 310
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_cli_json_anywhere.py"
-    sha256: 831db12bc434ab468dc1e5b0921eac600b817115b28a6897a5d21e3a07bd00c3
-    bytes: 272
+    sha256: e043a0e919203660d8e2f60f9ac8bf73242fc0171dd42c1d8b4fee81fe7a25b9
+    bytes: 274
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_cli_version.py"
@@ -1409,8 +1414,8 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_schemas.py"
-    sha256: 9c683660ae3b2332fc0dcf38bc1d660e5c9c571ba453dea683b7468300c03b13
-    bytes: 583
+    sha256: 73e952e421d6764702443c5f0f0dcd6438160b67530b0b6fbbda85c56e5b274a
+    bytes: 601
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_single_ingress.py"
@@ -1429,23 +1434,23 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_wheel_source_alignment.py"
-    sha256: 20ca29c8fd5af565bd8b009dc14eb44eac0c2ef8d368cfb04312dec6a045ada2
-    bytes: 1056
+    sha256: 5cf5f4a1ba9459929b17b22684c2033d96fcc20fe8c98f2438ff73025838a35c
+    bytes: 1070
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/integration/test_artifact_lifecycle.py"
-    sha256: 1d2fcb884d8b328a0882587da3821814b3ae717921267bb50061095c03022a3a
-    bytes: 421
+    sha256: b45d3f634553c28160d39c3f7bb7e9f481cb013a5b5f2d5cc2578ecda1904804
+    bytes: 362
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/integration/test_assurance_chain.py"
-    sha256: b7d557bff8ab557892b82f7d4a5d1444865fe156af643c17b2a14d51441d20d6
-    bytes: 405
+    sha256: 181a8c89f5a3732b9339eda627b00af93740041cdce514ad072c53c1262db92d
+    bytes: 501
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/integration/test_execution_isolation.py"
-    sha256: 99169224e541093e9a7a5e91ff2a69f5789386ccd52802a661fa0735ea4e5899
-    bytes: 2317
+    sha256: a9a15457c851c6cc6c3420a920793a5c252d2ab03e8b9287c3f08880702b85d8
+    bytes: 2482
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/integration/test_subject_lock.py"
@@ -1454,23 +1459,23 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/performance/test_digest_performance.py"
-    sha256: 6c2460ec5144f50c7e621a54137ab65732512e30cfc62f006228ba5416c1f6ed
-    bytes: 279
+    sha256: 544ecdf580457150bd7434fac9b83a7442d6c0a3b6da32a2d7603a00d077ad31
+    bytes: 281
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/property/test_determinism.py"
-    sha256: 0c501b603ed84d38fd3bb2e997f91d82fdb011a29637d22b456b8508983f7041
-    bytes: 276
+    sha256: 844fe86215c32416f9e0728025f3d6532bd9693cd78c4e0bbfa923b2c1e1469e
+    bytes: 278
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/replay/test_bundle_replay.py"
-    sha256: 2e6c5ab2d226baf5fa36db682c7fd0e36fcd2dac73ff1489c4ccaef7ea5ef5f7
-    bytes: 370
+    sha256: b9e5322939174c5b6cfa82bbe3104ae2305791f6435fa8f158799aec38c5789e
+    bytes: 371
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/replay/test_compare.py"
-    sha256: ae7bd402d7a3a2d85c651ccf7cbb68777efbd3506df1145d43d9dfc44da3bba8
-    bytes: 267
+    sha256: 075f0666db1c85da13392e6ab199913bb3e7ab97a1c4f06a168321620376fda6
+    bytes: 269
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_bundle_verify.py"
@@ -1479,8 +1484,8 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_corpus.py"
-    sha256: 72d2c87e701bea4e7e74c5ab4ac4732c7b6fe9d22557971c67ae4d5e30002c34
-    bytes: 213
+    sha256: 4bf590b0f9594a519430bccbca57211bbe3779e4b82a103ac43392d066a6a380
+    bytes: 214
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_corpus_sync.py"
@@ -1489,18 +1494,18 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_digests.py"
-    sha256: 5fc038ed36e64a0c259c064c7955be049d467ae8b859a098070e69f727a63acb
-    bytes: 502
+    sha256: 210efd835c4df568966919c205c5001eea9385a5ab32c6669e359e5a1382db77
+    bytes: 506
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_guidance.py"
-    sha256: 31101770f1516ee13b55db39efae0615cc6a54cfb2539f491287390aa5a1790e
-    bytes: 245
+    sha256: 0165c4b69232c2219acd9dbfb0a5b0640fc85d9fe88cd33bbf3dd5e86970b80f
+    bytes: 246
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_guidance_determinism.py"
-    sha256: d2c40df3e2f83922bcc8996b78fb850bddd05448783d12b6a4e30ba1ca1dea18
-    bytes: 251
+    sha256: b8556aa99e2d783759371d021fdce192ff8cae99fb2aa7bbfa68026acd193acc
+    bytes: 252
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_observation_validation.py"
@@ -1509,23 +1514,23 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_paths.py"
-    sha256: 0d980e382b2a81073bd069c686e23a192d37801d0104d322a37c5b9269555437
-    bytes: 323
+    sha256: 26bd0d595b6fe12c86671a3980f0bf0661fd376b492eb28ec966e6033a846c2e
+    bytes: 381
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_plan.py"
-    sha256: 40cb05be830a9d2be9545b006d05dd2b4ae198a975324b1f983fbcf7c7cf7e50
-    bytes: 3465
+    sha256: ba4dcccf7f52ab8ba5fbe3a5e8daea47b2bedc45de9c3194ec5df2ebb42dd40d
+    bytes: 3591
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/unit/test_preserve.py"
-    sha256: c86e98d68d433798cb8d393f12ffc2a2c3e53e5f248f75c656437c472cd85ab5
-    bytes: 332
+    sha256: eb69e5c66bc55db550eaf08e2e9c343f36ee6daa3d941e0aef55da28ec7ff2e8
+    bytes: 333
     role: test
     meta_ref: L9_META.yaml
   - path: "uv.lock"
-    sha256: 3559fce22632ed1d08da86c7c5e86e001568e670985459580b574a8785287087
-    bytes: 138
+    sha256: dc851fac233d9c04aa056a7db1c6419c757cf24fea2c35d5e356aa520524911d
+    bytes: 41927
     role: configuration
     meta_ref: L9_META.yaml
   - path: "validation_report.yaml"

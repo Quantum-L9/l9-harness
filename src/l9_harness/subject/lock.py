@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 from urllib.parse import urlparse
 
 from ..domain.digests import digest_bytes, digest_canonical
@@ -36,7 +37,7 @@ def create_subject_lock(
     build_digest: dict[str, str] | None = None,
     *,
     require_clean: bool = True,
-) -> dict:
+) -> dict[str, Any]:
     commit = resolve_commit(repo, selector)
     clean = is_clean(repo)
     if require_clean and not clean:
@@ -74,7 +75,7 @@ def create_subject_lock(
     }
 
 
-def revalidate_subject(repo: Path, lock: dict) -> bool:
+def revalidate_subject(repo: Path, lock: dict[str, Any]) -> bool:
     expected = lock["subject"]["revision"]
     if not is_clean(repo):
         return False
@@ -82,4 +83,4 @@ def revalidate_subject(repo: Path, lock: dict) -> bool:
     if current_commit != expected["commit"]:
         return False
     current_tree = digest_bytes(tree_digest(repo, current_commit).encode("ascii"))
-    return current_tree == expected.get("treeDigest")
+    return bool(current_tree == expected.get("treeDigest"))

@@ -10,7 +10,7 @@ from ..domain.reason_codes import ReasonCode
 
 
 def load_assurance_plan(path: Path, *, production: bool = False) -> dict[str, Any]:
-    plan = json.loads(path.read_text("utf-8"))
+    plan: dict[str, Any] = json.loads(path.read_text("utf-8"))
     complete, missing = plan_contract_complete(plan)
     if production and not complete:
         raise ContractError(

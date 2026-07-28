@@ -83,10 +83,15 @@ def _verify_sdist(sdist: Path, errors: list[str]) -> dict[str, Any]:
     with tempfile.TemporaryDirectory(prefix="l9-harness-sdist-") as temporary:
         extracted = safe_extract_sdist(sdist, Path(temporary))
         for path in sorted(ROOT.rglob("*")):
+            # Exclusion must be checked before the symlink guard: EXCLUDED_DIRS
+            # already lists ".venv", but a venv's bin/python is itself a
+            # symlink (see release_identity.source_files for the same fix).
+            if any(part in EXCLUDED_DIRS for part in path.parts):
+                continue
             if path.is_symlink():
                 errors.append(f"source symlink prohibited: {path.relative_to(ROOT).as_posix()}")
                 continue
-            if not path.is_file() or any(part in EXCLUDED_DIRS for part in path.parts):
+            if not path.is_file():
                 continue
             relative = path.relative_to(ROOT)
             _compare_bytes(path, extracted / relative, "sdist", errors)
@@ -120,7 +125,8 @@ def verify(dist: Path) -> dict[str, Any]:
         path
         for path in sorted(dist.iterdir())
         if path.is_file()
-        and path.name not in {"distribution-manifest.json", "distribution-alignment.json", "SHA256SUMS.txt"}
+        and path.name
+        not in {"distribution-manifest.json", "distribution-alignment.json", "SHA256SUMS.txt"}
     ]
     manifest = {
         "schema": "l9.harness-distribution-manifest",

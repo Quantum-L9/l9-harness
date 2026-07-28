@@ -5,6 +5,7 @@ import zipfile
 import pytest
 
 from l9_harness.bundle.archive import build_deterministic_zip
+from l9_harness.domain.errors import SecurityError
 from l9_harness.security.archives import safe_extract_zip
 
 
@@ -25,7 +26,7 @@ def test_extract_rejects_duplicate_paths(tmp_path):
         with zipfile.ZipFile(archive, "w") as handle:
             handle.writestr("a", "one")
             handle.writestr("a", "two")
-    with pytest.raises(Exception):
+    with pytest.raises(SecurityError):
         safe_extract_zip(archive, tmp_path / "out")
 
 
@@ -36,5 +37,5 @@ def test_extract_rejects_symlink_entry(tmp_path):
     info.external_attr = (stat.S_IFLNK | 0o777) << 16
     with zipfile.ZipFile(archive, "w") as handle:
         handle.writestr(info, "target")
-    with pytest.raises(Exception):
+    with pytest.raises(SecurityError):
         safe_extract_zip(archive, tmp_path / "out")

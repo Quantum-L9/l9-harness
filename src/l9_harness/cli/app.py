@@ -7,7 +7,7 @@ from typing import Any
 
 from ..application.ingress import IngressRequest, normalize_cli_request
 from ..domain.errors import HarnessError
-from ..domain.models import CommandResult, VERSION
+from ..domain.models import VERSION, CommandResult
 from .commands import assurance as c_assurance
 from .commands import bundle as c_bundle
 from .commands import clean as c_clean

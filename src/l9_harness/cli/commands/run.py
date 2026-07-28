@@ -20,6 +20,8 @@ def command(repo: Path, plan_path: Path, sdk_manifest_path: Path, run_dir: Path)
     return {
         "status": status,
         "artifacts": [{"path": output.as_posix()}],
-        "limitations": sorted({item for record in records for item in record.get("limitations", [])}),
+        "limitations": sorted(
+            {item for record in records for item in record.get("limitations", [])}
+        ),
         "details": {"records": len(records)},
     }

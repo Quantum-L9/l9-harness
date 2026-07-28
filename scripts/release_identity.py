@@ -7,8 +7,9 @@ import io
 import json
 import tarfile
 import zipfile
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 EXCLUDED_DIRS = {
     ".git",
@@ -51,9 +52,15 @@ def canonical_bytes(value: Any) -> bytes:
 def source_files(root: Path) -> list[Path]:
     records: list[Path] = []
     for path in sorted(root.rglob("*"), key=lambda item: item.relative_to(root).as_posix()):
+        # Exclusion must be checked before the symlink guard: EXCLUDED_DIRS
+        # already lists ".venv", but a venv's bin/python is itself a symlink,
+        # so checking is_symlink() first raised on excluded, non-source paths
+        # instead of skipping them.
+        if any(part in EXCLUDED_DIRS for part in path.parts):
+            continue
         if path.is_symlink():
             raise RuntimeError(f"Symlink prohibited in source identity: {path}")
-        if not path.is_file() or any(part in EXCLUDED_DIRS for part in path.parts):
+        if not path.is_file():
             continue
         relative = path.relative_to(root).as_posix()
         if relative in EXCLUDED_SOURCE_PATHS:
@@ -77,22 +84,26 @@ def source_tree_digest(records: Iterable[dict[str, Any]]) -> dict[str, str]:
     return raw_digest(canonical_bytes(list(records)))
 
 
-
 def deterministic_zip(source: Path, target: Path) -> None:
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path in sorted(
             source.rglob("*"),
             key=lambda item: item.relative_to(source).as_posix(),
         ):
+            # Same exclusion-before-symlink-guard ordering as source_files():
+            # see comment there.
+            if any(part in EXCLUDED_DIRS for part in path.parts):
+                continue
             if path.is_symlink():
                 raise RuntimeError(f"Symlink prohibited in release bundle: {path}")
-            if not path.is_file() or any(part in EXCLUDED_DIRS for part in path.parts):
+            if not path.is_file():
                 continue
             relative = path.relative_to(source).as_posix()
             info = zipfile.ZipInfo(relative, (1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = (0o100644 & 0xFFFF) << 16
             archive.writestr(info, path.read_bytes(), compresslevel=9)
+
 
 def wheel_record_errors(wheel_path: Path) -> list[str]:
     errors: list[str] = []
@@ -115,7 +126,9 @@ def wheel_record_errors(wheel_path: Path) -> list[str]:
                 if algorithm != "sha256":
                     errors.append(f"RECORD algorithm unsupported: {relative}")
                     continue
-                actual = base64.urlsafe_b64encode(hashlib.sha256(data).digest()).decode().rstrip("=")
+                actual = (
+                    base64.urlsafe_b64encode(hashlib.sha256(data).digest()).decode().rstrip("=")
+                )
                 if actual != encoded:
                     errors.append(f"RECORD digest mismatch: {relative}")
     return errors

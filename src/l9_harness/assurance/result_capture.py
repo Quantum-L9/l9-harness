@@ -12,9 +12,11 @@ def copy_outputs(source: Path, target: Path) -> list[dict[str, Any]]:
         if path.is_file() and not path.is_symlink():
             relative = path.relative_to(source)
             preserved = preserve_file(path, target / relative, target)
-            result.append({
-                "source": relative.as_posix(),
-                "target": preserved["path"],
-                "rawDigest": preserved["rawDigest"],
-            })
+            result.append(
+                {
+                    "source": relative.as_posix(),
+                    "target": preserved["path"],
+                    "rawDigest": preserved["rawDigest"],
+                }
+            )
     return result

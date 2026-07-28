@@ -31,9 +31,7 @@ def main() -> None:
     for generator in GENERATORS:
         subprocess.run([sys.executable, "-B", str(generator)], check=True)
     drifted = [
-        path
-        for path in TARGETS
-        if before[path] is None or before[path] != path.read_bytes()
+        path for path in TARGETS if before[path] is None or before[path] != path.read_bytes()
     ]
     if drifted:
         names = ", ".join(path.relative_to(ROOT).as_posix() for path in drifted)

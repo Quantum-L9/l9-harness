@@ -4,13 +4,28 @@ from typing import Any
 
 ASSURANCE_PLAN_SCHEMA = "l9.assurance-plan"
 REQUIRED_PLAN_FIELDS = {
-    "schema", "schemaVersion", "planId", "subject", "profile", "policy",
-    "registryDigests", "requirements", "waiverRules",
+    "schema",
+    "schemaVersion",
+    "planId",
+    "subject",
+    "profile",
+    "policy",
+    "registryDigests",
+    "requirements",
+    "waiverRules",
 }
 REQUIRED_REQUIREMENT_FIELDS = {
-    "requirementId", "controlRef", "mandatory", "producer", "check",
-    "subjectKind", "observationSchemaRef", "configurationContractRef",
-    "cardinality", "supportingArtifacts", "alternatives",
+    "requirementId",
+    "controlRef",
+    "mandatory",
+    "producer",
+    "check",
+    "subjectKind",
+    "observationSchemaRef",
+    "configurationContractRef",
+    "cardinality",
+    "supportingArtifacts",
+    "alternatives",
 }
 
 

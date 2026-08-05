@@ -1,9 +1,8 @@
-import json
 import subprocess
 from pathlib import Path
 
 from l9_harness.application.execute_run import execute
-from l9_harness.domain.digests import digest_bytes, digest_canonical
+from l9_harness.domain.digests import digest_bytes
 from l9_harness.subject.lock import create_subject_lock
 
 
@@ -29,29 +28,37 @@ def test_execution_writes_only_to_isolated_workspace(tmp_path):
         "execution": {"adapter": "process"},
         "complete": True,
         "unresolvedRequirements": [],
-        "steps": [{
-            "stepId": "harness-step:sha256:" + "2" * 64,
-            "kind": "sdk_check",
-            "checkRef": "l9.tests",
-            "capabilityRef": capability_id,
-            "dependsOn": [],
-            "required": True,
-            "timeoutSeconds": 30,
-            "outputContractRef": "l9.observation@1.0.0",
-            "network": "denied",
-        }],
+        "steps": [
+            {
+                "stepId": "harness-step:sha256:" + "2" * 64,
+                "kind": "sdk_check",
+                "checkRef": "l9.tests",
+                "capabilityRef": capability_id,
+                "dependsOn": [],
+                "required": True,
+                "timeoutSeconds": 30,
+                "outputContractRef": "l9.observation@1.0.0",
+                "network": "denied",
+            }
+        ],
     }
     manifest = {
         "id": "l9-ci-sdk",
-        "capabilities": [{
-            "capabilityId": capability_id,
-            "checkId": "l9.tests",
-            "version": "1.0.0",
-            "argv": ["python", "-c", "from pathlib import Path; Path('tracked.txt').write_text('changed'); Path('obs.json').write_text('{}')"],
-            "configurationDigest": digest_bytes(b"config"),
-            "observationGlobs": ["obs.json"],
-            "environmentAllowlist": [],
-        }],
+        "capabilities": [
+            {
+                "capabilityId": capability_id,
+                "checkId": "l9.tests",
+                "version": "1.0.0",
+                "argv": [
+                    "python",
+                    "-c",
+                    "from pathlib import Path; Path('tracked.txt').write_text('changed'); Path('obs.json').write_text('{}')",
+                ],
+                "configurationDigest": digest_bytes(b"config"),
+                "observationGlobs": ["obs.json"],
+                "environmentAllowlist": [],
+            }
+        ],
     }
     records = execute(plan, manifest, repo, tmp_path / "run")
     assert (repo / "tracked.txt").read_text() == "original"

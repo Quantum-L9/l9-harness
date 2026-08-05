@@ -32,14 +32,16 @@ def build_index(
             "validationReasons": reasons,
         }
         if document is not None:
-            entry.update({
-                "schema": document.get("schema"),
-                "schemaVersion": document.get("schemaVersion"),
-                "producerId": document.get("producer", {}).get("id"),
-                "producerVersion": document.get("producer", {}).get("version"),
-                "checkId": document.get("check", {}).get("id"),
-                "checkVersion": document.get("check", {}).get("version"),
-            })
+            entry.update(
+                {
+                    "schema": document.get("schema"),
+                    "schemaVersion": document.get("schemaVersion"),
+                    "producerId": document.get("producer", {}).get("id"),
+                    "producerVersion": document.get("producer", {}).get("version"),
+                    "checkId": document.get("check", {}).get("id"),
+                    "checkVersion": document.get("check", {}).get("version"),
+                }
+            )
         entries.append(entry)
     return {
         "schema": "l9.observation-index",

@@ -28,7 +28,9 @@ def execute(
         raise ContractError(str(ReasonCode.SUBJECT_CHANGED), "Subject changed before execution")
     subject = plan.get("subject", current_lock["subject"])
     if subject != current_lock["subject"]:
-        raise ContractError(str(ReasonCode.SUBJECT_CHANGED), "Plan subject does not match repository")
+        raise ContractError(
+            str(ReasonCode.SUBJECT_CHANGED), "Plan subject does not match repository"
+        )
     lock = {"subject": subject, "subjectIdentityDigest": plan["subjectLockDigest"]}
     sdk = SDKAdapter(manifest)
     records: list[dict[str, Any]] = []
@@ -42,7 +44,11 @@ def execute(
                 "subjectDigest": plan["subjectLockDigest"],
                 "producerId": manifest.get("id", "l9-ci-sdk"),
             }
-            records.append(invoke(step, capability, workspace, plan["planId"], step_output, adapter))
+            records.append(
+                invoke(step, capability, workspace, plan["planId"], step_output, adapter)
+            )
         if not revalidate_subject(repo, lock):
-            raise ContractError(str(ReasonCode.SUBJECT_CHANGED), "Source repository changed during execution")
+            raise ContractError(
+                str(ReasonCode.SUBJECT_CHANGED), "Source repository changed during execution"
+            )
     return records

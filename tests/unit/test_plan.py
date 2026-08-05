@@ -34,14 +34,22 @@ def test_resolves_six_checks_from_complete_contract():
         "subject": subject,
         "profile": {"id": "p", "version": "1.0.0", "digest": digest_bytes(b"p")},
         "policy": {"id": "policy", "version": "1.0.0", "digest": digest_bytes(b"policy")},
-        "registryDigests": {"producers": digest_bytes(b"p"), "checks": digest_bytes(b"c"), "controls": digest_bytes(b"x")},
+        "registryDigests": {
+            "producers": digest_bytes(b"p"),
+            "checks": digest_bytes(b"c"),
+            "controls": digest_bytes(b"x"),
+        },
         "waiverRules": [],
         "requirements": [
             {
                 "requirementId": check,
                 "controlRef": check,
                 "mandatory": True,
-                "producer": {"id": "l9-ci-sdk", "acceptedVersions": ["2.0.0"], "acceptedBuildDigests": [build_digest]},
+                "producer": {
+                    "id": "l9-ci-sdk",
+                    "acceptedVersions": ["2.0.0"],
+                    "acceptedBuildDigests": [build_digest],
+                },
                 "check": {"id": check, "acceptedVersions": ["1.0.0"]},
                 "subjectKind": "git-revision",
                 "observationSchemaRef": "l9.observation@1.0.0",

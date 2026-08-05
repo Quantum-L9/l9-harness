@@ -122,9 +122,7 @@ def main() -> None:
         check=True,
     )
     outputs = [
-        path
-        for path in sorted(DIST.iterdir())
-        if path.is_file() and path.name != "SHA256SUMS.txt"
+        path for path in sorted(DIST.iterdir()) if path.is_file() and path.name != "SHA256SUMS.txt"
     ]
     (DIST / "SHA256SUMS.txt").write_text(
         "".join(f"{sha(path)}  {path.name}\n" for path in outputs),

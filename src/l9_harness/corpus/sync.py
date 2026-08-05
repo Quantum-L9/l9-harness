@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 from ..domain.errors import ContractError
 from ..domain.reason_codes import ReasonCode
@@ -8,14 +9,18 @@ from .adapters.filesystem import FilesystemCorpus
 from .snapshot import snapshot
 
 
-def _mapping(state: dict) -> dict[str, dict]:
+def _mapping(state: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {item["path"]: item["rawDigest"] for item in state.get("files", [])}
 
 
-def _changed(base: dict, current: dict) -> set[str]:
+def _changed(base: dict[str, Any], current: dict[str, Any]) -> set[str]:
     base_map = _mapping(base)
     current_map = _mapping(current)
-    return {path for path in set(base_map) | set(current_map) if base_map.get(path) != current_map.get(path)}
+    return {
+        path
+        for path in set(base_map) | set(current_map)
+        if base_map.get(path) != current_map.get(path)
+    }
 
 
 def pull(remote: Path, cache: Path) -> None:

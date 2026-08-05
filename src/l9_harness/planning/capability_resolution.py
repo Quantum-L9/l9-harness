@@ -10,7 +10,9 @@ def _digest_equal(left: Any, right: Any) -> bool:
     return isinstance(left, dict) and isinstance(right, dict) and left == right
 
 
-def _resolve_requirement(requirement: dict[str, Any], capability: dict[str, Any], sdk: dict[str, Any]) -> list[str]:
+def _resolve_requirement(
+    requirement: dict[str, Any], capability: dict[str, Any], sdk: dict[str, Any]
+) -> list[str]:
     reasons: list[str] = []
     producer = requirement["producer"]
     check = requirement["check"]
@@ -28,7 +30,10 @@ def _resolve_requirement(requirement: dict[str, Any], capability: dict[str, Any]
         reasons.append("observation-schema")
     if capability.get("configurationContractRef") != requirement.get("configurationContractRef"):
         reasons.append("configuration-contract")
-    if capability.get("subjectKinds") and requirement.get("subjectKind") not in capability["subjectKinds"]:
+    if (
+        capability.get("subjectKinds")
+        and requirement.get("subjectKind") not in capability["subjectKinds"]
+    ):
         reasons.append("subject-kind")
     if requirement.get("alternatives"):
         reasons.append("alternatives-unsupported")
@@ -63,29 +68,35 @@ def resolve_plan(
     steps: list[dict[str, Any]] = []
     if not contract_complete:
         for item in missing:
-            unresolved.append({
-                "requirementRef": "assurance-plan-contract",
-                "reasonCode": "HARNESS_ASSURANCE_PLAN_SCHEMA_UNAVAILABLE",
-                "detail": item,
-            })
+            unresolved.append(
+                {
+                    "requirementRef": "assurance-plan-contract",
+                    "reasonCode": "HARNESS_ASSURANCE_PLAN_SCHEMA_UNAVAILABLE",
+                    "detail": item,
+                }
+            )
     else:
         for order, requirement in enumerate(assurance_plan["requirements"]):
             check_id = requirement["check"]["id"]
             capability = capabilities.get(check_id)
             if capability is None:
-                unresolved.append({
-                    "requirementRef": requirement["requirementId"],
-                    "reasonCode": "HARNESS_SDK_CAPABILITY_UNRESOLVED",
-                    "detail": f"No SDK capability for {check_id}",
-                })
+                unresolved.append(
+                    {
+                        "requirementRef": requirement["requirementId"],
+                        "reasonCode": "HARNESS_SDK_CAPABILITY_UNRESOLVED",
+                        "detail": f"No SDK capability for {check_id}",
+                    }
+                )
                 continue
             mismatches = _resolve_requirement(requirement, capability, sdk_authority)
             if mismatches:
-                unresolved.append({
-                    "requirementRef": requirement["requirementId"],
-                    "reasonCode": "HARNESS_SDK_CAPABILITY_UNRESOLVED",
-                    "detail": ",".join(mismatches),
-                })
+                unresolved.append(
+                    {
+                        "requirementRef": requirement["requirementId"],
+                        "reasonCode": "HARNESS_SDK_CAPABILITY_UNRESOLVED",
+                        "detail": ",".join(mismatches),
+                    }
+                )
                 continue
             entry = {
                 "evidenceRequirementRef": requirement["requirementId"],
@@ -126,7 +137,9 @@ def resolve_plan(
         "subjectLockDigest": subject_lock["subjectIdentityDigest"],
         "subject": subject_lock["subject"],
         "profile": profile,
-        "assurancePlanDigest": digest_canonical(assurance_plan, "external-assurance-plan-bytes-model"),
+        "assurancePlanDigest": digest_canonical(
+            assurance_plan, "external-assurance-plan-bytes-model"
+        ),
         "sdkAuthorityDigest": digest_canonical(sdk_authority, "external-sdk-authority-model"),
         "resolvedChecks": resolved,
         "unresolvedRequirements": unresolved,

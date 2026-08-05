@@ -6,70 +6,301 @@ from typing import NotRequired, Required, TypeAlias, TypedDict
 JSONScalar: TypeAlias = str | int | float | bool | None
 JSONValue: TypeAlias = JSONScalar | list["JSONValue"] | dict[str, "JSONValue"]
 
-AssuranceInputManifestDocument = TypedDict('AssuranceInputManifestDocument', {'assuranceInputDigest': Required[JSONValue], 'completeForRequestedPlan': Required[JSONValue], 'inputSetId': Required[JSONValue], 'limitations': Required[JSONValue], 'observationIndexRef': Required[JSONValue], 'observations': Required[JSONValue], 'profileRef': Required[JSONValue], 'registryDigest': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'subject': Required[JSONValue], 'subjectIdentityDigest': Required[JSONValue], 'supportingArtifacts': Required[JSONValue]}, total=False)
 
-AssuranceInvocationRecordDocument = TypedDict('AssuranceInvocationRecordDocument', {'argvDigest': Required[JSONValue], 'authoritative': Required[JSONValue], 'authorityRef': NotRequired[JSONValue], 'completedAt': Required[JSONValue], 'exitCode': Required[JSONValue], 'invocationId': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'startedAt': Required[JSONValue], 'stderrDigest': Required[JSONValue], 'stdoutDigest': Required[JSONValue]}, total=False)
+class AssuranceInputManifestDocument(TypedDict, total=False):
+    assuranceInputDigest: Required[JSONValue]
+    completeForRequestedPlan: Required[JSONValue]
+    inputSetId: Required[JSONValue]
+    limitations: Required[JSONValue]
+    observationIndexRef: Required[JSONValue]
+    observations: Required[JSONValue]
+    profileRef: Required[JSONValue]
+    registryDigest: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    subject: Required[JSONValue]
+    subjectIdentityDigest: Required[JSONValue]
+    supportingArtifacts: Required[JSONValue]
 
-L9HarnessCommonTypesDocument = TypedDict('L9HarnessCommonTypesDocument', {}, total=False)
 
-ConformanceReportDocument = TypedDict('ConformanceReportDocument', {'kind': Required[JSONValue], 'limitations': NotRequired[JSONValue], 'pass': Required[JSONValue], 'results': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue]}, total=False)
+class AssuranceInvocationRecordDocument(TypedDict, total=False):
+    argvDigest: Required[JSONValue]
+    authoritative: Required[JSONValue]
+    authorityRef: NotRequired[JSONValue]
+    completedAt: Required[JSONValue]
+    exitCode: Required[JSONValue]
+    invocationId: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    startedAt: Required[JSONValue]
+    stderrDigest: Required[JSONValue]
+    stdoutDigest: Required[JSONValue]
 
-CorpusCandidateDocument = TypedDict('CorpusCandidateDocument', {'candidateId': Required[JSONValue], 'kind': Required[JSONValue], 'payloadDigest': Required[JSONValue], 'promotion': NotRequired[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sourceRefs': Required[JSONValue], 'status': Required[JSONValue]}, total=False)
 
-CorpusSnapshotDocument = TypedDict('CorpusSnapshotDocument', {'digest': Required[JSONValue], 'files': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'snapshotId': Required[JSONValue]}, total=False)
+class L9HarnessCommonTypesDocument(TypedDict, total=False):
+    pass
 
-DistributionManifestDocument = TypedDict('DistributionManifestDocument', {'artifacts': Required[JSONValue], 'package': Required[JSONValue], 'repositoryValidationDigest': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sdist': Required[JSONValue], 'sourceIdentityDigest': Required[JSONValue], 'sourceTreeDigest': Required[JSONValue], 'version': Required[JSONValue], 'wheel': Required[JSONValue]}, total=False)
 
-ExecutionRecordDocument = TypedDict('ExecutionRecordDocument', {'adapter': Required[JSONValue], 'check': Required[JSONValue], 'commandDigest': Required[JSONValue], 'completedAt': Required[JSONValue], 'configurationDigest': Required[JSONValue], 'environmentDigest': Required[JSONValue], 'executionRecordId': Required[JSONValue], 'exitCode': NotRequired[JSONValue], 'limitations': Required[JSONValue], 'observationRefs': Required[JSONValue], 'resourceUsage': Required[JSONValue], 'runKey': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'startedAt': Required[JSONValue], 'stderrRef': NotRequired[JSONValue], 'stdoutRef': NotRequired[JSONValue], 'subjectDigest': Required[JSONValue], 'supportingArtifactRefs': Required[JSONValue], 'termination': Required[JSONValue]}, total=False)
+ConformanceReportDocument = TypedDict(
+    "ConformanceReportDocument",
+    {
+        "kind": Required[JSONValue],
+        "limitations": NotRequired[JSONValue],
+        "pass": Required[JSONValue],
+        "results": Required[JSONValue],
+        "schema": Required[JSONValue],
+        "schemaVersion": Required[JSONValue],
+    },
+    total=False,
+)
 
-GuidanceManifestDocument = TypedDict('GuidanceManifestDocument', {'authoritative': Required[JSONValue], 'outputs': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sources': Required[JSONValue]}, total=False)
 
-HarnessCommandResultDocument = TypedDict('HarnessCommandResultDocument', {'artifacts': NotRequired[JSONValue], 'authoritative': Required[JSONValue], 'command': Required[JSONValue], 'details': NotRequired[JSONValue], 'exit_code': Required[JSONValue], 'limitations': NotRequired[JSONValue], 'reason_codes': NotRequired[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'status': Required[JSONValue]}, total=False)
+class CorpusCandidateDocument(TypedDict, total=False):
+    candidateId: Required[JSONValue]
+    kind: Required[JSONValue]
+    payloadDigest: Required[JSONValue]
+    promotion: NotRequired[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sourceRefs: Required[JSONValue]
+    status: Required[JSONValue]
 
-HarnessConfigDocument = TypedDict('HarnessConfigDocument', {'extensions': NotRequired[JSONValue], 'mode': Required[JSONValue], 'paths': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue]}, total=False)
 
-HarnessPlanDocument = TypedDict('HarnessPlanDocument', {'assurancePlanRef': Required[JSONValue], 'complete': Required[JSONValue], 'execution': NotRequired[JSONValue], 'planId': Required[JSONValue], 'resolvedChecks': Required[JSONValue], 'runProfileRef': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sdkAuthorityRef': NotRequired[JSONValue], 'steps': Required[JSONValue], 'subject': NotRequired[JSONValue], 'subjectLockDigest': Required[JSONValue], 'unresolvedRequirements': Required[JSONValue]}, total=False)
+class CorpusSnapshotDocument(TypedDict, total=False):
+    digest: Required[JSONValue]
+    files: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    snapshotId: Required[JSONValue]
 
-HarnessRunBundleManifestDocument = TypedDict('HarnessRunBundleManifestDocument', {'archiveDigest': NotRequired[JSONValue], 'assuranceInputDigest': NotRequired[JSONValue], 'bundleId': Required[JSONValue], 'files': Required[JSONValue], 'runBundleContentDigest': Required[JSONValue], 'runKey': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue]}, total=False)
 
-HarnessRunManifestDocument = TypedDict('HarnessRunManifestDocument', {'assuranceInputManifestRef': NotRequired[JSONValue], 'assuranceInvocationRefs': Required[JSONValue], 'attempt': Required[JSONValue], 'completedAt': NotRequired[JSONValue], 'conformanceReportRef': NotRequired[JSONValue], 'executionId': Required[JSONValue], 'executionRecords': Required[JSONValue], 'limitations': Required[JSONValue], 'observationIndexRef': NotRequired[JSONValue], 'planRef': Required[JSONValue], 'reasonCodes': Required[JSONValue], 'replayRecordRef': NotRequired[JSONValue], 'runBundleManifestRef': NotRequired[JSONValue], 'runKey': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'startedAt': Required[JSONValue], 'state': Required[JSONValue], 'subjectLockRef': Required[JSONValue], 'toolchainLockRef': Required[JSONValue]}, total=False)
+class DistributionManifestDocument(TypedDict, total=False):
+    artifacts: Required[JSONValue]
+    package: Required[JSONValue]
+    repositoryValidationDigest: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sdist: Required[JSONValue]
+    sourceIdentityDigest: Required[JSONValue]
+    sourceTreeDigest: Required[JSONValue]
+    version: Required[JSONValue]
+    wheel: Required[JSONValue]
 
-HarnessRunProfileDocument = TypedDict('HarnessRunProfileDocument', {'artifacts': Required[JSONValue], 'assuranceProfileRef': Required[JSONValue], 'corpus': Required[JSONValue], 'execution': Required[JSONValue], 'fallback': Required[JSONValue], 'id': Required[JSONValue], 'replay': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sdk': Required[JSONValue], 'subjectKinds': Required[JSONValue], 'version': Required[JSONValue]}, total=False)
 
-ObservationIndexDocument = TypedDict('ObservationIndexDocument', {'counts': Required[JSONValue], 'entries': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'subjectDigest': Required[JSONValue]}, total=False)
+class ExecutionRecordDocument(TypedDict, total=False):
+    adapter: Required[JSONValue]
+    check: Required[JSONValue]
+    commandDigest: Required[JSONValue]
+    completedAt: Required[JSONValue]
+    configurationDigest: Required[JSONValue]
+    environmentDigest: Required[JSONValue]
+    executionRecordId: Required[JSONValue]
+    exitCode: NotRequired[JSONValue]
+    limitations: Required[JSONValue]
+    observationRefs: Required[JSONValue]
+    resourceUsage: Required[JSONValue]
+    runKey: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    startedAt: Required[JSONValue]
+    stderrRef: NotRequired[JSONValue]
+    stdoutRef: NotRequired[JSONValue]
+    subjectDigest: Required[JSONValue]
+    supportingArtifactRefs: Required[JSONValue]
+    termination: Required[JSONValue]
 
-ReplayRecordDocument = TypedDict('ReplayRecordDocument', {'actual': Required[JSONValue], 'baseline': Required[JSONValue], 'comparison': Required[JSONValue], 'recordedAt': Required[JSONValue], 'replayId': Required[JSONValue], 'runKey': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue]}, total=False)
 
-SingleIngressContractDocument = TypedDict('SingleIngressContractDocument', {'authority_rules': Required[JSONValue], 'constraints': Required[JSONValue], 'context_refs': Required[JSONValue], 'inputs': Required[JSONValue], 'mode': Required[JSONValue], 'objective': Required[JSONValue], 'output_contract': Required[JSONValue], 'request_id': Required[JSONValue], 'route': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'trace_id': Required[JSONValue], 'validation_profile': Required[JSONValue]}, total=False)
+class GuidanceManifestDocument(TypedDict, total=False):
+    authoritative: Required[JSONValue]
+    outputs: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sources: Required[JSONValue]
 
-SourceIdentityDocument = TypedDict('SourceIdentityDocument', {'buildBackendDigest': Required[JSONValue], 'exclusions': Required[JSONValue], 'files': Required[JSONValue], 'fixtureManifestDigest': Required[JSONValue], 'identityScope': Required[JSONValue], 'mutableEvidenceExclusions': Required[JSONValue], 'package': Required[JSONValue], 'schema': Required[JSONValue], 'schemaRegistryDigest': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sourceCommit': Required[JSONValue], 'sourceFileCount': Required[JSONValue], 'sourceRepository': Required[JSONValue], 'sourceTreeDigest': Required[JSONValue], 'specificationDigest': Required[JSONValue], 'version': Required[JSONValue]}, total=False)
 
-SubjectLockDocument = TypedDict('SubjectLockDocument', {'resolution': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'subject': Required[JSONValue], 'subjectIdentityDigest': Required[JSONValue]}, total=False)
+class HarnessCommandResultDocument(TypedDict, total=False):
+    artifacts: NotRequired[JSONValue]
+    authoritative: Required[JSONValue]
+    command: Required[JSONValue]
+    details: NotRequired[JSONValue]
+    exit_code: Required[JSONValue]
+    limitations: NotRequired[JSONValue]
+    reason_codes: NotRequired[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    status: Required[JSONValue]
 
-ToolchainLockDocument = TypedDict('ToolchainLockDocument', {'assuranceCli': Required[JSONValue], 'assuranceContracts': Required[JSONValue], 'capabilityManifestDigest': Required[JSONValue], 'container': Required[JSONValue], 'harness': Required[JSONValue], 'runtime': Required[JSONValue], 'schema': Required[JSONValue], 'schemaVersion': Required[JSONValue], 'sdk': Required[JSONValue], 'sdkPublicContractDigest': Required[JSONValue]}, total=False)
+
+class HarnessConfigDocument(TypedDict, total=False):
+    extensions: NotRequired[JSONValue]
+    mode: Required[JSONValue]
+    paths: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+
+
+class HarnessPlanDocument(TypedDict, total=False):
+    assurancePlanRef: Required[JSONValue]
+    complete: Required[JSONValue]
+    execution: NotRequired[JSONValue]
+    planId: Required[JSONValue]
+    resolvedChecks: Required[JSONValue]
+    runProfileRef: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sdkAuthorityRef: NotRequired[JSONValue]
+    steps: Required[JSONValue]
+    subject: NotRequired[JSONValue]
+    subjectLockDigest: Required[JSONValue]
+    unresolvedRequirements: Required[JSONValue]
+
+
+class HarnessRunBundleManifestDocument(TypedDict, total=False):
+    archiveDigest: NotRequired[JSONValue]
+    assuranceInputDigest: NotRequired[JSONValue]
+    bundleId: Required[JSONValue]
+    files: Required[JSONValue]
+    runBundleContentDigest: Required[JSONValue]
+    runKey: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+
+
+class HarnessRunManifestDocument(TypedDict, total=False):
+    assuranceInputManifestRef: NotRequired[JSONValue]
+    assuranceInvocationRefs: Required[JSONValue]
+    attempt: Required[JSONValue]
+    completedAt: NotRequired[JSONValue]
+    conformanceReportRef: NotRequired[JSONValue]
+    executionId: Required[JSONValue]
+    executionRecords: Required[JSONValue]
+    limitations: Required[JSONValue]
+    observationIndexRef: NotRequired[JSONValue]
+    planRef: Required[JSONValue]
+    reasonCodes: Required[JSONValue]
+    replayRecordRef: NotRequired[JSONValue]
+    runBundleManifestRef: NotRequired[JSONValue]
+    runKey: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    startedAt: Required[JSONValue]
+    state: Required[JSONValue]
+    subjectLockRef: Required[JSONValue]
+    toolchainLockRef: Required[JSONValue]
+
+
+class HarnessRunProfileDocument(TypedDict, total=False):
+    artifacts: Required[JSONValue]
+    assuranceProfileRef: Required[JSONValue]
+    corpus: Required[JSONValue]
+    execution: Required[JSONValue]
+    fallback: Required[JSONValue]
+    id: Required[JSONValue]
+    replay: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sdk: Required[JSONValue]
+    subjectKinds: Required[JSONValue]
+    version: Required[JSONValue]
+
+
+class ObservationIndexDocument(TypedDict, total=False):
+    counts: Required[JSONValue]
+    entries: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    subjectDigest: Required[JSONValue]
+
+
+class ReplayRecordDocument(TypedDict, total=False):
+    actual: Required[JSONValue]
+    baseline: Required[JSONValue]
+    comparison: Required[JSONValue]
+    recordedAt: Required[JSONValue]
+    replayId: Required[JSONValue]
+    runKey: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+
+
+class SingleIngressContractDocument(TypedDict, total=False):
+    authority_rules: Required[JSONValue]
+    constraints: Required[JSONValue]
+    context_refs: Required[JSONValue]
+    inputs: Required[JSONValue]
+    mode: Required[JSONValue]
+    objective: Required[JSONValue]
+    output_contract: Required[JSONValue]
+    request_id: Required[JSONValue]
+    route: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    trace_id: Required[JSONValue]
+    validation_profile: Required[JSONValue]
+
+
+class SourceIdentityDocument(TypedDict, total=False):
+    buildBackendDigest: Required[JSONValue]
+    exclusions: Required[JSONValue]
+    files: Required[JSONValue]
+    fixtureManifestDigest: Required[JSONValue]
+    identityScope: Required[JSONValue]
+    mutableEvidenceExclusions: Required[JSONValue]
+    package: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaRegistryDigest: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sourceCommit: Required[JSONValue]
+    sourceFileCount: Required[JSONValue]
+    sourceRepository: Required[JSONValue]
+    sourceTreeDigest: Required[JSONValue]
+    specificationDigest: Required[JSONValue]
+    version: Required[JSONValue]
+
+
+class SubjectLockDocument(TypedDict, total=False):
+    resolution: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    subject: Required[JSONValue]
+    subjectIdentityDigest: Required[JSONValue]
+
+
+class ToolchainLockDocument(TypedDict, total=False):
+    assuranceCli: Required[JSONValue]
+    assuranceContracts: Required[JSONValue]
+    capabilityManifestDigest: Required[JSONValue]
+    container: Required[JSONValue]
+    harness: Required[JSONValue]
+    runtime: Required[JSONValue]
+    schema: Required[JSONValue]
+    schemaVersion: Required[JSONValue]
+    sdk: Required[JSONValue]
+    sdkPublicContractDigest: Required[JSONValue]
+
 
 __all__ = [
-    'JSONScalar',
-    'JSONValue',
-    'AssuranceInputManifestDocument',
-    'AssuranceInvocationRecordDocument',
-    'L9HarnessCommonTypesDocument',
-    'ConformanceReportDocument',
-    'CorpusCandidateDocument',
-    'CorpusSnapshotDocument',
-    'DistributionManifestDocument',
-    'ExecutionRecordDocument',
-    'GuidanceManifestDocument',
-    'HarnessCommandResultDocument',
-    'HarnessConfigDocument',
-    'HarnessPlanDocument',
-    'HarnessRunBundleManifestDocument',
-    'HarnessRunManifestDocument',
-    'HarnessRunProfileDocument',
-    'ObservationIndexDocument',
-    'ReplayRecordDocument',
-    'SingleIngressContractDocument',
-    'SourceIdentityDocument',
-    'SubjectLockDocument',
-    'ToolchainLockDocument',
+    "AssuranceInputManifestDocument",
+    "AssuranceInvocationRecordDocument",
+    "ConformanceReportDocument",
+    "CorpusCandidateDocument",
+    "CorpusSnapshotDocument",
+    "DistributionManifestDocument",
+    "ExecutionRecordDocument",
+    "GuidanceManifestDocument",
+    "HarnessCommandResultDocument",
+    "HarnessConfigDocument",
+    "HarnessPlanDocument",
+    "HarnessRunBundleManifestDocument",
+    "HarnessRunManifestDocument",
+    "HarnessRunProfileDocument",
+    "JSONScalar",
+    "JSONValue",
+    "L9HarnessCommonTypesDocument",
+    "ObservationIndexDocument",
+    "ReplayRecordDocument",
+    "SingleIngressContractDocument",
+    "SourceIdentityDocument",
+    "SubjectLockDocument",
+    "ToolchainLockDocument",
 ]

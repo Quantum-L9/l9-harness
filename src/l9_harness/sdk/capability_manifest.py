@@ -10,7 +10,7 @@ from ..domain.reason_codes import ReasonCode
 
 
 def load_manifest(path: Path, *, production: bool = False) -> dict[str, Any]:
-    document = json.loads(path.read_text("utf-8"))
+    document: dict[str, Any] = json.loads(path.read_text("utf-8"))
     missing = validate_sdk_authority(document)
     if production and missing:
         raise ContractError(

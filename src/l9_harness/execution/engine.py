@@ -60,12 +60,14 @@ def execute_step(
             raw = destination.read_bytes()
             if raw != source.read_bytes():
                 raise OSError(f"Observation byte preservation failed: {relative}")
-            observation_refs.append({
-                "path": destination.relative_to(output_dir).as_posix(),
-                "sourcePath": relative.as_posix(),
-                "rawDigest": digest_bytes(raw),
-                "canonicalPayloadDigest": None,
-            })
+            observation_refs.append(
+                {
+                    "path": destination.relative_to(output_dir).as_posix(),
+                    "sourcePath": relative.as_posix(),
+                    "rawDigest": digest_bytes(raw),
+                    "canonicalPayloadDigest": None,
+                }
+            )
     return {
         "schema": "l9.execution-record",
         "schemaVersion": "1.0.0",
@@ -80,18 +82,24 @@ def execute_step(
         "adapter": adapter,
         "commandDigest": digest_canonical(argv, "command"),
         "configurationDigest": capability["configurationDigest"],
-        "environmentDigest": digest_canonical(capability.get("environmentAllowlist", []), "environment"),
+        "environmentDigest": digest_canonical(
+            capability.get("environmentAllowlist", []), "environment"
+        ),
         "startedAt": started_at,
         "completedAt": utc_now(),
         "exitCode": exit_code,
         "termination": termination,
         "stdoutRef": {
-            "path": "stdout.log", "byteLength": len(stdout),
-            "rawDigest": digest_bytes(stdout), "canonicalPayloadDigest": None,
+            "path": "stdout.log",
+            "byteLength": len(stdout),
+            "rawDigest": digest_bytes(stdout),
+            "canonicalPayloadDigest": None,
         },
         "stderrRef": {
-            "path": "stderr.log", "byteLength": len(stderr),
-            "rawDigest": digest_bytes(stderr), "canonicalPayloadDigest": None,
+            "path": "stderr.log",
+            "byteLength": len(stderr),
+            "rawDigest": digest_bytes(stderr),
+            "canonicalPayloadDigest": None,
         },
         "observationRefs": observation_refs,
         "supportingArtifactRefs": [],

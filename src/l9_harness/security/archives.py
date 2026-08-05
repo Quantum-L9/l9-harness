@@ -33,8 +33,7 @@ def safe_extract_zip(
             raw_name = info.filename.rstrip("/")
             if not raw_name:
                 continue
-            name = normalize_relative(raw_name)
-            normalized = name.as_posix()
+            normalized = normalize_relative(raw_name)
             if normalized in names:
                 raise _unsafe(f"Duplicate archive path: {normalized}")
             names.add(normalized)
@@ -47,7 +46,7 @@ def safe_extract_zip(
                 raise _unsafe("Archive entry has invalid compression metadata")
             if info.compress_size and info.file_size / info.compress_size > max_ratio:
                 raise _unsafe("Archive compression ratio exceeds limit")
-            destination = confined(target, target / name)
+            destination = confined(target, target / normalized)
             mode = info.external_attr >> 16 & 0o170000
             if mode == 0o120000:
                 raise _unsafe("Symlink entries are prohibited")

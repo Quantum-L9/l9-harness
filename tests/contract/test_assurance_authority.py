@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from l9_harness.assurance.versioning import authority_complete, verify_authority_executable
 from l9_harness.domain.digests import digest_file
 

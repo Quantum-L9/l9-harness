@@ -31,7 +31,11 @@ dev = [
 [tool.pytest.ini_options]
 addopts = "-ra --strict-config --strict-markers"
 testpaths = ["tests"]
-pythonpath = ["src"]
+# "." (repo root) is required alongside "src": tests/contract/*.py imports the
+# in-tree PEP 517 build backend (`import build_backend`, backend-path = ["."]
+# above) directly, which otherwise fails collection with
+# ModuleNotFoundError: No module named 'build_backend'.
+pythonpath = ["src", "."]
 
 [tool.ruff]
 target-version = "py311"

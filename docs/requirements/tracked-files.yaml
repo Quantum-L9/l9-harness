@@ -6,7 +6,7 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 306
+file_count: 308
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
@@ -104,8 +104,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: 8d51ac39acfdf00d7f54a244b717da351a5aa1fcc0e94aa4ed6e8a2bfce0cbcb
-    bytes: 12307
+    sha256: 4f5a93c5f68742d4ccb9ba53dc4a8d30f4092c5e714df5570bad208fdb5eca52
+    bytes: 12391
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -119,8 +119,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: 490f80c16f67f5d5b736382e134078b9980cd3280e707cd9b4d9421457bb8ccb
-    bytes: 17725
+    sha256: 0c01289755f4930114bb41c0bf2733df64ff13cd863760765c77f3abeba2d7ac
+    bytes: 17840
     role: documentation
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
@@ -184,8 +184,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 13c48115dcfd48dec9b8b7c49a862b506f7e28df5a9a0f85d37b35a461151564
-    bytes: 72749
+    sha256: 4823ded85bb9ef586ecfcfc0bedafc1be0ce297df168631f391f480a7d976e78
+    bytes: 73225
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
@@ -236,6 +236,11 @@ files:
   - path: "docs/adr/ADR-010-unified-distribution-identity.md"
     sha256: 799ced1033e8dd07d575d244f451b962e3dfa48c5ce258172e8a7eff4fd08a97
     bytes: 965
+    role: documentation
+    meta_ref: L9_META.yaml
+  - path: "docs/boundaries-v0.1.md"
+    sha256: efe33ec30474bfec6f3b6b7312248b2e2f5e4b8de5729d56e833b7a5553c58eb
+    bytes: 2734
     role: documentation
     meta_ref: L9_META.yaml
   - path: "docs/examples/README.md"
@@ -1331,6 +1336,11 @@ files:
   - path: "tests/architecture/test_prohibited_symbols.py"
     sha256: 14052e84785ff78ad19a698fb2b111b948f630fa11bba837490a248c30f60baf
     bytes: 789
+    role: test
+    meta_ref: L9_META.yaml
+  - path: "tests/architecture/test_sdk_manifest_is_inactive.py"
+    sha256: 26dad4f0558f0a3cef376a33698abf16fef47e8f80e95ee1ee550557e965b8e1
+    bytes: 3072
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/architecture/test_subprocess_boundary.py"

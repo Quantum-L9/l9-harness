@@ -6,7 +6,7 @@ Identity scope: approved source graph plus separately bound mutable validation e
 
 The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.
 
-## Source-pack inventory (308 files)
+## Source-pack inventory (310 files)
 
 | Path | Responsibility |
 |---|---|
@@ -56,6 +56,7 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `docs/adr/ADR-008-cross-language.md` | `documentation` |
 | `docs/adr/ADR-009-build-authorization-and-baseline.md` | `documentation` |
 | `docs/adr/ADR-010-unified-distribution-identity.md` | `documentation` |
+| `docs/boundaries-v0.1.md` | `documentation` |
 | `docs/examples/README.md` | `documentation` |
 | `docs/migration/ASSET_DISPOSITION.md` | `documentation` |
 | `docs/protocol/ASSURANCE_BOUNDARY.md` | `documentation` |
@@ -277,6 +278,7 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `tests/architecture/test_fallback.py` | `test` |
 | `tests/architecture/test_no_mutation.py` | `test` |
 | `tests/architecture/test_prohibited_symbols.py` | `test` |
+| `tests/architecture/test_sdk_manifest_is_inactive.py` | `test` |
 | `tests/architecture/test_subprocess_boundary.py` | `test` |
 | `tests/conformance/test_canonicalization.py` | `test` |
 | `tests/conformance/test_consumer.py` | `test` |

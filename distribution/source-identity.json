@@ -634,11 +634,11 @@
       }
     },
     {
-      "byteLength": 1549,
+      "byteLength": 1548,
       "path": "pyproject.toml",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "96ead8df004ed227130280d22c81188f2b6bd3819b3cf3d8158f78dfdcc578a4"
+        "value": "a62958b544c52ad34ea50e757915e4852a9ddeffd6483411591cc93a84371e1e"
       }
     },
     {
@@ -2450,11 +2450,11 @@
       }
     },
     {
-      "byteLength": 41927,
+      "byteLength": 41574,
       "path": "uv.lock",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "dc851fac233d9c04aa056a7db1c6419c757cf24fea2c35d5e356aa520524911d"
+        "value": "85a56594baa0dbaa93b17a0d8c25d8fcadbc09307de6d3f23796c0a6b9d37192"
       }
     },
     {
@@ -2486,7 +2486,7 @@
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "442da2b89b08bc2e3de7b02287be13d5c75973a90ef2f5e88f1a7d346154ba8d"
+    "value": "5d489288e8962a6346178ef95c263bbfa4a60bb7a3f1ae667594622a89cf1cea"
   },
   "specificationDigest": {
     "algorithm": "sha256",

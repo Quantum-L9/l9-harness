@@ -2,7 +2,7 @@
 
 Deterministic source-pack inventory. Built distribution artifacts are indexed by `dist/distribution-manifest.json` and are intentionally excluded here to avoid a source-to-output identity cycle.
 
-Source-pack files: **308**
+Source-pack files: **310**
 
 - `.editorconfig`
 - `.github/dependabot.yml`
@@ -50,6 +50,7 @@ Source-pack files: **308**
 - `docs/adr/ADR-008-cross-language.md`
 - `docs/adr/ADR-009-build-authorization-and-baseline.md`
 - `docs/adr/ADR-010-unified-distribution-identity.md`
+- `docs/boundaries-v0.1.md`
 - `docs/examples/README.md`
 - `docs/migration/ASSET_DISPOSITION.md`
 - `docs/protocol/ASSURANCE_BOUNDARY.md`
@@ -271,6 +272,7 @@ Source-pack files: **308**
 - `tests/architecture/test_fallback.py`
 - `tests/architecture/test_no_mutation.py`
 - `tests/architecture/test_prohibited_symbols.py`
+- `tests/architecture/test_sdk_manifest_is_inactive.py`
 - `tests/architecture/test_subprocess_boundary.py`
 - `tests/conformance/test_canonicalization.py`
 - `tests/conformance/test_consumer.py`

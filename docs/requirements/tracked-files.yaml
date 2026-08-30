@@ -184,7 +184,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 13c48115dcfd48dec9b8b7c49a862b506f7e28df5a9a0f85d37b35a461151564
+    sha256: 84ec6adca37b3bcbd0ebdbcc1adbff94e3daa33c4d29149e26889bc278c783b7
     bytes: 72749
     role: distribution_identity
     meta_ref: L9_META.yaml
@@ -399,8 +399,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "pyproject.toml"
-    sha256: 96ead8df004ed227130280d22c81188f2b6bd3819b3cf3d8158f78dfdcc578a4
-    bytes: 1549
+    sha256: a62958b544c52ad34ea50e757915e4852a9ddeffd6483411591cc93a84371e1e
+    bytes: 1548
     role: configuration
     meta_ref: L9_META.yaml
   - path: "schemas/v1/assurance-input-manifest.schema.json"
@@ -1529,8 +1529,8 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "uv.lock"
-    sha256: dc851fac233d9c04aa056a7db1c6419c757cf24fea2c35d5e356aa520524911d
-    bytes: 41927
+    sha256: 85a56594baa0dbaa93b17a0d8c25d8fcadbc09307de6d3f23796c0a6b9d37192
+    bytes: 41574
     role: configuration
     meta_ref: L9_META.yaml
   - path: "validation_report.yaml"

@@ -22,9 +22,9 @@ l9-harness = "l9_harness.cli.app:main"
 # uv.lock so Dependabot tracks and bumps them like any other dependency.
 [dependency-groups]
 dev = [
-  "ruff==0.12.12",
+  "ruff==0.16.4",
   "mypy==1.17.1",
-  "pytest==9.0.2",
+  "pytest==9.1.1",
   "jsonschema==4.26.0",
 ]
 

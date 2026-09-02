@@ -162,11 +162,11 @@
       }
     },
     {
-      "byteLength": 12307,
+      "byteLength": 12391,
       "path": "FILETREE.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "8d51ac39acfdf00d7f54a244b717da351a5aa1fcc0e94aa4ed6e8a2bfce0cbcb"
+        "value": "4f5a93c5f68742d4ccb9ba53dc4a8d30f4092c5e714df5570bad208fdb5eca52"
       }
     },
     {
@@ -186,11 +186,11 @@
       }
     },
     {
-      "byteLength": 17725,
+      "byteLength": 17840,
       "path": "MANIFEST.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "490f80c16f67f5d5b736382e134078b9980cd3280e707cd9b4d9421457bb8ccb"
+        "value": "0c01289755f4930114bb41c0bf2733df64ff13cd863760765c77f3abeba2d7ac"
       }
     },
     {
@@ -367,6 +367,14 @@
       "rawDigest": {
         "algorithm": "sha256",
         "value": "799ced1033e8dd07d575d244f451b962e3dfa48c5ce258172e8a7eff4fd08a97"
+      }
+    },
+    {
+      "byteLength": 2734,
+      "path": "docs/boundaries-v0.1.md",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "efe33ec30474bfec6f3b6b7312248b2e2f5e4b8de5729d56e833b7a5553c58eb"
       }
     },
     {
@@ -2122,6 +2130,14 @@
       }
     },
     {
+      "byteLength": 3072,
+      "path": "tests/architecture/test_sdk_manifest_is_inactive.py",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "26dad4f0558f0a3cef376a33698abf16fef47e8f80e95ee1ee550557e965b8e1"
+      }
+    },
+    {
       "byteLength": 954,
       "path": "tests/architecture/test_subprocess_boundary.py",
       "rawDigest": {
@@ -2466,11 +2482,11 @@
   },
   "schemaVersion": "2.0.0",
   "sourceCommit": "UNKNOWN_REPOSITORY_UNAVAILABLE",
-  "sourceFileCount": 305,
+  "sourceFileCount": 307,
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "764bede67dc9a9ebcdd3bf300b2377127812ef54730cbbc354d2973029b3d1b4"
+    "value": "5d489288e8962a6346178ef95c263bbfa4a60bb7a3f1ae667594622a89cf1cea"
   },
   "specificationDigest": {
     "algorithm": "sha256",

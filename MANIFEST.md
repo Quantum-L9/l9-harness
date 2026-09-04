@@ -1,8 +1,8 @@
 # Manifest
 
-Package: `l9-harness`  
-Version: `2.0.4`  
-Identity scope: approved source graph plus separately bound mutable validation evidence.
+- Package: `l9-harness`
+- Version: `2.0.4`
+- Identity scope: approved source graph plus separately bound mutable validation evidence.
 
 The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.
 

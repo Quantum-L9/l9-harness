@@ -194,11 +194,11 @@
       }
     },
     {
-      "byteLength": 18003,
+      "byteLength": 18005,
       "path": "MANIFEST.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "d5cdc3cd56ae5259ee01d2d712453365b855f94e7623882b1608757a4b95bf09"
+        "value": "c51dd56705595c4abc348398fec56cd209ca11dde01fbf1805fcd90adf872450"
       }
     },
     {
@@ -882,11 +882,11 @@
       }
     },
     {
-      "byteLength": 3253,
+      "byteLength": 3721,
       "path": "scripts/update_manifest.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "c105f35ad57eee37ac4b5233c5bc6b235e2e7431c4bc802c18662f3f256b2e0d"
+        "value": "fbe7ac1d108abeec2431908917ce800bb52c95606bdbbe6c2665d1fcc2084c64"
       }
     },
     {
@@ -2510,7 +2510,7 @@
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "8c1f08f1fde779b3ad9e1c5d7b3ba96f54cabeae8ff650fe9b8ae6b7409a030d"
+    "value": "7a4382e8ce876b2ab358dacc5c8bd0ab38a5bcf9e4fb45c86acbd5d4bb5f991f"
   },
   "specificationDigest": {
     "algorithm": "sha256",

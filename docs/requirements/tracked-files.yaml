@@ -124,8 +124,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: d5cdc3cd56ae5259ee01d2d712453365b855f94e7623882b1608757a4b95bf09
-    bytes: 18003
+    sha256: c51dd56705595c4abc348398fec56cd209ca11dde01fbf1805fcd90adf872450
+    bytes: 18005
     role: documentation
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
@@ -189,7 +189,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 758628329ae716865f958c36d6cbd5f0b59a5586b187b4ebe8204ce4a227780e
+    sha256: 86a6f61ee62b476b9045543ccbbb4a81dbb6b7c5ad24fe3c29f164d2adeef0df
     bytes: 73941
     role: distribution_identity
     meta_ref: L9_META.yaml
@@ -559,8 +559,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_manifest.py"
-    sha256: c105f35ad57eee37ac4b5233c5bc6b235e2e7431c4bc802c18662f3f256b2e0d
-    bytes: 3253
+    sha256: fbe7ac1d108abeec2431908917ce800bb52c95606bdbbe6c2665d1fcc2084c64
+    bytes: 3721
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_schema_registry.py"

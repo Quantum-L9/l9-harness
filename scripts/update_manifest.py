@@ -55,9 +55,15 @@ def render(values: list[tuple[str, str]]) -> str:
     lines = [
         "# Manifest",
         "",
-        f"Package: `{PROJECT['name']}`  ",
-        f"Version: `{version}`  ",
-        "Identity scope: approved source graph plus separately bound mutable validation evidence.",
+        # Markdown list items rather than trailing-double-space hard breaks.
+        # Trailing whitespace is stripped by ordinary formatters and pre-commit
+        # catalogs, which put this generator in direct conflict with them: the
+        # stripped file then fails verify_generated.py, and regenerating it
+        # re-adds whitespace the hook removes again. A list keeps the three
+        # fields on separate lines without depending on invisible characters.
+        f"- Package: `{PROJECT['name']}`",
+        f"- Version: `{version}`",
+        "- Identity scope: approved source graph plus separately bound mutable validation evidence.",
         "",
         "The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.",
         "",

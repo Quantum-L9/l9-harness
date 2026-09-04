@@ -1,12 +1,12 @@
 # Manifest
 
-Package: `l9-harness`  
-Version: `2.0.4`  
-Identity scope: approved source graph plus separately bound mutable validation evidence.
+- Package: `l9-harness`
+- Version: `2.0.4`
+- Identity scope: approved source graph plus separately bound mutable validation evidence.
 
 The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.
 
-## Source-pack inventory (311 files)
+## Source-pack inventory (313 files)
 
 | Path | Responsibility |
 |---|---|
@@ -143,6 +143,7 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `src/l9_harness/assurance/__init__.py` | `runtime` |
 | `src/l9_harness/assurance/admission.py` | `runtime` |
 | `src/l9_harness/assurance/cli_adapter.py` | `runtime` |
+| `src/l9_harness/assurance/commands.py` | `runtime` |
 | `src/l9_harness/assurance/evaluation.py` | `runtime` |
 | `src/l9_harness/assurance/plan.py` | `runtime` |
 | `src/l9_harness/assurance/result_capture.py` | `runtime` |
@@ -285,6 +286,7 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `tests/conformance/test_consumer.py` | `test` |
 | `tests/conformance/test_producer.py` | `test` |
 | `tests/contract/test_assurance_authority.py` | `test` |
+| `tests/contract/test_assurance_command_paths.py` | `test` |
 | `tests/contract/test_cli_json.py` | `test` |
 | `tests/contract/test_cli_json_anywhere.py` | `test` |
 | `tests/contract/test_cli_version.py` | `test` |

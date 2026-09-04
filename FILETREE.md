@@ -2,7 +2,7 @@
 
 Deterministic source-pack inventory. Built distribution artifacts are indexed by `dist/distribution-manifest.json` and are intentionally excluded here to avoid a source-to-output identity cycle.
 
-Source-pack files: **311**
+Source-pack files: **313**
 
 - `.editorconfig`
 - `.github/dependabot.yml`
@@ -137,6 +137,7 @@ Source-pack files: **311**
 - `src/l9_harness/assurance/__init__.py`
 - `src/l9_harness/assurance/admission.py`
 - `src/l9_harness/assurance/cli_adapter.py`
+- `src/l9_harness/assurance/commands.py`
 - `src/l9_harness/assurance/evaluation.py`
 - `src/l9_harness/assurance/plan.py`
 - `src/l9_harness/assurance/result_capture.py`
@@ -279,6 +280,7 @@ Source-pack files: **311**
 - `tests/conformance/test_consumer.py`
 - `tests/conformance/test_producer.py`
 - `tests/contract/test_assurance_authority.py`
+- `tests/contract/test_assurance_command_paths.py`
 - `tests/contract/test_cli_json.py`
 - `tests/contract/test_cli_json_anywhere.py`
 - `tests/contract/test_cli_version.py`

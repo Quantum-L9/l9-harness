@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 
 from .cli_adapter import invoke
+from .commands import command_path
 
 
 def admit(
@@ -13,8 +14,7 @@ def admit(
     return invoke(
         executable,
         [
-            "evidence",
-            "admit",
+            *command_path("admit"),
             "--subject",
             str(subject),
             "--input",

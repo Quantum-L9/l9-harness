@@ -27,7 +27,7 @@
     {
       "check_id": "V-STATIC-003",
       "detail": "import errors: []",
-      "evidence": "modules=139",
+      "evidence": "modules=140",
       "status": "PASS"
     },
     {
@@ -128,21 +128,21 @@
     },
     {
       "check_id": "V-META-001",
-      "detail": "L9 metadata coverage: files=309, meta_refs=309",
+      "detail": "L9 metadata coverage: files=311, meta_refs=311",
       "evidence": "",
       "status": "PASS"
     },
     {
       "check_id": "V-META-002",
-      "detail": "tracked-file integrity: exact",
+      "detail": "tracked-file integrity: ['tracked index mismatch: expected=326 actual=311']",
       "evidence": "",
-      "status": "PASS"
+      "status": "FAIL"
     },
     {
       "check_id": "V-RELEASE-003",
-      "detail": "source identity errors: []",
+      "detail": "source identity errors: ['RuntimeError: Symlink prohibited in source identity: /home/user/l9-harness/.claude/commands/clean.md']",
       "evidence": "",
-      "status": "PASS"
+      "status": "FAIL"
     },
     {
       "check_id": "V-ASSURANCE-001",

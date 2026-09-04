@@ -2,13 +2,14 @@
 
 Deterministic source-pack inventory. Built distribution artifacts are indexed by `dist/distribution-manifest.json` and are intentionally excluded here to avoid a source-to-output identity cycle.
 
-Source-pack files: **310**
+Source-pack files: **311**
 
 - `.editorconfig`
 - `.github/dependabot.yml`
 - `.github/workflows/ci.yml`
 - `.github/workflows/conformance.yml`
 - `.github/workflows/dependency-review.yml`
+- `.github/workflows/l9-nightly.yml`
 - `.github/workflows/release.yml`
 - `.gitignore`
 - `.pre-commit-config.yaml`

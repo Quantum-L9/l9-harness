@@ -34,8 +34,8 @@ files:
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/l9-nightly.yml"
-    sha256: ef7d1edf2b28c258005e76a628fec638c28aad25bd80d1f007e754e1fdb55994
-    bytes: 599
+    sha256: 16bf165e4307504f95324d2ba0b4f2055a6af4fe9495f39b8573d4251f603e3c
+    bytes: 603
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/release.yml"
@@ -189,7 +189,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 74b75ffeb1a4ea508e0744bb15bbe9eeb3580de5d162f29abf585d36fb95fe9b
+    sha256: a55557ed3e1cd8cc2a09ef74b2d5d3404a7455cf0600ce7793099ec6e8c57e76
     bytes: 73457
     role: distribution_identity
     meta_ref: L9_META.yaml

@@ -6,7 +6,7 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 308
+file_count: 309
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
@@ -31,6 +31,11 @@ files:
   - path: ".github/workflows/dependency-review.yml"
     sha256: 8224c048b18f8c87409b334842c7698c59519b8157c4437ae580b5460a829bf3
     bytes: 211
+    role: ci
+    meta_ref: L9_META.yaml
+  - path: ".github/workflows/l9-nightly.yml"
+    sha256: ef7d1edf2b28c258005e76a628fec638c28aad25bd80d1f007e754e1fdb55994
+    bytes: 599
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/release.yml"
@@ -104,8 +109,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: 4f5a93c5f68742d4ccb9ba53dc4a8d30f4092c5e714df5570bad208fdb5eca52
-    bytes: 12391
+    sha256: a76e66c026f08f6ce75fb89e5f73f142e0fbc0a7904d00a69afe847c3c76a87d
+    bytes: 12428
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -119,8 +124,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: 0c01289755f4930114bb41c0bf2733df64ff13cd863760765c77f3abeba2d7ac
-    bytes: 17840
+    sha256: 5326089cfbf7a5209c0df735a51d36396fb551a18e971e64b8e78f81ff0836eb
+    bytes: 17886
     role: documentation
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
@@ -184,8 +189,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: f1f848f276d3b9d40f0ee1073c7166a7bd1235bb540148deef22ac1aeb8ea686
-    bytes: 73225
+    sha256: 74b75ffeb1a4ea508e0744bb15bbe9eeb3580de5d162f29abf585d36fb95fe9b
+    bytes: 73457
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
@@ -404,7 +409,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "pyproject.toml"
-    sha256: a62958b544c52ad34ea50e757915e4852a9ddeffd6483411591cc93a84371e1e
+    sha256: 3bc1c314a7fa25870b4dc49c0dccbd2a4dd78976aa28047b2c0ca0574c71f314
     bytes: 1548
     role: configuration
     meta_ref: L9_META.yaml
@@ -1539,8 +1544,8 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "uv.lock"
-    sha256: 85a56594baa0dbaa93b17a0d8c25d8fcadbc09307de6d3f23796c0a6b9d37192
-    bytes: 41574
+    sha256: 4edf8c6fd33ae5bad527e147b8dbd646829f8b999087368f5aefc1e986e26d59
+    bytes: 41569
     role: configuration
     meta_ref: L9_META.yaml
   - path: "validation_report.yaml"

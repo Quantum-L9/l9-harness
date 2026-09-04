@@ -50,6 +50,14 @@
       }
     },
     {
+      "byteLength": 599,
+      "path": ".github/workflows/l9-nightly.yml",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "ef7d1edf2b28c258005e76a628fec638c28aad25bd80d1f007e754e1fdb55994"
+      }
+    },
+    {
       "byteLength": 437,
       "path": ".github/workflows/release.yml",
       "rawDigest": {
@@ -162,11 +170,11 @@
       }
     },
     {
-      "byteLength": 12391,
+      "byteLength": 12428,
       "path": "FILETREE.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "4f5a93c5f68742d4ccb9ba53dc4a8d30f4092c5e714df5570bad208fdb5eca52"
+        "value": "a76e66c026f08f6ce75fb89e5f73f142e0fbc0a7904d00a69afe847c3c76a87d"
       }
     },
     {
@@ -186,11 +194,11 @@
       }
     },
     {
-      "byteLength": 17840,
+      "byteLength": 17886,
       "path": "MANIFEST.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "0c01289755f4930114bb41c0bf2733df64ff13cd863760765c77f3abeba2d7ac"
+        "value": "5326089cfbf7a5209c0df735a51d36396fb551a18e971e64b8e78f81ff0836eb"
       }
     },
     {
@@ -638,7 +646,7 @@
       "path": "pyproject.toml",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "a62958b544c52ad34ea50e757915e4852a9ddeffd6483411591cc93a84371e1e"
+        "value": "3bc1c314a7fa25870b4dc49c0dccbd2a4dd78976aa28047b2c0ca0574c71f314"
       }
     },
     {
@@ -2450,11 +2458,11 @@
       }
     },
     {
-      "byteLength": 41574,
+      "byteLength": 41569,
       "path": "uv.lock",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "85a56594baa0dbaa93b17a0d8c25d8fcadbc09307de6d3f23796c0a6b9d37192"
+        "value": "4edf8c6fd33ae5bad527e147b8dbd646829f8b999087368f5aefc1e986e26d59"
       }
     },
     {
@@ -2482,11 +2490,11 @@
   },
   "schemaVersion": "2.0.0",
   "sourceCommit": "UNKNOWN_REPOSITORY_UNAVAILABLE",
-  "sourceFileCount": 307,
+  "sourceFileCount": 308,
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "5d489288e8962a6346178ef95c263bbfa4a60bb7a3f1ae667594622a89cf1cea"
+    "value": "48778fca17dfc8997183eaa2f0d8680a846fb09af603f401ba2d66fb856fc3f7"
   },
   "specificationDigest": {
     "algorithm": "sha256",

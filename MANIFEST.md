@@ -6,7 +6,7 @@ Identity scope: approved source graph plus separately bound mutable validation e
 
 The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.
 
-## Source-pack inventory (310 files)
+## Source-pack inventory (311 files)
 
 | Path | Responsibility |
 |---|---|
@@ -15,6 +15,7 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `.github/workflows/ci.yml` | `ci` |
 | `.github/workflows/conformance.yml` | `ci` |
 | `.github/workflows/dependency-review.yml` | `ci` |
+| `.github/workflows/l9-nightly.yml` | `ci` |
 | `.github/workflows/release.yml` | `ci` |
 | `.gitignore` | `configuration` |
 | `.pre-commit-config.yaml` | `configuration` |

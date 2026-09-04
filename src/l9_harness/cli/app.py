@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from ..application.ingress import IngressRequest, normalize_cli_request
+from ..assurance import commands as assurance_commands
 from ..domain.errors import HarnessError
 from ..domain.models import VERSION, CommandResult
 from .commands import assurance as c_assurance
@@ -84,7 +85,7 @@ def parser() -> argparse.ArgumentParser:
     command = sub.add_parser("assurance")
     command.add_argument(
         "operation",
-        choices=["plan", "admit", "evaluate", "verify", "simulate"],
+        choices=list(assurance_commands.OPERATIONS),
     )
     command.add_argument("--executable", default="l9-assurance")
     command.add_argument("--cwd", default=".")
@@ -168,7 +169,13 @@ def _dispatch(request: IngressRequest) -> dict[str, Any]:
     if command_name == "assurance":
         return c_assurance.command(
             str(inputs["executable"]),
-            [str(inputs["operation"]), *[str(value) for value in inputs["args"]]],
+            [
+                # Resolve the harness operation name to the assurance command
+                # path. `admit` is `evidence admit` there; forwarding the bare
+                # name made the CLI's admission route permanently unreachable.
+                *assurance_commands.command_path(str(inputs["operation"])),
+                *[str(value) for value in inputs["args"]],
+            ],
             Path(str(inputs["cwd"])),
             Path(str(inputs["invocations"])),
             Path(str(inputs["authority"])) if inputs["authority"] else None,

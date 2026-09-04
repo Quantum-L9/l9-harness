@@ -27,7 +27,7 @@
     {
       "check_id": "V-STATIC-003",
       "detail": "import errors: []",
-      "evidence": "modules=139",
+      "evidence": "modules=140",
       "status": "PASS"
     },
     {
@@ -128,7 +128,7 @@
     },
     {
       "check_id": "V-META-001",
-      "detail": "L9 metadata coverage: files=309, meta_refs=309",
+      "detail": "L9 metadata coverage: files=311, meta_refs=311",
       "evidence": "",
       "status": "PASS"
     },

@@ -858,19 +858,19 @@
       }
     },
     {
-      "byteLength": 5425,
+      "byteLength": 6316,
       "path": "scripts/release_identity.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "6758b6d677261459e257ab6bd6f996e21708e3ecb2f10189ac16f31a7043f2cf"
+        "value": "7bdcf3f2e756bd261b52ddff71bbe407674f78725acd91067d5621227de37b6f"
       }
     },
     {
-      "byteLength": 1273,
+      "byteLength": 1963,
       "path": "scripts/update_filetree.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "dbd9bd17fe677f464d569769b56f1945a25e784b3fb1f70751a5ab700400e40f"
+        "value": "13943dee534639b4644df43d4151dd6211b53c93f3649030ecc2b8210d18a12c"
       }
     },
     {
@@ -882,11 +882,11 @@
       }
     },
     {
-      "byteLength": 3721,
+      "byteLength": 4411,
       "path": "scripts/update_manifest.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "fbe7ac1d108abeec2431908917ce800bb52c95606bdbbe6c2665d1fcc2084c64"
+        "value": "5ed2d35364105027b919f5d0452fb489d2a7fdf681a5b3f5a78ca05826865a6d"
       }
     },
     {
@@ -898,19 +898,19 @@
       }
     },
     {
-      "byteLength": 3137,
+      "byteLength": 3827,
       "path": "scripts/update_tracked_files.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "faebacc619deeabd7ff6deca113219384322fce7ccb7fa1eb1c11075a49e27b7"
+        "value": "e2379128355ab3bb7312024501d5704c01be0b7a62a7c64d5ee54a4806947e8e"
       }
     },
     {
-      "byteLength": 21920,
+      "byteLength": 23354,
       "path": "scripts/validate_repository.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "6a1c4d048b7127dfcaf4e80ff7904df72e233c3a1a92637d8bde919d95e6ea6c"
+        "value": "a7eb9df9a709e735abefd4a5c4253501d2244c498630d39af9ba5fd967b415d6"
       }
     },
     {
@@ -2510,7 +2510,7 @@
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "7a4382e8ce876b2ab358dacc5c8bd0ab38a5bcf9e4fb45c86acbd5d4bb5f991f"
+    "value": "65a888861213d192460819690a44b575e5743ceda1531ba6b026d5506adf0978"
   },
   "specificationDigest": {
     "algorithm": "sha256",

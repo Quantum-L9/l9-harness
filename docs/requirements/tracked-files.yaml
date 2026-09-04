@@ -189,7 +189,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 86a6f61ee62b476b9045543ccbbb4a81dbb6b7c5ad24fe3c29f164d2adeef0df
+    sha256: 5eceb585cce18ba39dfacf9a088bb8ebb4a3d21abf9979e01a04fcd80301397a
     bytes: 73941
     role: distribution_identity
     meta_ref: L9_META.yaml
@@ -544,13 +544,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/release_identity.py"
-    sha256: 6758b6d677261459e257ab6bd6f996e21708e3ecb2f10189ac16f31a7043f2cf
-    bytes: 5425
+    sha256: 7bdcf3f2e756bd261b52ddff71bbe407674f78725acd91067d5621227de37b6f
+    bytes: 6316
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_filetree.py"
-    sha256: dbd9bd17fe677f464d569769b56f1945a25e784b3fb1f70751a5ab700400e40f
-    bytes: 1273
+    sha256: 13943dee534639b4644df43d4151dd6211b53c93f3649030ecc2b8210d18a12c
+    bytes: 1963
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_fixtures.py"
@@ -559,8 +559,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_manifest.py"
-    sha256: fbe7ac1d108abeec2431908917ce800bb52c95606bdbbe6c2665d1fcc2084c64
-    bytes: 3721
+    sha256: 5ed2d35364105027b919f5d0452fb489d2a7fdf681a5b3f5a78ca05826865a6d
+    bytes: 4411
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_schema_registry.py"
@@ -569,13 +569,13 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/update_tracked_files.py"
-    sha256: faebacc619deeabd7ff6deca113219384322fce7ccb7fa1eb1c11075a49e27b7
-    bytes: 3137
+    sha256: e2379128355ab3bb7312024501d5704c01be0b7a62a7c64d5ee54a4806947e8e
+    bytes: 3827
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/validate_repository.py"
-    sha256: 6a1c4d048b7127dfcaf4e80ff7904df72e233c3a1a92637d8bde919d95e6ea6c
-    bytes: 21920
+    sha256: a7eb9df9a709e735abefd4a5c4253501d2244c498630d39af9ba5fd967b415d6
+    bytes: 23354
     role: implementation
     meta_ref: L9_META.yaml
   - path: "scripts/verify_distribution.py"

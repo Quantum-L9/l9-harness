@@ -134,15 +134,15 @@
     },
     {
       "check_id": "V-META-002",
-      "detail": "tracked-file integrity: ['tracked index mismatch: expected=326 actual=311']",
+      "detail": "tracked-file integrity: exact",
       "evidence": "",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "check_id": "V-RELEASE-003",
-      "detail": "source identity errors: ['RuntimeError: Symlink prohibited in source identity: /home/user/l9-harness/.claude/commands/clean.md']",
+      "detail": "source identity errors: []",
       "evidence": "",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "check_id": "V-ASSURANCE-001",

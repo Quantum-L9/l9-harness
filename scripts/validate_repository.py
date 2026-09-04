@@ -446,8 +446,35 @@ def main() -> int:
         expected_tracked = tracked_records(ROOT)
         actual_tracked = load_tracked_index(ROOT / "docs" / "requirements" / "tracked-files.yaml")
         if actual_tracked != expected_tracked:
+            # The comparison is over whole records, so counts can agree while
+            # content differs -- reporting only lengths produced the useless
+            # "expected=311 actual=311". Name what actually diverged: paths that
+            # appeared or vanished, else the records whose content drifted.
+            expected_paths = {record["path"] for record in expected_tracked}
+            actual_paths = {record["path"] for record in actual_tracked}
+            added = sorted(expected_paths - actual_paths)
+            removed = sorted(actual_paths - expected_paths)
+            expected_by_path = {record["path"]: record for record in expected_tracked}
+            actual_by_path = {record["path"]: record for record in actual_tracked}
+            changed = sorted(
+                path
+                for path in expected_paths & actual_paths
+                if expected_by_path[path] != actual_by_path[path]
+            )
+            detail = "; ".join(
+                part
+                for part in (
+                    f"missing from index: {added}" if added else "",
+                    f"stale in index: {removed}" if removed else "",
+                    f"content drifted: {changed}" if changed else "",
+                )
+                if part
+            )
             tracked_index_errors.append(
-                f"tracked index mismatch: expected={len(expected_tracked)} actual={len(actual_tracked)}"
+                "tracked index mismatch "
+                f"(expected={len(expected_tracked)} actual={len(actual_tracked)}): "
+                f"{detail or 'record ordering differs'}. "
+                "Regenerate with scripts/update_tracked_files.py."
             )
     except Exception as error:
         tracked_index_errors.append(f"{type(error).__name__}: {error}")

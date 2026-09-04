@@ -11,9 +11,27 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
+# Kept identical across release_identity.py, update_filetree.py,
+# update_manifest.py, and update_tracked_files.py: the four scanners must agree
+# on the source graph or the manifest and the identity record drift apart.
+#
+# Entries are matched against every path COMPONENT, so a bare filename here
+# excludes that file as well as a directory of that name.
+#
+# ".claude", ".cursor", ".l9" and ".mcp.json" are tool-plane artifacts the
+# governance/agent tooling writes into a working copy. None is tracked and
+# none appears in the approved source graph. ".claude" is a directory of
+# symlinks, so without it the symlink guard in source_files() aborted the
+# whole scan on a developer checkout while CI (which has no such directory)
+# stayed green -- the same asymmetry the ".venv" comment below records for
+# symlinked venv binaries.
 EXCLUDED_DIRS = {
     ".git",
     ".venv",
+    ".claude",
+    ".cursor",
+    ".l9",
+    ".mcp.json",
     "dist",
     "build",
     "__pycache__",

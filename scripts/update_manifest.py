@@ -6,9 +6,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "MANIFEST.md"
 PROJECT = tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))["project"]
+# Kept identical across release_identity.py, update_filetree.py,
+# update_manifest.py, and update_tracked_files.py: the four scanners must agree
+# on the source graph or the manifest and the identity record drift apart.
+# Entries are matched against every path COMPONENT, so a bare filename here
+# excludes that file as well as a directory of that name.
+#
+# ".claude", ".cursor", ".l9" and ".mcp.json" are tool-plane artifacts the
+# governance/agent tooling writes into a working copy. None is tracked, none
+# appears in the approved source graph, and ".claude" is a directory of
+# symlinks that made source_files() abort outright.
 EXCLUDED_DIRS = {
     ".git",
     ".venv",
+    ".claude",
+    ".cursor",
+    ".l9",
+    ".mcp.json",
     "dist",
     "build",
     "__pycache__",

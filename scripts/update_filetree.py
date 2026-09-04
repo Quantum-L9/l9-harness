@@ -4,9 +4,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "FILETREE.md"
+# Kept identical across release_identity.py, update_filetree.py,
+# update_manifest.py, and update_tracked_files.py: the four scanners must agree
+# on the source graph or the manifest and the identity record drift apart.
+# ".claude"/".cursor" are projected agent-tooling directories -- untracked,
+# symlinked, and absent from the approved source graph.
 EXCLUDED_DIRS = {
     ".git",
     ".venv",
+    ".claude",
+    ".cursor",
     "dist",
     "build",
     "__pycache__",

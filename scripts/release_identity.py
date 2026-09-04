@@ -11,9 +11,21 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
+# Kept identical across release_identity.py, update_filetree.py,
+# update_manifest.py, and update_tracked_files.py: the four scanners must agree
+# on the source graph or the manifest and the identity record drift apart.
+#
+# ".claude"/".cursor" are agent-tooling directories the governance plane
+# projects into a working copy; they are untracked, contain symlinks, and are
+# absent from the approved source graph. Without them here the symlink guard in
+# source_files() aborts the whole scan on a developer checkout while CI (which
+# has no such directory) stays green -- the same asymmetry the ".venv" comment
+# below records for symlinked venv binaries.
 EXCLUDED_DIRS = {
     ".git",
     ".venv",
+    ".claude",
+    ".cursor",
     "dist",
     "build",
     "__pycache__",

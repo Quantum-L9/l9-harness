@@ -50,11 +50,11 @@
       }
     },
     {
-      "byteLength": 599,
+      "byteLength": 603,
       "path": ".github/workflows/l9-nightly.yml",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "ef7d1edf2b28c258005e76a628fec638c28aad25bd80d1f007e754e1fdb55994"
+        "value": "16bf165e4307504f95324d2ba0b4f2055a6af4fe9495f39b8573d4251f603e3c"
       }
     },
     {
@@ -2494,7 +2494,7 @@
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "48778fca17dfc8997183eaa2f0d8680a846fb09af603f401ba2d66fb856fc3f7"
+    "value": "c05e60dfd8a934ccf81904dfadcb7bd098711eb27d0695a305c97eaad53cddf4"
   },
   "specificationDigest": {
     "algorithm": "sha256",

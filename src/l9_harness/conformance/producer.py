@@ -12,7 +12,10 @@ def run_producer_fixtures(root: Path, subject: dict[str, Any] | None = None) -> 
     for p in sorted(root.rglob("*.json")):
         try:
             raw = json.loads(p.read_text())
-        except Exception:
+        except ValueError:
+            # Not JSON we can read (JSONDecodeError/UnicodeDecodeError): skip
+            # it via the schema check below. An OSError now propagates instead
+            # of being silently reported as a non-observation file.
             raw = {}
         if raw.get("schema") != "l9.observation":
             continue

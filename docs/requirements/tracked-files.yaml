@@ -6,7 +6,7 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 311
+file_count: 312
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
@@ -109,8 +109,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: 938550f4563514b4eb0a0110f8f6913d12fad37cb0fd013e03de2c184dc97da3
-    bytes: 12520
+    sha256: 36eb5c4fe61d5fb4acfc9b4545171183a1c183e2cf7c48dd2e14338d156d9d63
+    bytes: 12572
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -124,8 +124,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: c51dd56705595c4abc348398fec56cd209ca11dde01fbf1805fcd90adf872450
-    bytes: 18005
+    sha256: 7bc9be3e475f1b5056a4e7aa87bb101dc3274b19dc75c665f6e1fb8171897f7a
+    bytes: 18068
     role: documentation
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
@@ -189,8 +189,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 5eceb585cce18ba39dfacf9a088bb8ebb4a3d21abf9979e01a04fcd80301397a
-    bytes: 73941
+    sha256: ad0a1c1822768e5f24b816f1500fbe070d1ad966ba446478638b10bc4be2724f
+    bytes: 74189
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
@@ -664,8 +664,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/commands.py"
-    sha256: 50ce84b70486be9d1dc5f285eed7fef692ab90c144a382cd9c2e8f8bd8ff880f
-    bytes: 1709
+    sha256: d17c6eed2a9df7079e90a7eed34cafc4cd2eed02fa212ee6d31b8b2eea2f0f22
+    bytes: 2955
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/evaluation.py"
@@ -754,8 +754,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/assurance.py"
-    sha256: 16fb8fd49a9d6341d92f8d11e11f24563225c5d69e7c451321c129c8ca268c47
-    bytes: 1551
+    sha256: d958afa749289aa77c9af4c92f1fedeb18847c2b07a6e4050bd6bad349269d44
+    bytes: 3634
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/cli/commands/bundle.py"
@@ -1371,6 +1371,11 @@ files:
   - path: "tests/conformance/test_producer.py"
     sha256: 8ec5349e7a355fc81d39bcfc5f304c92e0aea00b332416114bd91ee76c56a4f8
     bytes: 240
+    role: test
+    meta_ref: L9_META.yaml
+  - path: "tests/contract/test_assurance_argument_order.py"
+    sha256: b2555dc90f4b4e08bb200b91ae9a777febc22b6ab5fbd10b0f9e929dcb86aa68
+    bytes: 7055
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_assurance_authority.py"

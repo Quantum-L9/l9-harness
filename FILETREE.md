@@ -2,7 +2,7 @@
 
 Deterministic source-pack inventory. Built distribution artifacts are indexed by `dist/distribution-manifest.json` and are intentionally excluded here to avoid a source-to-output identity cycle.
 
-Source-pack files: **313**
+Source-pack files: **314**
 
 - `.editorconfig`
 - `.github/dependabot.yml`
@@ -279,6 +279,7 @@ Source-pack files: **313**
 - `tests/conformance/test_canonicalization.py`
 - `tests/conformance/test_consumer.py`
 - `tests/conformance/test_producer.py`
+- `tests/contract/test_assurance_argument_order.py`
 - `tests/contract/test_assurance_authority.py`
 - `tests/contract/test_assurance_command_paths.py`
 - `tests/contract/test_cli_json.py`

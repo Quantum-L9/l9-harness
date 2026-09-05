@@ -170,11 +170,11 @@
       }
     },
     {
-      "byteLength": 12520,
+      "byteLength": 12572,
       "path": "FILETREE.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "938550f4563514b4eb0a0110f8f6913d12fad37cb0fd013e03de2c184dc97da3"
+        "value": "36eb5c4fe61d5fb4acfc9b4545171183a1c183e2cf7c48dd2e14338d156d9d63"
       }
     },
     {
@@ -194,11 +194,11 @@
       }
     },
     {
-      "byteLength": 18005,
+      "byteLength": 18068,
       "path": "MANIFEST.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "c51dd56705595c4abc348398fec56cd209ca11dde01fbf1805fcd90adf872450"
+        "value": "7bc9be3e475f1b5056a4e7aa87bb101dc3274b19dc75c665f6e1fb8171897f7a"
       }
     },
     {
@@ -1050,11 +1050,11 @@
       }
     },
     {
-      "byteLength": 1709,
+      "byteLength": 2955,
       "path": "src/l9_harness/assurance/commands.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "50ce84b70486be9d1dc5f285eed7fef692ab90c144a382cd9c2e8f8bd8ff880f"
+        "value": "d17c6eed2a9df7079e90a7eed34cafc4cd2eed02fa212ee6d31b8b2eea2f0f22"
       }
     },
     {
@@ -1194,11 +1194,11 @@
       }
     },
     {
-      "byteLength": 1551,
+      "byteLength": 3634,
       "path": "src/l9_harness/cli/commands/assurance.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "16fb8fd49a9d6341d92f8d11e11f24563225c5d69e7c451321c129c8ca268c47"
+        "value": "d958afa749289aa77c9af4c92f1fedeb18847c2b07a6e4050bd6bad349269d44"
       }
     },
     {
@@ -2186,6 +2186,14 @@
       }
     },
     {
+      "byteLength": 7055,
+      "path": "tests/contract/test_assurance_argument_order.py",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "b2555dc90f4b4e08bb200b91ae9a777febc22b6ab5fbd10b0f9e929dcb86aa68"
+      }
+    },
+    {
       "byteLength": 1227,
       "path": "tests/contract/test_assurance_authority.py",
       "rawDigest": {
@@ -2506,11 +2514,11 @@
   },
   "schemaVersion": "2.0.0",
   "sourceCommit": "UNKNOWN_REPOSITORY_UNAVAILABLE",
-  "sourceFileCount": 310,
+  "sourceFileCount": 311,
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "65a888861213d192460819690a44b575e5743ceda1531ba6b026d5506adf0978"
+    "value": "d9d00da3f28d5348ed35701215930e3e2dd32da669a58aa732b45b63253c5e4f"
   },
   "specificationDigest": {
     "algorithm": "sha256",

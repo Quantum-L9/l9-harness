@@ -20,13 +20,15 @@ resolved to a concrete path before invocation so the record binds it.
 
 from __future__ import annotations
 
+import argparse
 import os
 import stat
 from pathlib import Path
 
 import pytest
 
-from l9_harness.assurance import commands
+from l9_harness.assurance import cli_adapter, commands
+from l9_harness.cli import app
 from l9_harness.cli.commands import assurance as cli_assurance
 from l9_harness.domain.errors import HarnessError
 from l9_harness.domain.reason_codes import ReasonCode
@@ -84,20 +86,36 @@ class TestMisplacedOptionDetection:
             == []
         )
 
-    def test_no_harness_option_collides_with_the_detector(self) -> None:
-        """Every declared harness option must be in the detected set."""
-        assert (
-            frozenset(
-                (
-                    "--executable",
-                    "--cwd",
-                    "--invocations",
-                    "--authority",
-                    "--production",
-                )
-            )
-            == commands.HARNESS_OPTIONS
-        )
+    def test_the_detected_set_is_exactly_what_the_parser_declares(self) -> None:
+        """Bound to the real parser, not to a second copy of the list.
+
+        Comparing ``HARNESS_OPTIONS`` against a literal in this file proves
+        nothing: adding a sixth option to the ``assurance`` subparser would
+        reintroduce the defect this module exists to prevent, with both the
+        frozenset and the literal unchanged and the suite green. So the
+        declaration is read off the parser itself.
+
+        argparse exposes no public accessor for a subparser, hence the private
+        attributes. A layout change here fails loudly rather than silently
+        passing, which is the property that matters.
+        """
+        root = app.parser()
+        subparsers = [
+            action for action in root._actions if isinstance(action, argparse._SubParsersAction)
+        ]
+        assert len(subparsers) == 1, "parser layout changed; update this test"
+        assurance = subparsers[0].choices["assurance"]
+        declared = {
+            option
+            # argparse adds its own help action. Forwarding ``--help`` to
+            # assurance is what a caller writing it after the operation wants,
+            # so it is deliberately not a harness option.
+            for action in assurance._actions
+            if not isinstance(action, argparse._HelpAction)
+            for option in action.option_strings
+            if option.startswith("--")
+        }
+        assert declared == commands.HARNESS_OPTIONS
 
 
 class TestCommandRefusesMisordering:
@@ -180,3 +198,33 @@ class TestExecutableResolution:
             ["l9-assurance", "plan"], "assurance-argv"
         )
         assert result["authoritative"] is False
+
+    def test_binding_is_enforced_by_the_module_that_writes_the_digest(self, tmp_path: Path) -> None:
+        """Not only by the CLI.
+
+        ``invoke`` writes ``argvDigest``, so it owns the invariant that the
+        record binds what ran. Enforcing it only in the CLI left the library
+        entry points -- ``capture_plan``, ``admit``, ``simulate``, ``evaluate``
+        -- reaching ``invoke`` with an unresolved name and producing a record
+        that bound nothing.
+        """
+        invocations = tmp_path / "invocations"
+        with pytest.raises(HarnessError) as caught:
+            cli_adapter.invoke(
+                "definitely-not-on-path-l9-assurance",
+                ["--root", "/bundle"],
+                tmp_path,
+                invocations,
+            )
+        assert caught.value.reason_code == ReasonCode.INPUT_INVALID
+        # And no invocation directory was left behind looking like an attempt.
+        assert not invocations.exists()
+
+    def test_resolution_is_idempotent_on_an_absolute_path(self, tmp_path: Path) -> None:
+        """The CLI resolves, then passes the result to ``invoke``, which
+        resolves again. The second pass must not change the path, or authority
+        verification and the invocation would disagree about which file ran."""
+        stub = _stub_executable(tmp_path)
+        once = cli_adapter.resolve_executable(str(stub))
+        assert cli_adapter.resolve_executable(once) == once
+        assert once == str(stub.resolve())

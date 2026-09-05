@@ -1042,11 +1042,11 @@
       }
     },
     {
-      "byteLength": 1341,
+      "byteLength": 3475,
       "path": "src/l9_harness/assurance/cli_adapter.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "6a778cadf1072372b9f4a0c0f630af4c8854ef4455d8ca78ab7d93cb6d994eaf"
+        "value": "8a6228b6ca4c9b3ead16dc97a6502898b05597ef3149098b87bec052a7ef0267"
       }
     },
     {
@@ -1194,11 +1194,11 @@
       }
     },
     {
-      "byteLength": 3634,
+      "byteLength": 2552,
       "path": "src/l9_harness/cli/commands/assurance.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "d958afa749289aa77c9af4c92f1fedeb18847c2b07a6e4050bd6bad349269d44"
+        "value": "d6a1a4ac1470b8fa8bc17cc2174ad2ac06f95139d1b107a843baa190993c60c2"
       }
     },
     {
@@ -2186,11 +2186,11 @@
       }
     },
     {
-      "byteLength": 7055,
+      "byteLength": 9668,
       "path": "tests/contract/test_assurance_argument_order.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "b2555dc90f4b4e08bb200b91ae9a777febc22b6ab5fbd10b0f9e929dcb86aa68"
+        "value": "f4dc8086f8d8f7c6c1ef2af6895af97d9fba04bd25347e1718d8d939c2cd4fdd"
       }
     },
     {
@@ -2518,7 +2518,7 @@
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "d9d00da3f28d5348ed35701215930e3e2dd32da669a58aa732b45b63253c5e4f"
+    "value": "cc111e0ef0a4040bde6ccd4b2e76bcedb5f8c248a6abc799167f0a228c883d82"
   },
   "specificationDigest": {
     "algorithm": "sha256",

@@ -4,8 +4,11 @@ import json
 from pathlib import Path
 from typing import Any
 
-from ...assurance.cli_adapter import invoke
+from ...assurance.cli_adapter import invoke, resolve_executable
+from ...assurance.commands import misplaced_harness_options
 from ...assurance.versioning import authority_complete, verify_authority_executable
+from ...domain.errors import ContractError
+from ...domain.reason_codes import ReasonCode
 
 
 def command(
@@ -16,6 +19,22 @@ def command(
     authority_path: Path | None = None,
     production: bool = False,
 ) -> dict[str, Any]:
+    misplaced = misplaced_harness_options(args)
+    if misplaced:
+        raise ContractError(
+            ReasonCode.INPUT_INVALID,
+            "Harness options must precede the assurance operation; "
+            f"{', '.join(misplaced)} was forwarded to assurance instead. "
+            "Write: l9-harness assurance "
+            "--executable ... <operation> <assurance flags>.",
+            details={"misplaced_options": misplaced},
+        )
+    # Resolved here as well as in `invoke`, so that `verify_authority_executable`
+    # digests the same file the invocation runs. Two independent PATH lookups of
+    # one bare name could in principle disagree; `resolve_executable` is
+    # idempotent on the absolute path it returns, so `invoke` re-resolving it
+    # changes nothing.
+    executable = resolve_executable(executable)
     authority = None
     if authority_path:
         authority = json.loads(authority_path.read_text("utf-8"))

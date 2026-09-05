@@ -128,7 +128,7 @@
     },
     {
       "check_id": "V-META-001",
-      "detail": "L9 metadata coverage: files=311, meta_refs=311",
+      "detail": "L9 metadata coverage: files=312, meta_refs=312",
       "evidence": "",
       "status": "PASS"
     },

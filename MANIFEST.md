@@ -6,7 +6,7 @@
 
 The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.
 
-## Source-pack inventory (313 files)
+## Source-pack inventory (314 files)
 
 | Path | Responsibility |
 |---|---|
@@ -285,6 +285,7 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `tests/conformance/test_canonicalization.py` | `test` |
 | `tests/conformance/test_consumer.py` | `test` |
 | `tests/conformance/test_producer.py` | `test` |
+| `tests/contract/test_assurance_argument_order.py` | `test` |
 | `tests/contract/test_assurance_authority.py` | `test` |
 | `tests/contract/test_assurance_command_paths.py` | `test` |
 | `tests/contract/test_cli_json.py` | `test` |

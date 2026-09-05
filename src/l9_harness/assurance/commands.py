@@ -17,7 +17,7 @@ results, and nothing here decides a verdict.
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from types import MappingProxyType
 
 #: Operations the harness CLI accepts, in the order it presents them.
@@ -34,6 +34,26 @@ _COMMAND_PATHS: Mapping[str, tuple[str, ...]] = MappingProxyType(
 )
 
 
+#: Options the harness's own ``assurance`` subparser owns.
+#:
+#: ``args`` is declared ``nargs=argparse.REMAINDER``, so everything after the
+#: operation name is captured verbatim and forwarded to assurance -- including
+#: these, when a caller writes them in the wrong order. argparse does not
+#: complain; ``--executable`` lands in the forwarded list and the harness
+#: silently falls back to its default, running whatever ``l9-assurance`` is on
+#: PATH instead of the one the caller named. None of these collide with an
+#: assurance flag, so their presence in the forwarded list is unambiguous.
+HARNESS_OPTIONS: frozenset[str] = frozenset(
+    {
+        "--executable",
+        "--cwd",
+        "--invocations",
+        "--authority",
+        "--production",
+    }
+)
+
+
 def command_path(operation: str) -> list[str]:
     """The assurance argv prefix for one harness operation.
 
@@ -42,3 +62,17 @@ def command_path(operation: str) -> list[str]:
     prevent.
     """
     return list(_COMMAND_PATHS[operation])
+
+
+def misplaced_harness_options(args: Sequence[str]) -> list[str]:
+    """Harness options found among the arguments forwarded to assurance.
+
+    Returns them in the order given, so the caller can be told exactly which
+    ones to move. Matches ``--opt`` and ``--opt=value`` alike.
+    """
+    found: list[str] = []
+    for argument in args:
+        name = argument.split("=", 1)[0]
+        if name in HARNESS_OPTIONS:
+            found.append(name)
+    return found

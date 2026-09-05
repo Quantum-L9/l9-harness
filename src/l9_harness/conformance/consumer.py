@@ -15,7 +15,11 @@ def verify_transport(source: Path, transported: Path) -> dict[str, Any]:
         canonical_equal = digest_canonical(json.loads(a), "assurance-decision") == digest_canonical(
             json.loads(b), "assurance-decision"
         )
-    except Exception:
+    except ValueError:
+        # Every reachable failure here is a ValueError subclass: JSONDecodeError
+        # and UnicodeDecodeError from json.loads, and the plain ValueError
+        # canonical_json_bytes raises for NaN/Infinity under allow_nan=False.
+        # Anything else is a real fault and must not read as "not equal".
         canonical_equal = False
     return {
         "rawBytePreserved": raw_equal,

@@ -189,8 +189,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: b52adf6f2d541b59450d11d2aa6666f9e451a350067b84766c8c02e5603b8ace
-    bytes: 74189
+    sha256: b7d61a4d8934b36f121bedd34e58869b62c57f568207fcf4737393879ef01772
+    bytes: 74190
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
@@ -844,8 +844,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/consumer.py"
-    sha256: 8bc677a3ab53df741698c78fb82eb8c468c3140e57b2287548b356ea0f8d0551
-    bytes: 722
+    sha256: 63e95db5c814007423ffe1db5cbcf4e5e0d0d6f1ce9ad5c4486d6e34746f1f93
+    bytes: 1031
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/cross_language.py"
@@ -859,8 +859,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/conformance/producer.py"
-    sha256: 725bc224333c1e81c9f576c483dc53784e8ae78eda9cf41967cd3f8efe1adec1
-    bytes: 1062
+    sha256: 980666b51a8e8ec55d38062f1152e11691a96719e2ab13a7ae2ce9d259ebf834
+    bytes: 1288
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/contracts/__init__.py"

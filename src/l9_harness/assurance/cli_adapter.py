@@ -8,6 +8,7 @@ from typing import Any
 
 from ..domain.digests import digest_bytes, digest_canonical
 from ..domain.errors import ContractError
+from ..domain.invariants import prohibit_authoritative_harness
 from ..domain.provenance import utc_now
 from ..domain.reason_codes import ReasonCode
 from ..security.subprocesses import run_argv
@@ -77,6 +78,9 @@ def invoke(
         "stderrDigest": digest_bytes(cp.stderr),
         "authoritative": False,
     }
+    # The record binds an execution fact, never a verdict: refuse to persist a
+    # record that claims Assurance authority (schema `authoritative: const false`).
+    prohibit_authoritative_harness(bool(record["authoritative"]))
     (root / "invocation-record.json").write_text(
         json.dumps(record, sort_keys=True, indent=2), encoding="utf-8"
     )

@@ -6,7 +6,7 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 312
+file_count: 313
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
@@ -109,8 +109,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: 36eb5c4fe61d5fb4acfc9b4545171183a1c183e2cf7c48dd2e14338d156d9d63
-    bytes: 12572
+    sha256: 23b723e402d4c0c62307510f1a9677e375f9ef1c4ea8c1cdc4c34b8cde6024bf
+    bytes: 12625
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -124,8 +124,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: 7bc9be3e475f1b5056a4e7aa87bb101dc3274b19dc75c665f6e1fb8171897f7a
-    bytes: 18068
+    sha256: a2528e160277f994009f499c2613e11c99ab87bb6a69e564107bae0c390fdbb6
+    bytes: 18132
     role: documentation
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
@@ -189,8 +189,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: b7d61a4d8934b36f121bedd34e58869b62c57f568207fcf4737393879ef01772
-    bytes: 74190
+    sha256: f5d1265470416b69666d5f54cdaaae75090b17f5486d05523080bb7db7334f40
+    bytes: 74439
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
@@ -659,8 +659,8 @@ files:
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/cli_adapter.py"
-    sha256: 8a6228b6ca4c9b3ead16dc97a6502898b05597ef3149098b87bec052a7ef0267
-    bytes: 3475
+    sha256: 6c91d1f5bea511b294f246bb90149d7f3ad84462edc850bc92e017f97006d353
+    bytes: 3767
     role: implementation
     meta_ref: L9_META.yaml
   - path: "src/l9_harness/assurance/commands.py"
@@ -1426,6 +1426,11 @@ files:
   - path: "tests/contract/test_external_contract_immutability.py"
     sha256: 4c27bdb16342819f54f5c05e59febc8356cf5ca64fa299f06ade94515e515f16
     bytes: 793
+    role: test
+    meta_ref: L9_META.yaml
+  - path: "tests/contract/test_non_authoritative_records.py"
+    sha256: a5aa78b03dbb1743c32ac175f9db1d26ad6d4d73b460dd0af18aae26028cc378
+    bytes: 3967
     role: test
     meta_ref: L9_META.yaml
   - path: "tests/contract/test_pack_contract_artifacts.py"

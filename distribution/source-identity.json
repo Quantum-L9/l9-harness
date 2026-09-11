@@ -170,11 +170,11 @@
       }
     },
     {
-      "byteLength": 12572,
+      "byteLength": 12625,
       "path": "FILETREE.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "36eb5c4fe61d5fb4acfc9b4545171183a1c183e2cf7c48dd2e14338d156d9d63"
+        "value": "23b723e402d4c0c62307510f1a9677e375f9ef1c4ea8c1cdc4c34b8cde6024bf"
       }
     },
     {
@@ -194,11 +194,11 @@
       }
     },
     {
-      "byteLength": 18068,
+      "byteLength": 18132,
       "path": "MANIFEST.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "7bc9be3e475f1b5056a4e7aa87bb101dc3274b19dc75c665f6e1fb8171897f7a"
+        "value": "a2528e160277f994009f499c2613e11c99ab87bb6a69e564107bae0c390fdbb6"
       }
     },
     {
@@ -1042,11 +1042,11 @@
       }
     },
     {
-      "byteLength": 3475,
+      "byteLength": 3767,
       "path": "src/l9_harness/assurance/cli_adapter.py",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "8a6228b6ca4c9b3ead16dc97a6502898b05597ef3149098b87bec052a7ef0267"
+        "value": "6c91d1f5bea511b294f246bb90149d7f3ad84462edc850bc92e017f97006d353"
       }
     },
     {
@@ -2274,6 +2274,14 @@
       }
     },
     {
+      "byteLength": 3967,
+      "path": "tests/contract/test_non_authoritative_records.py",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "a5aa78b03dbb1743c32ac175f9db1d26ad6d4d73b460dd0af18aae26028cc378"
+      }
+    },
+    {
       "byteLength": 706,
       "path": "tests/contract/test_pack_contract_artifacts.py",
       "rawDigest": {
@@ -2514,11 +2522,11 @@
   },
   "schemaVersion": "2.0.0",
   "sourceCommit": "UNKNOWN_REPOSITORY_UNAVAILABLE",
-  "sourceFileCount": 311,
+  "sourceFileCount": 312,
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "60058db89a69843b82286ce4d98ee438e8a4172458b48d4891f472ba99688079"
+    "value": "9ce7df9de4ce1a2971f8803e82c36a7e438b2f653cdac2deeee8582f20233f2f"
   },
   "specificationDigest": {
     "algorithm": "sha256",

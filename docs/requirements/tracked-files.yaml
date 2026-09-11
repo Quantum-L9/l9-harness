@@ -189,7 +189,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: f5d1265470416b69666d5f54cdaaae75090b17f5486d05523080bb7db7334f40
+    sha256: 446a71f70e5a0bd6e35d8cccb91bf510afd934b3dd324b182460a61f28a17625
     bytes: 74439
     role: distribution_identity
     meta_ref: L9_META.yaml
@@ -409,7 +409,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "pyproject.toml"
-    sha256: 3bc1c314a7fa25870b4dc49c0dccbd2a4dd78976aa28047b2c0ca0574c71f314
+    sha256: 50e99c144cb72355dd2bf310327f4d6cc3953080c106fc2a95bd6f8608802378
     bytes: 1548
     role: configuration
     meta_ref: L9_META.yaml
@@ -1564,8 +1564,8 @@ files:
     role: test
     meta_ref: L9_META.yaml
   - path: "uv.lock"
-    sha256: 4edf8c6fd33ae5bad527e147b8dbd646829f8b999087368f5aefc1e986e26d59
-    bytes: 41569
+    sha256: 40d9779532927c8e27bf3a7c224cfc7a3fbe44ed549316e5e14f2031ab745949
+    bytes: 41574
     role: configuration
     meta_ref: L9_META.yaml
   - path: "validation_report.yaml"

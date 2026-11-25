@@ -8,8 +8,8 @@ Source-pack files: **315**
 - `.github/dependabot.yml`
 - `.github/workflows/ci.yml`
 - `.github/workflows/conformance.yml`
+- `.github/workflows/deep-plan.yml`
 - `.github/workflows/dependency-review.yml`
-- `.github/workflows/l9-nightly.yml`
 - `.github/workflows/release.yml`
 - `.gitignore`
 - `.pre-commit-config.yaml`

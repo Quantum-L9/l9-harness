@@ -14,8 +14,8 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `.github/dependabot.yml` | `ci` |
 | `.github/workflows/ci.yml` | `ci` |
 | `.github/workflows/conformance.yml` | `ci` |
+| `.github/workflows/deep-plan.yml` | `ci` |
 | `.github/workflows/dependency-review.yml` | `ci` |
-| `.github/workflows/l9-nightly.yml` | `ci` |
 | `.github/workflows/release.yml` | `ci` |
 | `.gitignore` | `configuration` |
 | `.pre-commit-config.yaml` | `configuration` |

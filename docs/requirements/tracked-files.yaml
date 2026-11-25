@@ -19,13 +19,13 @@ files:
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/ci.yml"
-    sha256: 7d229ee591360976c3a8d44d5bbd6bc0f75b52ae1861cd46f72251880a63eebb
-    bytes: 1138
+    sha256: a594e7b2177f8e9210c933e4a937f8a67ec2e0bca0b72c6b71eeff2b5f7f5c00
+    bytes: 1612
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/conformance.yml"
-    sha256: da7e3e3254084c87297b53493e17d38be35061a8cda394051af4274aeea9207b
-    bytes: 365
+    sha256: 04a410522b7739ebc43e846be8b9f859d87c877be75b99669b788a485827cb48
+    bytes: 453
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/deep-plan.yml"
@@ -34,13 +34,13 @@ files:
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/dependency-review.yml"
-    sha256: 8224c048b18f8c87409b334842c7698c59519b8157c4437ae580b5460a829bf3
-    bytes: 211
+    sha256: 24f76935f1b576e21346cf516d0ad97e3de7d07adfd5cc1c7dc283ae4cced544
+    bytes: 303
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/release.yml"
-    sha256: 7da5d0da61f95e857bbef51408f66855e104c68448f9d7017fdcd7235ce4d0b3
-    bytes: 437
+    sha256: 04e0eef537f1069bec4bce61e0467b5fed56737d095f83b22569159debad7095
+    bytes: 573
     role: ci
     meta_ref: L9_META.yaml
   - path: ".gitignore"
@@ -189,7 +189,7 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 25d92e40d85d8c9d322787af10a2afc0c47612c5176e9d0e4a7b023cb066e898
+    sha256: 27a34d7fff7578596da64c1c5cf14a75242fb067d309e95de6d2e4597a876680
     bytes: 74439
     role: distribution_identity
     meta_ref: L9_META.yaml

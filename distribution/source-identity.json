@@ -170,11 +170,11 @@
       }
     },
     {
-      "byteLength": 12624,
+      "byteLength": 12649,
       "path": "FILETREE.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "c0f83af0c8efad72d316b0843ef7b4de20bb390c15b65aab79969cd7c6c72d57"
+        "value": "84eab91be6a721d0cbda87336d18868944968ed25eeaf311818d371c3f895a20"
       }
     },
     {
@@ -194,11 +194,19 @@
       }
     },
     {
-      "byteLength": 18131,
+      "byteLength": 18196,
       "path": "MANIFEST.md",
       "rawDigest": {
         "algorithm": "sha256",
-        "value": "401a7b000ae03b2c56d0d46e44f489029caa71476809bff251cfdea202300362"
+        "value": "f4d325558be3ff055e9350204e51f4a91424f22747fdb0a153cfe1963e450151"
+      }
+    },
+    {
+      "byteLength": 1641,
+      "path": "Makefile",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "7ac0aec8e961d2b755fc6eb3fd89a7811b04795e2bad8b9265601ebe83722b8b"
       }
     },
     {
@@ -247,6 +255,14 @@
       "rawDigest": {
         "algorithm": "sha256",
         "value": "a150d9f7d332d48a15f41e1c00f94a9e2ca425766b1fec84df7ae9623a6b6f48"
+      }
+    },
+    {
+      "byteLength": 1751,
+      "path": "Repo.mk",
+      "rawDigest": {
+        "algorithm": "sha256",
+        "value": "93c14eecb3c7b48c07fb48591839fb95885ce3e43e0cd837733344df1128c990"
       }
     },
     {
@@ -2522,11 +2538,11 @@
   },
   "schemaVersion": "2.0.0",
   "sourceCommit": "UNKNOWN_REPOSITORY_UNAVAILABLE",
-  "sourceFileCount": 312,
+  "sourceFileCount": 314,
   "sourceRepository": "Quantum-L9/l9-harness",
   "sourceTreeDigest": {
     "algorithm": "sha256",
-    "value": "58f831f14caf0860f3eb650e8a584571849e70ec504a24c1eecb3cc4af2efe1a"
+    "value": "3f3d74a06612b0fc54a5d980d6a610310983c38cdc71cd6e324c5432351c3bb8"
   },
   "specificationDigest": {
     "algorithm": "sha256",

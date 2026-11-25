@@ -6,7 +6,7 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 313
+file_count: 315
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
@@ -109,8 +109,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: c0f83af0c8efad72d316b0843ef7b4de20bb390c15b65aab79969cd7c6c72d57
-    bytes: 12624
+    sha256: 84eab91be6a721d0cbda87336d18868944968ed25eeaf311818d371c3f895a20
+    bytes: 12649
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -124,9 +124,14 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: 401a7b000ae03b2c56d0d46e44f489029caa71476809bff251cfdea202300362
-    bytes: 18131
+    sha256: f4d325558be3ff055e9350204e51f4a91424f22747fdb0a153cfe1963e450151
+    bytes: 18196
     role: documentation
+    meta_ref: L9_META.yaml
+  - path: "Makefile"
+    sha256: 7ac0aec8e961d2b755fc6eb3fd89a7811b04795e2bad8b9265601ebe83722b8b
+    bytes: 1641
+    role: configuration
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
     sha256: 113fd0bc7191fdfaa6b131d07804b22ff2542ae66ca87b24c8338fe649b6694e
@@ -157,6 +162,11 @@ files:
     sha256: a150d9f7d332d48a15f41e1c00f94a9e2ca425766b1fec84df7ae9623a6b6f48
     bytes: 5104
     role: documentation
+    meta_ref: L9_META.yaml
+  - path: "Repo.mk"
+    sha256: 93c14eecb3c7b48c07fb48591839fb95885ce3e43e0cd837733344df1128c990
+    bytes: 1751
+    role: configuration
     meta_ref: L9_META.yaml
   - path: "SECURITY.md"
     sha256: 044fbd72dc4081830a87c1ab94a0e22bf8b2ccd65402cc1b833970163c07aee6
@@ -189,8 +199,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 27a34d7fff7578596da64c1c5cf14a75242fb067d309e95de6d2e4597a876680
-    bytes: 74439
+    sha256: 312cb3ad6d3c60ec87a483e0cae9b1ef630b265fe1bb4c25d9fd33fd11a14b96
+    bytes: 74856
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"

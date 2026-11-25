@@ -6,7 +6,7 @@
 
 The source identity excludes its own generated record, the generated tracked-file index, and the mutable repository-validation report. The finalized distribution copies that report into `dist/` and binds it through the distribution manifest.
 
-## Source-pack inventory (315 files)
+## Source-pack inventory (317 files)
 
 | Path | Responsibility |
 |---|---|
@@ -34,12 +34,14 @@ The source identity excludes its own generated record, the generated tracked-fil
 | `L9_META.yaml` | `configuration` |
 | `LICENSE` | `configuration` |
 | `MANIFEST.md` | `documentation` |
+| `Makefile` | `configuration` |
 | `PROVENANCE_MAP.yaml` | `configuration` |
 | `README.md` | `documentation` |
 | `REGRESSION_GUARD.md` | `documentation` |
 | `RELEASE_READINESS.yaml` | `configuration` |
 | `ROADMAP.md` | `documentation` |
 | `RUNBOOK.md` | `documentation` |
+| `Repo.mk` | `configuration` |
 | `SECURITY.md` | `documentation` |
 | `SPECIFICATION.md` | `documentation` |
 | `TRACEABILITY_MAP.yaml` | `configuration` |

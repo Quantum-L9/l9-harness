@@ -2,7 +2,7 @@
 
 Deterministic source-pack inventory. Built distribution artifacts are indexed by `dist/distribution-manifest.json` and are intentionally excluded here to avoid a source-to-output identity cycle.
 
-Source-pack files: **315**
+Source-pack files: **317**
 
 - `.editorconfig`
 - `.github/dependabot.yml`
@@ -28,12 +28,14 @@ Source-pack files: **315**
 - `L9_META.yaml`
 - `LICENSE`
 - `MANIFEST.md`
+- `Makefile`
 - `PROVENANCE_MAP.yaml`
 - `README.md`
 - `REGRESSION_GUARD.md`
 - `RELEASE_READINESS.yaml`
 - `ROADMAP.md`
 - `RUNBOOK.md`
+- `Repo.mk`
 - `SECURITY.md`
 - `SPECIFICATION.md`
 - `TRACEABILITY_MAP.yaml`

@@ -5,8 +5,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e  # v6
         with: {enable-cache: true}
       # Dev tool versions (ruff/mypy/pytest/jsonschema) now come from the
       # [dependency-groups].dev pins in pyproject.toml via uv.lock, not inline
@@ -16,7 +16,12 @@ jobs:
       - run: uv run ruff format --check .
       - run: uv run ruff check .
       - run: uv run mypy src/l9_harness
-      - run: uv run pytest
+      # The organization's required workflow judges pull-request test
+      # expense: a full-suite selection is refused on a judged event. The
+      # fast lane runs the contract and architecture suites; conformance,
+      # adversarial and integration run in conformance.yml and in the
+      # admitted deep entry point, which is dispatched nightly.
+      - run: uv run pytest tests/contract tests/architecture
       - run: uv run python scripts/verify_generated.py
       # mypy/pytest leave __pycache__/.mypy_cache/.pytest_cache behind; V-QUALITY-002
       # in validate_repository.py treats any such residue in the source tree as a

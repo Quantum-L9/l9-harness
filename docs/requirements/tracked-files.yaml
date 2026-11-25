@@ -6,7 +6,7 @@ metadata_inheritance: every_entry
 scope: immutable_and_operational_source_files
 excluded_mutable_evidence:
   - "docs/validation/repository-validation.json"
-file_count: 313
+file_count: 315
 files:
   - path: ".editorconfig"
     sha256: b6f1b7f9f0c85bf0c9d2cdc7a19cd7003bd8155ec4094743d2e30553dbfb4d0d
@@ -19,28 +19,28 @@ files:
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/ci.yml"
-    sha256: 7d229ee591360976c3a8d44d5bbd6bc0f75b52ae1861cd46f72251880a63eebb
-    bytes: 1138
+    sha256: a594e7b2177f8e9210c933e4a937f8a67ec2e0bca0b72c6b71eeff2b5f7f5c00
+    bytes: 1612
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/conformance.yml"
-    sha256: da7e3e3254084c87297b53493e17d38be35061a8cda394051af4274aeea9207b
-    bytes: 365
+    sha256: 04a410522b7739ebc43e846be8b9f859d87c877be75b99669b788a485827cb48
+    bytes: 453
+    role: ci
+    meta_ref: L9_META.yaml
+  - path: ".github/workflows/deep-plan.yml"
+    sha256: 2e077c8f0b0f5775feeb91496636968a3869d8b5c7edd2f0e1a2b0b7762bfc3b
+    bytes: 5368
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/dependency-review.yml"
-    sha256: 8224c048b18f8c87409b334842c7698c59519b8157c4437ae580b5460a829bf3
-    bytes: 211
-    role: ci
-    meta_ref: L9_META.yaml
-  - path: ".github/workflows/l9-nightly.yml"
-    sha256: 16bf165e4307504f95324d2ba0b4f2055a6af4fe9495f39b8573d4251f603e3c
-    bytes: 603
+    sha256: 24f76935f1b576e21346cf516d0ad97e3de7d07adfd5cc1c7dc283ae4cced544
+    bytes: 303
     role: ci
     meta_ref: L9_META.yaml
   - path: ".github/workflows/release.yml"
-    sha256: 7da5d0da61f95e857bbef51408f66855e104c68448f9d7017fdcd7235ce4d0b3
-    bytes: 437
+    sha256: 04e0eef537f1069bec4bce61e0467b5fed56737d095f83b22569159debad7095
+    bytes: 573
     role: ci
     meta_ref: L9_META.yaml
   - path: ".gitignore"
@@ -109,8 +109,8 @@ files:
     role: documentation
     meta_ref: L9_META.yaml
   - path: "FILETREE.md"
-    sha256: 23b723e402d4c0c62307510f1a9677e375f9ef1c4ea8c1cdc4c34b8cde6024bf
-    bytes: 12625
+    sha256: 84eab91be6a721d0cbda87336d18868944968ed25eeaf311818d371c3f895a20
+    bytes: 12649
     role: documentation
     meta_ref: L9_META.yaml
   - path: "L9_META.yaml"
@@ -124,9 +124,14 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "MANIFEST.md"
-    sha256: a2528e160277f994009f499c2613e11c99ab87bb6a69e564107bae0c390fdbb6
-    bytes: 18132
+    sha256: f4d325558be3ff055e9350204e51f4a91424f22747fdb0a153cfe1963e450151
+    bytes: 18196
     role: documentation
+    meta_ref: L9_META.yaml
+  - path: "Makefile"
+    sha256: 7ac0aec8e961d2b755fc6eb3fd89a7811b04795e2bad8b9265601ebe83722b8b
+    bytes: 1641
+    role: configuration
     meta_ref: L9_META.yaml
   - path: "PROVENANCE_MAP.yaml"
     sha256: 113fd0bc7191fdfaa6b131d07804b22ff2542ae66ca87b24c8338fe649b6694e
@@ -157,6 +162,11 @@ files:
     sha256: a150d9f7d332d48a15f41e1c00f94a9e2ca425766b1fec84df7ae9623a6b6f48
     bytes: 5104
     role: documentation
+    meta_ref: L9_META.yaml
+  - path: "Repo.mk"
+    sha256: 93c14eecb3c7b48c07fb48591839fb95885ce3e43e0cd837733344df1128c990
+    bytes: 1751
+    role: configuration
     meta_ref: L9_META.yaml
   - path: "SECURITY.md"
     sha256: 044fbd72dc4081830a87c1ab94a0e22bf8b2ccd65402cc1b833970163c07aee6
@@ -189,8 +199,8 @@ files:
     role: configuration
     meta_ref: L9_META.yaml
   - path: "distribution/source-identity.json"
-    sha256: 446a71f70e5a0bd6e35d8cccb91bf510afd934b3dd324b182460a61f28a17625
-    bytes: 74439
+    sha256: 312cb3ad6d3c60ec87a483e0cae9b1ef630b265fe1bb4c25d9fd33fd11a14b96
+    bytes: 74856
     role: distribution_identity
     meta_ref: L9_META.yaml
   - path: "docs/adr/ADR-001-harness-role.md"
